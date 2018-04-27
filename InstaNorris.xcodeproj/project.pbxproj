@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		129D8915E54F059CAD6E63AE /* Pods_InstaNorrisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5921CE20972611E3BA3B644D /* Pods_InstaNorrisTests.framework */; };
+		403C13B72093C4A1009B5FE9 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403C13B62093C4A0009B5FE9 /* R.generated.swift */; };
 		40A9DE372092402100104E00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A9DE362092402100104E00 /* AppDelegate.swift */; };
 		40A9DE3E2092402100104E00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40A9DE3D2092402100104E00 /* Assets.xcassets */; };
 		40A9DE412092402100104E00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A9DE3F2092402100104E00 /* LaunchScreen.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		403C13B62093C4A0009B5FE9 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		40A9DE332092402100104E00 /* InstaNorris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaNorris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40A9DE362092402100104E00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40A9DE3D2092402100104E00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,6 +94,8 @@
 		40A608BC2093AC54001212A3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				403C13B62093C4A0009B5FE9 /* R.generated.swift */,
+				40A9DE3D2092402100104E00 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -171,7 +175,6 @@
 				40A608BE2093AC6C001212A3 /* Service */,
 				40A608BD2093AC61001212A3 /* Modules */,
 				40A9DE362092402100104E00 /* AppDelegate.swift */,
-				40A9DE3D2092402100104E00 /* Assets.xcassets */,
 				40A9DE3F2092402100104E00 /* LaunchScreen.storyboard */,
 				40A9DE422092402100104E00 /* Info.plist */,
 			);
@@ -219,6 +222,8 @@
 				40A9DE302092402100104E00 /* Frameworks */,
 				40A9DE312092402100104E00 /* Resources */,
 				DAC260F4E618A345E1A3A1A8 /* [CP] Embed Pods Frameworks */,
+				403C13B42093B458009B5FE9 /* R.swift */,
+				403C13B52093B482009B5FE9 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -358,6 +363,34 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		403C13B42093B458009B5FE9 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
+		};
+		403C13B52093B482009B5FE9 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
 		82EA8CCD71A5E1BB26137E1B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -442,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40A9DE372092402100104E00 /* AppDelegate.swift in Sources */,
+				403C13B72093C4A1009B5FE9 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
