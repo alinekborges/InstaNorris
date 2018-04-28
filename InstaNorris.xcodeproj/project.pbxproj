@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		129D8915E54F059CAD6E63AE /* Pods_InstaNorrisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5921CE20972611E3BA3B644D /* Pods_InstaNorrisTests.framework */; };
 		403C13B72093C4A1009B5FE9 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403C13B62093C4A0009B5FE9 /* R.generated.swift */; };
+		403C13BC2093DB56009B5FE9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403C13B92093DB56009B5FE9 /* MainView.swift */; };
+		403C13BD2093DB56009B5FE9 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403C13BA2093DB56009B5FE9 /* MainViewModel.swift */; };
+		403C13BE2093DB56009B5FE9 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 403C13BB2093DB56009B5FE9 /* MainView.xib */; };
+		403C13C02093DBC0009B5FE9 /* DefaultContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403C13BF2093DBC0009B5FE9 /* DefaultContainer.swift */; };
 		40A9DE372092402100104E00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A9DE362092402100104E00 /* AppDelegate.swift */; };
 		40A9DE3E2092402100104E00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40A9DE3D2092402100104E00 /* Assets.xcassets */; };
 		40A9DE412092402100104E00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A9DE3F2092402100104E00 /* LaunchScreen.storyboard */; };
@@ -36,6 +40,10 @@
 
 /* Begin PBXFileReference section */
 		403C13B62093C4A0009B5FE9 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		403C13B92093DB56009B5FE9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		403C13BA2093DB56009B5FE9 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		403C13BB2093DB56009B5FE9 /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		403C13BF2093DBC0009B5FE9 /* DefaultContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultContainer.swift; sourceTree = "<group>"; };
 		40A9DE332092402100104E00 /* InstaNorris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaNorris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40A9DE362092402100104E00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40A9DE3D2092402100104E00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +99,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		403C13B82093DB46009B5FE9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				403C13B92093DB56009B5FE9 /* MainView.swift */,
+				403C13BA2093DB56009B5FE9 /* MainViewModel.swift */,
+				403C13BB2093DB56009B5FE9 /* MainView.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		40A608BC2093AC54001212A3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +121,7 @@
 		40A608BD2093AC61001212A3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				403C13B82093DB46009B5FE9 /* Main */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -138,6 +157,7 @@
 		40A608C22093ACC4001212A3 /* Containters */ = {
 			isa = PBXGroup;
 			children = (
+				403C13BF2093DBC0009B5FE9 /* DefaultContainer.swift */,
 			);
 			path = Containters;
 			sourceTree = "<group>";
@@ -323,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				403C13BE2093DB56009B5FE9 /* MainView.xib in Resources */,
 				40A9DE412092402100104E00 /* LaunchScreen.storyboard in Resources */,
 				40A9DE3E2092402100104E00 /* Assets.xcassets in Resources */,
 			);
@@ -475,7 +496,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				40A9DE372092402100104E00 /* AppDelegate.swift in Sources */,
+				403C13BC2093DB56009B5FE9 /* MainView.swift in Sources */,
 				403C13B72093C4A1009B5FE9 /* R.generated.swift in Sources */,
+				403C13BD2093DB56009B5FE9 /* MainViewModel.swift in Sources */,
+				403C13C02093DBC0009B5FE9 /* DefaultContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
