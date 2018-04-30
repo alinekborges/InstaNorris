@@ -1,0 +1,14 @@
+disabled_rules: # rule identifiers to exclude from running
+- function_body_length
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+- Pods
+- xCode Templates
+- ebanxTests
+- R.generated.swift
+
+identifier_name:
+    excluded:
+        - id
+trailing_whitespace:
+    ignores_empty_lines: true
+    ignores_comments: true
