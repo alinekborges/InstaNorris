@@ -16,7 +16,6 @@
 		40A9DE372092402100104E00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A9DE362092402100104E00 /* AppDelegate.swift */; };
 		40A9DE3E2092402100104E00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40A9DE3D2092402100104E00 /* Assets.xcassets */; };
 		40A9DE412092402100104E00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A9DE3F2092402100104E00 /* LaunchScreen.storyboard */; };
-		40A9DE4C2092402100104E00 /* InstaNorrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A9DE4B2092402100104E00 /* InstaNorrisTests.swift */; };
 		40A9DE572092402200104E00 /* InstaNorrisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A9DE562092402200104E00 /* InstaNorrisUITests.swift */; };
 		AA11FE78401E2C7D2643C89A /* Pods_InstaNorris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E562B61ACBC0A05C5F0DA5FA /* Pods_InstaNorris.framework */; };
 /* End PBXBuildFile section */
@@ -50,7 +49,6 @@
 		40A9DE402092402100104E00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40A9DE422092402100104E00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40A9DE472092402100104E00 /* InstaNorrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaNorrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		40A9DE4B2092402100104E00 /* InstaNorrisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaNorrisTests.swift; sourceTree = "<group>"; };
 		40A9DE4D2092402100104E00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40A9DE522092402200104E00 /* InstaNorrisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaNorrisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40A9DE562092402200104E00 /* InstaNorrisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaNorrisUITests.swift; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 		40A9DE4A2092402100104E00 /* InstaNorrisTests */ = {
 			isa = PBXGroup;
 			children = (
-				40A9DE4B2092402100104E00 /* InstaNorrisTests.swift */,
 				40A9DE4D2092402100104E00 /* Info.plist */,
 			);
 			path = InstaNorrisTests;
@@ -507,7 +504,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40A9DE4C2092402100104E00 /* InstaNorrisTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
