@@ -21,6 +21,17 @@ func jsonSerializedUTF8(json: [String: Any]) -> Data {
     }
 }
 
+func arrayJsonSerializedUTF8(json: [String]) -> Data {
+    do {
+        return try JSONSerialization.data(
+            withJSONObject: json,
+            options: [.prettyPrinted]
+        )
+    } catch {
+        return Data()
+    }
+}
+
 func stringArrayToData(array: [String]) -> Data {
     let data = NSMutableData()
     let terminator = [0]
@@ -33,5 +44,6 @@ func stringArrayToData(array: [String]) -> Data {
             NSLog("Cannot encode string \"\(string)\"")
         }
     }
+    print(data as Data)
     return data as Data
 }

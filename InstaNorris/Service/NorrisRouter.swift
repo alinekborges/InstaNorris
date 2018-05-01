@@ -32,7 +32,7 @@ extension NorrisRouter: TargetType {
         switch self {
         case .categories:
             let data = ["category_test1", "category_test2", "category_test3"]
-            return stringArrayToData(array: data)
+            return arrayJsonSerializedUTF8(json: data)
         }
     }
     
