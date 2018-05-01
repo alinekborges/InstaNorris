@@ -26,8 +26,8 @@ final class DefaultContainer {
 extension DefaultContainer {
     
     func registerViews() {
-        self.container.register(MainView.self) { _ in
-            MainView()
+        self.container.register(MainView.self) { resolver in
+            MainView(repository: resolver.resolve(NorrisRepository.self)!)
         }
     }
     

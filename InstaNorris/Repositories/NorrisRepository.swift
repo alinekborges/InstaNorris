@@ -10,5 +10,5 @@ import RxSwift
 import Moya
 
 protocol NorrisRepository: class {
-    
+    func categories() -> Observable<[String]>
 }

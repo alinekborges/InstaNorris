@@ -11,7 +11,14 @@ import RxCocoa
 
 class MainViewModel {
     
-    init() {
+    let repository: NorrisRepository
+    
+    let categories: Driver<[String]>
+    
+    init(repository: NorrisRepository) {
+        self.repository = repository
         
+        self.categories = self.repository.categories()
+            .asDriver(onErrorJustReturn: [])
     }
 }

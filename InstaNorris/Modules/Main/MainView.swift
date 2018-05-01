@@ -13,8 +13,10 @@ import RxCocoa
 class MainView: UIViewController {
     
     var viewModel: MainViewModel!
+    let repository: NorrisRepository
 
-    init() {
+    init(repository: NorrisRepository) {
+        self.repository = repository
         super.init(nibName: String(describing: MainView.self), bundle: nil)
     }
     
@@ -34,7 +36,7 @@ class MainView: UIViewController {
 extension MainView {
     
     func setupViewModel() {
-        self.viewModel = MainViewModel()
+        self.viewModel = MainViewModel(repository: self.repository)
     }
     
     func configureViews() {
@@ -42,6 +44,6 @@ extension MainView {
     }
     
     func setupBindings() {
-
+        
     }
 }
