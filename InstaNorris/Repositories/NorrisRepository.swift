@@ -10,6 +10,6 @@ import RxSwift
 import Moya
 
 protocol NorrisRepository: class {
-    func categories() -> Observable<[String]>
-    
+    func categories() -> Single<[String]>
+    func search(_ query: String) -> Single<SearchResponse>
 }

@@ -18,10 +18,13 @@ class NorrisRepositoryImpl: NorrisRepository {
         self.service = service
     }
     
-    func categories() -> Observable<[String]> {
+    func categories() -> Single<[String]> {
         return self.service.categories()
             .map([String].self)
-            .asObservable()
     }
     
+    func search(_ query: String) -> Single<SearchResponse> {
+        return self.service.search(query)
+            .map(SearchResponse.self)
+    }
 }

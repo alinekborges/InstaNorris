@@ -35,6 +35,15 @@ class NorrisRepositorySpec: QuickSpec {
                     fatalError(error.localizedDescription)
                 }
             }
+            
+            it("search with success") {
+                do {
+                    let result = try subject.search("teste").toBlocking().first()
+                    expect(result).toNot(beNil())
+                } catch let error {
+                    fatalError(error.localizedDescription)
+                }
+            }
         }
         
     }

@@ -24,8 +24,8 @@ class MockNorrisService: NorrisService {
         return self.provider.rx.request(.categories)
     }
     
-    /*func search(_ query: String) -> Single<Response> {
+    func search(_ query: String) -> Single<Response> {
         return self.provider.rx.request(.search(query: query))
-    }*/
+    }
     
 }

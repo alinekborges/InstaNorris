@@ -24,6 +24,8 @@
 		405D44CA2098D64D00160077 /* Networking+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44C92098D64D00160077 /* Networking+Utils.swift */; };
 		405D44CE2098D7BF00160077 /* MockNorrisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44CD2098D7BF00160077 /* MockNorrisService.swift */; };
 		405D44D02098D7CD00160077 /* NorrisRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44CF2098D7CD00160077 /* NorrisRepositorySpec.swift */; };
+		40BCC7B62098F1D3009279FA /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7B52098F1D3009279FA /* SearchResponse.swift */; };
+		40BCC7B82098F1F7009279FA /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7B72098F1F7009279FA /* Fact.swift */; };
 		626A356D802BA04F15EF2C0A /* Pods_InstaNorrisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE77A4F49C701B10B4FE1A7 /* Pods_InstaNorrisTests.framework */; };
 		E123DA4ACB802F70168853F9 /* Pods_InstaNorris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CA89E0A059D94CD92D2FD3 /* Pods_InstaNorris.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +61,8 @@
 		405D44C92098D64D00160077 /* Networking+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Networking+Utils.swift"; sourceTree = "<group>"; };
 		405D44CD2098D7BF00160077 /* MockNorrisService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNorrisService.swift; sourceTree = "<group>"; };
 		405D44CF2098D7CD00160077 /* NorrisRepositorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NorrisRepositorySpec.swift; sourceTree = "<group>"; };
+		40BCC7B52098F1D3009279FA /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		40BCC7B72098F1F7009279FA /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
 		44DB4F89243AFA231A1D36F9 /* Pods-InstaNorris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaNorris.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris.release.xcconfig"; sourceTree = "<group>"; };
 		73CA89E0A059D94CD92D2FD3 /* Pods_InstaNorris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaNorris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CDA602A63EB08B8C09599D1 /* Pods-InstaNorris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaNorris.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris.debug.xcconfig"; sourceTree = "<group>"; };
@@ -231,6 +235,8 @@
 		405D44D12098D98300160077 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				40BCC7B52098F1D3009279FA /* SearchResponse.swift */,
+				40BCC7B72098F1F7009279FA /* Fact.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -464,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40BCC7B82098F1F7009279FA /* Fact.swift in Sources */,
 				405D44A92098D56200160077 /* AppDelegate.swift in Sources */,
 				405D44C72098D64800160077 /* NorrisRouter.swift in Sources */,
 				405D44CA2098D64D00160077 /* Networking+Utils.swift in Sources */,
@@ -474,6 +481,7 @@
 				405D44B92098D62800160077 /* MainViewModel.swift in Sources */,
 				405D44BD2098D63700160077 /* NorrisRepositoryImpl.swift in Sources */,
 				405D44C52098D64800160077 /* NorrisService.swift in Sources */,
+				40BCC7B62098F1D3009279FA /* SearchResponse.swift in Sources */,
 				405D44C62098D64800160077 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
