@@ -44,6 +44,9 @@ extension MainView {
     }
     
     func setupBindings() {
-        
+        self.viewModel.results
+            .drive(onNext: {
+                print($0)
+            })
     }
 }
