@@ -8,9 +8,7 @@
 
 import Foundation
 
-struct SearchResponse: Codable {
-    
+struct SearchResponse: Decodable {
     let total: Int
     let result: [Fact]
-    
 }
