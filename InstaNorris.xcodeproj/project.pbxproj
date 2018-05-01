@@ -7,240 +7,272 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		129D8915E54F059CAD6E63AE /* Pods_InstaNorrisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5921CE20972611E3BA3B644D /* Pods_InstaNorrisTests.framework */; };
-		403C13B72093C4A1009B5FE9 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403C13B62093C4A0009B5FE9 /* R.generated.swift */; };
-		403C13BC2093DB56009B5FE9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403C13B92093DB56009B5FE9 /* MainView.swift */; };
-		403C13BD2093DB56009B5FE9 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403C13BA2093DB56009B5FE9 /* MainViewModel.swift */; };
-		403C13BE2093DB56009B5FE9 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 403C13BB2093DB56009B5FE9 /* MainView.xib */; };
-		403C13C02093DBC0009B5FE9 /* DefaultContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403C13BF2093DBC0009B5FE9 /* DefaultContainer.swift */; };
-		40A9DE372092402100104E00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A9DE362092402100104E00 /* AppDelegate.swift */; };
-		40A9DE3E2092402100104E00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40A9DE3D2092402100104E00 /* Assets.xcassets */; };
-		40A9DE412092402100104E00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A9DE3F2092402100104E00 /* LaunchScreen.storyboard */; };
-		40A9DE572092402200104E00 /* InstaNorrisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A9DE562092402200104E00 /* InstaNorrisUITests.swift */; };
-		AA11FE78401E2C7D2643C89A /* Pods_InstaNorris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E562B61ACBC0A05C5F0DA5FA /* Pods_InstaNorris.framework */; };
+		405D44A52098D54B00160077 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405D44A32098D54B00160077 /* LaunchScreen.storyboard */; };
+		405D44A82098D56200160077 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 405D44A62098D56200160077 /* Info.plist */; };
+		405D44A92098D56200160077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44A72098D56200160077 /* AppDelegate.swift */; };
+		405D44AC2098D58E00160077 /* DefaultContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44AB2098D58E00160077 /* DefaultContainer.swift */; };
+		405D44B82098D62800160077 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 405D44B52098D62700160077 /* MainView.xib */; };
+		405D44B92098D62800160077 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44B62098D62800160077 /* MainViewModel.swift */; };
+		405D44BA2098D62800160077 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44B72098D62800160077 /* MainView.swift */; };
+		405D44BD2098D63700160077 /* NorrisRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44BB2098D63700160077 /* NorrisRepositoryImpl.swift */; };
+		405D44BE2098D63700160077 /* NorrisRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44BC2098D63700160077 /* NorrisRepository.swift */; };
+		405D44C02098D63E00160077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 405D44BF2098D63E00160077 /* Assets.xcassets */; };
+		405D44C52098D64800160077 /* NorrisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44C12098D64800160077 /* NorrisService.swift */; };
+		405D44C62098D64800160077 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44C22098D64800160077 /* Constants.swift */; };
+		405D44C72098D64800160077 /* NorrisRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44C32098D64800160077 /* NorrisRouter.swift */; };
+		405D44C82098D64800160077 /* NorrisServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44C42098D64800160077 /* NorrisServiceImpl.swift */; };
+		405D44CA2098D64D00160077 /* Networking+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44C92098D64D00160077 /* Networking+Utils.swift */; };
+		405D44CE2098D7BF00160077 /* MockNorrisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44CD2098D7BF00160077 /* MockNorrisService.swift */; };
+		405D44D02098D7CD00160077 /* NorrisRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44CF2098D7CD00160077 /* NorrisRepositorySpec.swift */; };
+		40BCC7B62098F1D3009279FA /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7B52098F1D3009279FA /* SearchResponse.swift */; };
+		40BCC7B82098F1F7009279FA /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7B72098F1F7009279FA /* Fact.swift */; };
+		626A356D802BA04F15EF2C0A /* Pods_InstaNorrisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE77A4F49C701B10B4FE1A7 /* Pods_InstaNorrisTests.framework */; };
+		E123DA4ACB802F70168853F9 /* Pods_InstaNorris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CA89E0A059D94CD92D2FD3 /* Pods_InstaNorris.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		40A9DE482092402100104E00 /* PBXContainerItemProxy */ = {
+		405D448C2098C16000160077 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 40A9DE2B2092402100104E00 /* Project object */;
+			containerPortal = 405D446F2098C16000160077 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 40A9DE322092402100104E00;
-			remoteInfo = InstaNorris;
-		};
-		40A9DE532092402200104E00 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 40A9DE2B2092402100104E00 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 40A9DE322092402100104E00;
+			remoteGlobalIDString = 405D44762098C16000160077;
 			remoteInfo = InstaNorris;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		403C13B62093C4A0009B5FE9 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
-		403C13B92093DB56009B5FE9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		403C13BA2093DB56009B5FE9 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		403C13BB2093DB56009B5FE9 /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
-		403C13BF2093DBC0009B5FE9 /* DefaultContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultContainer.swift; sourceTree = "<group>"; };
-		40A9DE332092402100104E00 /* InstaNorris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaNorris.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		40A9DE362092402100104E00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		40A9DE3D2092402100104E00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		40A9DE402092402100104E00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		40A9DE422092402100104E00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		40A9DE472092402100104E00 /* InstaNorrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaNorrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		40A9DE4D2092402100104E00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		40A9DE522092402200104E00 /* InstaNorrisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaNorrisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		40A9DE562092402200104E00 /* InstaNorrisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaNorrisUITests.swift; sourceTree = "<group>"; };
-		40A9DE582092402200104E00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5921CE20972611E3BA3B644D /* Pods_InstaNorrisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaNorrisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		66E169F348305E445605A0B3 /* Pods-InstaNorrisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaNorrisTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaNorrisTests/Pods-InstaNorrisTests.release.xcconfig"; sourceTree = "<group>"; };
-		B4C59C027B302543BBDF1BC5 /* Pods-InstaNorris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaNorris.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris.debug.xcconfig"; sourceTree = "<group>"; };
-		C30FC6DA72A44477BCD00ED1 /* Pods-InstaNorris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaNorris.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris.release.xcconfig"; sourceTree = "<group>"; };
-		E4BC8E2CF83B5541DAB91D1E /* Pods-InstaNorrisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaNorrisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaNorrisTests/Pods-InstaNorrisTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E562B61ACBC0A05C5F0DA5FA /* Pods_InstaNorris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaNorris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		405D44772098C16000160077 /* InstaNorris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaNorris.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		405D448B2098C16000160077 /* InstaNorrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaNorrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		405D44912098C16000160077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		405D44A42098D54B00160077 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		405D44A62098D56200160077 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		405D44A72098D56200160077 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		405D44AB2098D58E00160077 /* DefaultContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultContainer.swift; sourceTree = "<group>"; };
+		405D44B52098D62700160077 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		405D44B62098D62800160077 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		405D44B72098D62800160077 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		405D44BB2098D63700160077 /* NorrisRepositoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NorrisRepositoryImpl.swift; sourceTree = "<group>"; };
+		405D44BC2098D63700160077 /* NorrisRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NorrisRepository.swift; sourceTree = "<group>"; };
+		405D44BF2098D63E00160077 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		405D44C12098D64800160077 /* NorrisService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NorrisService.swift; sourceTree = "<group>"; };
+		405D44C22098D64800160077 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		405D44C32098D64800160077 /* NorrisRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NorrisRouter.swift; sourceTree = "<group>"; };
+		405D44C42098D64800160077 /* NorrisServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NorrisServiceImpl.swift; sourceTree = "<group>"; };
+		405D44C92098D64D00160077 /* Networking+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Networking+Utils.swift"; sourceTree = "<group>"; };
+		405D44CD2098D7BF00160077 /* MockNorrisService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNorrisService.swift; sourceTree = "<group>"; };
+		405D44CF2098D7CD00160077 /* NorrisRepositorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NorrisRepositorySpec.swift; sourceTree = "<group>"; };
+		40BCC7B52098F1D3009279FA /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		40BCC7B72098F1F7009279FA /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
+		44DB4F89243AFA231A1D36F9 /* Pods-InstaNorris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaNorris.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris.release.xcconfig"; sourceTree = "<group>"; };
+		73CA89E0A059D94CD92D2FD3 /* Pods_InstaNorris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaNorris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CDA602A63EB08B8C09599D1 /* Pods-InstaNorris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaNorris.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris.debug.xcconfig"; sourceTree = "<group>"; };
+		8E5F55B92C6D20B8ED3BFCC5 /* Pods-InstaNorrisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaNorrisTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaNorrisTests/Pods-InstaNorrisTests.release.xcconfig"; sourceTree = "<group>"; };
+		CAE77A4F49C701B10B4FE1A7 /* Pods_InstaNorrisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaNorrisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7B63B94BF2DC9A975189D53 /* Pods-InstaNorrisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaNorrisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaNorrisTests/Pods-InstaNorrisTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		40A9DE302092402100104E00 /* Frameworks */ = {
+		405D44742098C16000160077 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA11FE78401E2C7D2643C89A /* Pods_InstaNorris.framework in Frameworks */,
+				E123DA4ACB802F70168853F9 /* Pods_InstaNorris.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		40A9DE442092402100104E00 /* Frameworks */ = {
+		405D44882098C16000160077 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				129D8915E54F059CAD6E63AE /* Pods_InstaNorrisTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		40A9DE4F2092402200104E00 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				626A356D802BA04F15EF2C0A /* Pods_InstaNorrisTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04A9B0C8B10F0654EC9EC154 /* Frameworks */ = {
+		405D446E2098C16000160077 = {
 			isa = PBXGroup;
 			children = (
-				E562B61ACBC0A05C5F0DA5FA /* Pods_InstaNorris.framework */,
-				5921CE20972611E3BA3B644D /* Pods_InstaNorrisTests.framework */,
+				405D44792098C16000160077 /* InstaNorris */,
+				405D448E2098C16000160077 /* InstaNorrisTests */,
+				405D44782098C16000160077 /* Products */,
+				65ACD68DBF8AE5A66E7B9487 /* Pods */,
+				CBBA5B08448434373C23C642 /* Frameworks */,
 			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		403C13B82093DB46009B5FE9 /* Main */ = {
+		405D44782098C16000160077 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				403C13B92093DB56009B5FE9 /* MainView.swift */,
-				403C13BA2093DB56009B5FE9 /* MainViewModel.swift */,
-				403C13BB2093DB56009B5FE9 /* MainView.xib */,
+				405D44772098C16000160077 /* InstaNorris.app */,
+				405D448B2098C16000160077 /* InstaNorrisTests.xctest */,
 			);
-			path = Main;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		40A608BC2093AC54001212A3 /* Resources */ = {
+		405D44792098C16000160077 /* InstaNorris */ = {
 			isa = PBXGroup;
 			children = (
-				403C13B62093C4A0009B5FE9 /* R.generated.swift */,
-				40A9DE3D2092402100104E00 /* Assets.xcassets */,
+				405D44D12098D98300160077 /* Model */,
+				405D44B32098D5D200160077 /* Utils */,
+				405D44B22098D5CD00160077 /* Service */,
+				405D44B12098D5C500160077 /* RxExtensions */,
+				405D44B02098D5BF00160077 /* Resources */,
+				405D44AF2098D5B700160077 /* Repositories */,
+				405D44AE2098D5AC00160077 /* Modules */,
+				405D44AD2098D5A600160077 /* Components */,
+				405D44AA2098D58300160077 /* Container */,
+				405D44A72098D56200160077 /* AppDelegate.swift */,
+				405D44A62098D56200160077 /* Info.plist */,
+				405D44A32098D54B00160077 /* LaunchScreen.storyboard */,
 			);
-			path = Resources;
+			path = InstaNorris;
 			sourceTree = "<group>";
 		};
-		40A608BD2093AC61001212A3 /* Modules */ = {
+		405D448E2098C16000160077 /* InstaNorrisTests */ = {
 			isa = PBXGroup;
 			children = (
-				403C13B82093DB46009B5FE9 /* Main */,
+				405D44CC2098D7AE00160077 /* Repository */,
+				405D44CB2098D7A700160077 /* Mock */,
+				405D44912098C16000160077 /* Info.plist */,
 			);
-			path = Modules;
+			path = InstaNorrisTests;
 			sourceTree = "<group>";
 		};
-		40A608BE2093AC6C001212A3 /* Service */ = {
+		405D44AA2098D58300160077 /* Container */ = {
 			isa = PBXGroup;
 			children = (
+				405D44AB2098D58E00160077 /* DefaultContainer.swift */,
 			);
-			path = Service;
+			path = Container;
 			sourceTree = "<group>";
 		};
-		40A608BF2093AC81001212A3 /* Components */ = {
+		405D44AD2098D5A600160077 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		40A608C02093ACA8001212A3 /* RxExtensions */ = {
+		405D44AE2098D5AC00160077 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				405D44B42098D61F00160077 /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		405D44AF2098D5B700160077 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				405D44BC2098D63700160077 /* NorrisRepository.swift */,
+				405D44BB2098D63700160077 /* NorrisRepositoryImpl.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		405D44B02098D5BF00160077 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				405D44BF2098D63E00160077 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		405D44B12098D5C500160077 /* RxExtensions */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = RxExtensions;
 			sourceTree = "<group>";
 		};
-		40A608C12093ACB6001212A3 /* Utils */ = {
+		405D44B22098D5CD00160077 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				405D44C22098D64800160077 /* Constants.swift */,
+				405D44C32098D64800160077 /* NorrisRouter.swift */,
+				405D44C12098D64800160077 /* NorrisService.swift */,
+				405D44C42098D64800160077 /* NorrisServiceImpl.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		405D44B32098D5D200160077 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				405D44C92098D64D00160077 /* Networking+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		40A608C22093ACC4001212A3 /* Containters */ = {
+		405D44B42098D61F00160077 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				403C13BF2093DBC0009B5FE9 /* DefaultContainer.swift */,
+				405D44B72098D62800160077 /* MainView.swift */,
+				405D44B52098D62700160077 /* MainView.xib */,
+				405D44B62098D62800160077 /* MainViewModel.swift */,
 			);
-			path = Containters;
+			path = Main;
 			sourceTree = "<group>";
 		};
-		40A9DE2A2092402100104E00 = {
+		405D44CB2098D7A700160077 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				40A9DE352092402100104E00 /* InstaNorris */,
-				40A9DE4A2092402100104E00 /* InstaNorrisTests */,
-				40A9DE552092402200104E00 /* InstaNorrisUITests */,
-				40A9DE342092402100104E00 /* Products */,
-				CB2D8288FFFA0E48072B7E76 /* Pods */,
-				04A9B0C8B10F0654EC9EC154 /* Frameworks */,
+				405D44CD2098D7BF00160077 /* MockNorrisService.swift */,
 			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
-		40A9DE342092402100104E00 /* Products */ = {
+		405D44CC2098D7AE00160077 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				40A9DE332092402100104E00 /* InstaNorris.app */,
-				40A9DE472092402100104E00 /* InstaNorrisTests.xctest */,
-				40A9DE522092402200104E00 /* InstaNorrisUITests.xctest */,
+				405D44CF2098D7CD00160077 /* NorrisRepositorySpec.swift */,
 			);
-			name = Products;
+			path = Repository;
 			sourceTree = "<group>";
 		};
-		40A9DE352092402100104E00 /* InstaNorris */ = {
+		405D44D12098D98300160077 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				40A608C22093ACC4001212A3 /* Containters */,
-				40A608BC2093AC54001212A3 /* Resources */,
-				40A608C12093ACB6001212A3 /* Utils */,
-				40A608C02093ACA8001212A3 /* RxExtensions */,
-				40A608BF2093AC81001212A3 /* Components */,
-				40A608BE2093AC6C001212A3 /* Service */,
-				40A608BD2093AC61001212A3 /* Modules */,
-				40A9DE362092402100104E00 /* AppDelegate.swift */,
-				40A9DE3F2092402100104E00 /* LaunchScreen.storyboard */,
-				40A9DE422092402100104E00 /* Info.plist */,
+				40BCC7B52098F1D3009279FA /* SearchResponse.swift */,
+				40BCC7B72098F1F7009279FA /* Fact.swift */,
 			);
-			path = InstaNorris;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		40A9DE4A2092402100104E00 /* InstaNorrisTests */ = {
+		65ACD68DBF8AE5A66E7B9487 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				40A9DE4D2092402100104E00 /* Info.plist */,
-			);
-			path = InstaNorrisTests;
-			sourceTree = "<group>";
-		};
-		40A9DE552092402200104E00 /* InstaNorrisUITests */ = {
-			isa = PBXGroup;
-			children = (
-				40A9DE562092402200104E00 /* InstaNorrisUITests.swift */,
-				40A9DE582092402200104E00 /* Info.plist */,
-			);
-			path = InstaNorrisUITests;
-			sourceTree = "<group>";
-		};
-		CB2D8288FFFA0E48072B7E76 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B4C59C027B302543BBDF1BC5 /* Pods-InstaNorris.debug.xcconfig */,
-				C30FC6DA72A44477BCD00ED1 /* Pods-InstaNorris.release.xcconfig */,
-				E4BC8E2CF83B5541DAB91D1E /* Pods-InstaNorrisTests.debug.xcconfig */,
-				66E169F348305E445605A0B3 /* Pods-InstaNorrisTests.release.xcconfig */,
+				8CDA602A63EB08B8C09599D1 /* Pods-InstaNorris.debug.xcconfig */,
+				44DB4F89243AFA231A1D36F9 /* Pods-InstaNorris.release.xcconfig */,
+				D7B63B94BF2DC9A975189D53 /* Pods-InstaNorrisTests.debug.xcconfig */,
+				8E5F55B92C6D20B8ED3BFCC5 /* Pods-InstaNorrisTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CBBA5B08448434373C23C642 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73CA89E0A059D94CD92D2FD3 /* Pods_InstaNorris.framework */,
+				CAE77A4F49C701B10B4FE1A7 /* Pods_InstaNorrisTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		40A9DE322092402100104E00 /* InstaNorris */ = {
+		405D44762098C16000160077 /* InstaNorris */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 40A9DE5B2092402200104E00 /* Build configuration list for PBXNativeTarget "InstaNorris" */;
+			buildConfigurationList = 405D44942098C16000160077 /* Build configuration list for PBXNativeTarget "InstaNorris" */;
 			buildPhases = (
-				19E0DFB346F2E4FD86229CFC /* [CP] Check Pods Manifest.lock */,
-				40A9DE2F2092402100104E00 /* Sources */,
-				40A9DE302092402100104E00 /* Frameworks */,
-				40A9DE312092402100104E00 /* Resources */,
-				DAC260F4E618A345E1A3A1A8 /* [CP] Embed Pods Frameworks */,
-				403C13B42093B458009B5FE9 /* R.swift */,
-				403C13B52093B482009B5FE9 /* Swift Lint */,
+				E0FF4BB9BD703EF1EAD9FBA2 /* [CP] Check Pods Manifest.lock */,
+				405D44732098C16000160077 /* Sources */,
+				405D44742098C16000160077 /* Frameworks */,
+				405D44752098C16000160077 /* Resources */,
+				9AD897B2FB9D001F9EAEED96 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -248,74 +280,53 @@
 			);
 			name = InstaNorris;
 			productName = InstaNorris;
-			productReference = 40A9DE332092402100104E00 /* InstaNorris.app */;
+			productReference = 405D44772098C16000160077 /* InstaNorris.app */;
 			productType = "com.apple.product-type.application";
 		};
-		40A9DE462092402100104E00 /* InstaNorrisTests */ = {
+		405D448A2098C16000160077 /* InstaNorrisTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 40A9DE5E2092402200104E00 /* Build configuration list for PBXNativeTarget "InstaNorrisTests" */;
+			buildConfigurationList = 405D44972098C16000160077 /* Build configuration list for PBXNativeTarget "InstaNorrisTests" */;
 			buildPhases = (
-				82EA8CCD71A5E1BB26137E1B /* [CP] Check Pods Manifest.lock */,
-				40A9DE432092402100104E00 /* Sources */,
-				40A9DE442092402100104E00 /* Frameworks */,
-				40A9DE452092402100104E00 /* Resources */,
-				ED92F1D8F2FEF2C85E70BB21 /* [CP] Embed Pods Frameworks */,
+				09167340964D83096653818D /* [CP] Check Pods Manifest.lock */,
+				405D44872098C16000160077 /* Sources */,
+				405D44882098C16000160077 /* Frameworks */,
+				405D44892098C16000160077 /* Resources */,
+				4955BC27058BA267FBAD025C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				40A9DE492092402100104E00 /* PBXTargetDependency */,
+				405D448D2098C16000160077 /* PBXTargetDependency */,
 			);
 			name = InstaNorrisTests;
 			productName = InstaNorrisTests;
-			productReference = 40A9DE472092402100104E00 /* InstaNorrisTests.xctest */;
+			productReference = 405D448B2098C16000160077 /* InstaNorrisTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		40A9DE512092402200104E00 /* InstaNorrisUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 40A9DE612092402200104E00 /* Build configuration list for PBXNativeTarget "InstaNorrisUITests" */;
-			buildPhases = (
-				40A9DE4E2092402200104E00 /* Sources */,
-				40A9DE4F2092402200104E00 /* Frameworks */,
-				40A9DE502092402200104E00 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				40A9DE542092402200104E00 /* PBXTargetDependency */,
-			);
-			name = InstaNorrisUITests;
-			productName = InstaNorrisUITests;
-			productReference = 40A9DE522092402200104E00 /* InstaNorrisUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		40A9DE2B2092402100104E00 /* Project object */ = {
+		405D446F2098C16000160077 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Aline Borges";
 				TargetAttributes = {
-					40A9DE322092402100104E00 = {
+					405D44762098C16000160077 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
-					40A9DE462092402100104E00 = {
+					405D448A2098C16000160077 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 40A9DE322092402100104E00;
-					};
-					40A9DE512092402200104E00 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 40A9DE322092402100104E00;
+						TestTargetID = 405D44762098C16000160077;
 					};
 				};
 			};
-			buildConfigurationList = 40A9DE2E2092402100104E00 /* Build configuration list for PBXProject "InstaNorris" */;
+			buildConfigurationList = 405D44722098C16000160077 /* Build configuration list for PBXProject "InstaNorris" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -323,37 +334,30 @@
 				en,
 				Base,
 			);
-			mainGroup = 40A9DE2A2092402100104E00;
-			productRefGroup = 40A9DE342092402100104E00 /* Products */;
+			mainGroup = 405D446E2098C16000160077;
+			productRefGroup = 405D44782098C16000160077 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				40A9DE322092402100104E00 /* InstaNorris */,
-				40A9DE462092402100104E00 /* InstaNorrisTests */,
-				40A9DE512092402200104E00 /* InstaNorrisUITests */,
+				405D44762098C16000160077 /* InstaNorris */,
+				405D448A2098C16000160077 /* InstaNorrisTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		40A9DE312092402100104E00 /* Resources */ = {
+		405D44752098C16000160077 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				403C13BE2093DB56009B5FE9 /* MainView.xib in Resources */,
-				40A9DE412092402100104E00 /* LaunchScreen.storyboard in Resources */,
-				40A9DE3E2092402100104E00 /* Assets.xcassets in Resources */,
+				405D44B82098D62800160077 /* MainView.xib in Resources */,
+				405D44A82098D56200160077 /* Info.plist in Resources */,
+				405D44C02098D63E00160077 /* Assets.xcassets in Resources */,
+				405D44A52098D54B00160077 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		40A9DE452092402100104E00 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		40A9DE502092402200104E00 /* Resources */ = {
+		405D44892098C16000160077 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -363,53 +367,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		19E0DFB346F2E4FD86229CFC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-InstaNorris-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		403C13B42093B458009B5FE9 /* R.swift */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = R.swift;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
-		};
-		403C13B52093B482009B5FE9 /* Swift Lint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Swift Lint";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
-		};
-		82EA8CCD71A5E1BB26137E1B /* [CP] Check Pods Manifest.lock */ = {
+		09167340964D83096653818D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -427,41 +385,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DAC260F4E618A345E1A3A1A8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ED92F1D8F2FEF2C85E70BB21 /* [CP] Embed Pods Frameworks */ = {
+		4955BC27058BA267FBAD025C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -485,56 +409,107 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InstaNorrisTests/Pods-InstaNorrisTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9AD897B2FB9D001F9EAEED96 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwiftUtilities/RxSwiftUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0FF4BB9BD703EF1EAD9FBA2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InstaNorris-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		40A9DE2F2092402100104E00 /* Sources */ = {
+		405D44732098C16000160077 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40A9DE372092402100104E00 /* AppDelegate.swift in Sources */,
-				403C13BC2093DB56009B5FE9 /* MainView.swift in Sources */,
-				403C13B72093C4A1009B5FE9 /* R.generated.swift in Sources */,
-				403C13BD2093DB56009B5FE9 /* MainViewModel.swift in Sources */,
-				403C13C02093DBC0009B5FE9 /* DefaultContainer.swift in Sources */,
+				40BCC7B82098F1F7009279FA /* Fact.swift in Sources */,
+				405D44A92098D56200160077 /* AppDelegate.swift in Sources */,
+				405D44C72098D64800160077 /* NorrisRouter.swift in Sources */,
+				405D44CA2098D64D00160077 /* Networking+Utils.swift in Sources */,
+				405D44C82098D64800160077 /* NorrisServiceImpl.swift in Sources */,
+				405D44BA2098D62800160077 /* MainView.swift in Sources */,
+				405D44BE2098D63700160077 /* NorrisRepository.swift in Sources */,
+				405D44AC2098D58E00160077 /* DefaultContainer.swift in Sources */,
+				405D44B92098D62800160077 /* MainViewModel.swift in Sources */,
+				405D44BD2098D63700160077 /* NorrisRepositoryImpl.swift in Sources */,
+				405D44C52098D64800160077 /* NorrisService.swift in Sources */,
+				40BCC7B62098F1D3009279FA /* SearchResponse.swift in Sources */,
+				405D44C62098D64800160077 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		40A9DE432092402100104E00 /* Sources */ = {
+		405D44872098C16000160077 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		40A9DE4E2092402200104E00 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				40A9DE572092402200104E00 /* InstaNorrisUITests.swift in Sources */,
+				405D44CE2098D7BF00160077 /* MockNorrisService.swift in Sources */,
+				405D44D02098D7CD00160077 /* NorrisRepositorySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		40A9DE492092402100104E00 /* PBXTargetDependency */ = {
+		405D448D2098C16000160077 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 40A9DE322092402100104E00 /* InstaNorris */;
-			targetProxy = 40A9DE482092402100104E00 /* PBXContainerItemProxy */;
-		};
-		40A9DE542092402200104E00 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 40A9DE322092402100104E00 /* InstaNorris */;
-			targetProxy = 40A9DE532092402200104E00 /* PBXContainerItemProxy */;
+			target = 405D44762098C16000160077 /* InstaNorris */;
+			targetProxy = 405D448C2098C16000160077 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		40A9DE3F2092402100104E00 /* LaunchScreen.storyboard */ = {
+		405D44A32098D54B00160077 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				40A9DE402092402100104E00 /* Base */,
+				405D44A42098D54B00160077 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -542,7 +517,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		40A9DE592092402200104E00 /* Debug */ = {
+		405D44922098C16000160077 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -599,7 +574,7 @@
 			};
 			name = Debug;
 		};
-		40A9DE5A2092402200104E00 /* Release */ = {
+		405D44932098C16000160077 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -649,46 +624,68 @@
 			};
 			name = Release;
 		};
-		40A9DE5C2092402200104E00 /* Debug */ = {
+		405D44952098C16000160077 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4C59C027B302543BBDF1BC5 /* Pods-InstaNorris.debug.xcconfig */;
+			baseConfigurationReference = 8CDA602A63EB08B8C09599D1 /* Pods-InstaNorris.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68SZERZ856;
 				INFOPLIST_FILE = InstaNorris/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.akb.InstaNorris;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		40A9DE5D2092402200104E00 /* Release */ = {
+		405D44962098C16000160077 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C30FC6DA72A44477BCD00ED1 /* Pods-InstaNorris.release.xcconfig */;
+			baseConfigurationReference = 44DB4F89243AFA231A1D36F9 /* Pods-InstaNorris.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68SZERZ856;
 				INFOPLIST_FILE = InstaNorris/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.akb.InstaNorris;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		40A9DE5F2092402200104E00 /* Debug */ = {
+		405D44982098C16000160077 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4BC8E2CF83B5541DAB91D1E /* Pods-InstaNorrisTests.debug.xcconfig */;
+			baseConfigurationReference = D7B63B94BF2DC9A975189D53 /* Pods-InstaNorrisTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68SZERZ856;
+				INFOPLIST_FILE = InstaNorrisTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.akb.InstaNorrisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstaNorris.app/InstaNorris";
+			};
+			name = Debug;
+		};
+		405D44992098C16000160077 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E5F55B92C6D20B8ED3BFCC5 /* Pods-InstaNorrisTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68SZERZ856;
 				INFOPLIST_FILE = InstaNorrisTests/Info.plist;
@@ -698,99 +695,40 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstaNorris.app/InstaNorris";
-			};
-			name = Debug;
-		};
-		40A9DE602092402200104E00 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66E169F348305E445605A0B3 /* Pods-InstaNorrisTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 68SZERZ856;
-				INFOPLIST_FILE = InstaNorrisTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.akb.InstaNorrisTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstaNorris.app/InstaNorris";
-			};
-			name = Release;
-		};
-		40A9DE622092402200104E00 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 68SZERZ856;
-				INFOPLIST_FILE = InstaNorrisUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.akb.InstaNorrisUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = InstaNorris;
-			};
-			name = Debug;
-		};
-		40A9DE632092402200104E00 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 68SZERZ856;
-				INFOPLIST_FILE = InstaNorrisUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.akb.InstaNorrisUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = InstaNorris;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		40A9DE2E2092402100104E00 /* Build configuration list for PBXProject "InstaNorris" */ = {
+		405D44722098C16000160077 /* Build configuration list for PBXProject "InstaNorris" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				40A9DE592092402200104E00 /* Debug */,
-				40A9DE5A2092402200104E00 /* Release */,
+				405D44922098C16000160077 /* Debug */,
+				405D44932098C16000160077 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		40A9DE5B2092402200104E00 /* Build configuration list for PBXNativeTarget "InstaNorris" */ = {
+		405D44942098C16000160077 /* Build configuration list for PBXNativeTarget "InstaNorris" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				40A9DE5C2092402200104E00 /* Debug */,
-				40A9DE5D2092402200104E00 /* Release */,
+				405D44952098C16000160077 /* Debug */,
+				405D44962098C16000160077 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		40A9DE5E2092402200104E00 /* Build configuration list for PBXNativeTarget "InstaNorrisTests" */ = {
+		405D44972098C16000160077 /* Build configuration list for PBXNativeTarget "InstaNorrisTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				40A9DE5F2092402200104E00 /* Debug */,
-				40A9DE602092402200104E00 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		40A9DE612092402200104E00 /* Build configuration list for PBXNativeTarget "InstaNorrisUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				40A9DE622092402200104E00 /* Debug */,
-				40A9DE632092402200104E00 /* Release */,
+				405D44982098C16000160077 /* Debug */,
+				405D44992098C16000160077 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 40A9DE2B2092402100104E00 /* Project object */;
+	rootObject = 405D446F2098C16000160077 /* Project object */;
 }
