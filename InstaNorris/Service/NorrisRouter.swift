@@ -36,9 +36,16 @@ extension NorrisRouter: TargetType {
         case .categories:
             let data = ["category_test1", "category_test2", "category_test3"]
             return stringArrayToData(array: data)
-        case .search(let query):
-            return Data()
-            //TODO: add sample data
+        case .search:
+            
+            let data = ["total": 6,
+                        "result": [["category": ["dev"],
+                                    "icon_url": "www.icon.com",
+                                    "url": "www.url.com",
+                                    //swiftlint:disable line_lenght
+                                    "value": "Chuck Norris doesn't need code testing. He is always right. But Aline is not that good."]]
+                ] as [String: Any]
+            return jsonSerializedUTF8(json: data)
         }
     }
     
@@ -63,4 +70,3 @@ extension NorrisRouter: TargetType {
         return nil
     }
 }
-
