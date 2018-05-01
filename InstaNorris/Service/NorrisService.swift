@@ -10,5 +10,6 @@ import RxSwift
 import Moya
 
 protocol NorrisService {
-    func categories()-> Single<Response>
+    func categories() -> Single<Response>
+    func search(_ query: String) -> Single<Response>
 }

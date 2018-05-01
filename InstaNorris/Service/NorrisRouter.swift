@@ -10,6 +10,7 @@ import Moya
 
 enum NorrisRouter {
     case categories
+    case search(query: String)
 }
 
 extension NorrisRouter: TargetType {
@@ -21,6 +22,8 @@ extension NorrisRouter: TargetType {
         switch self {
         case .categories:
             return "/categories"
+        case .search:
+            return "/search"
         }
     }
     
@@ -33,6 +36,9 @@ extension NorrisRouter: TargetType {
         case .categories:
             let data = ["category_test1", "category_test2", "category_test3"]
             return stringArrayToData(array: data)
+        case .search(let query):
+            return Data()
+            //TODO: add sample data
         }
     }
     
@@ -40,12 +46,14 @@ extension NorrisRouter: TargetType {
         switch self {
         case .categories:
             return nil
+        case .search(let query):
+            return ["query": query]
         }
     }
     
     var task: Task {
         if let `parameters` = parameters {
-            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         } else {
             return .requestPlain
         }

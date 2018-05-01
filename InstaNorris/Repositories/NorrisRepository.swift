@@ -11,4 +11,5 @@ import Moya
 
 protocol NorrisRepository: class {
     func categories() -> Observable<[String]>
+    func search(_ query: String) -> Observable<SearchResponse>
 }

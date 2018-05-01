@@ -20,6 +20,8 @@
 		40A95E432097F70E00E7E208 /* Networking+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A95E422097F70E00E7E208 /* Networking+Utils.swift */; };
 		40A95E472097FD6700E7E208 /* NorrisRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A95E452097FD6700E7E208 /* NorrisRepositoryImpl.swift */; };
 		40A95E482097FD6700E7E208 /* NorrisRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A95E462097FD6700E7E208 /* NorrisRepository.swift */; };
+		40A95E4B2098046700E7E208 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A95E4A2098046700E7E208 /* SearchResponse.swift */; };
+		40A95E4D209804A400E7E208 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A95E4C209804A400E7E208 /* Fact.swift */; };
 		40A9DE372092402100104E00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A9DE362092402100104E00 /* AppDelegate.swift */; };
 		40A9DE3E2092402100104E00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40A9DE3D2092402100104E00 /* Assets.xcassets */; };
 		40A9DE412092402100104E00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A9DE3F2092402100104E00 /* LaunchScreen.storyboard */; };
@@ -57,6 +59,8 @@
 		40A95E422097F70E00E7E208 /* Networking+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Networking+Utils.swift"; sourceTree = "<group>"; };
 		40A95E452097FD6700E7E208 /* NorrisRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NorrisRepositoryImpl.swift; sourceTree = "<group>"; };
 		40A95E462097FD6700E7E208 /* NorrisRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NorrisRepository.swift; sourceTree = "<group>"; };
+		40A95E4A2098046700E7E208 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		40A95E4C209804A400E7E208 /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
 		40A9DE332092402100104E00 /* InstaNorris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaNorris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40A9DE362092402100104E00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40A9DE3D2092402100104E00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -191,6 +195,8 @@
 		40A95E492097FF9800E7E208 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				40A95E4A2098046700E7E208 /* SearchResponse.swift */,
+				40A95E4C209804A400E7E208 /* Fact.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -531,6 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40A95E4B2098046700E7E208 /* SearchResponse.swift in Sources */,
 				40A9DE372092402100104E00 /* AppDelegate.swift in Sources */,
 				40A95E432097F70E00E7E208 /* Networking+Utils.swift in Sources */,
 				40A95E482097FD6700E7E208 /* NorrisRepository.swift in Sources */,
@@ -541,6 +548,7 @@
 				403C13BD2093DB56009B5FE9 /* MainViewModel.swift in Sources */,
 				40A95E3D2097EF3600E7E208 /* NorrisRouter.swift in Sources */,
 				403C13C02093DBC0009B5FE9 /* DefaultContainer.swift in Sources */,
+				40A95E4D209804A400E7E208 /* Fact.swift in Sources */,
 				40A95E412097F01F00E7E208 /* Constants.swift in Sources */,
 				40A95E472097FD6700E7E208 /* NorrisRepositoryImpl.swift in Sources */,
 			);

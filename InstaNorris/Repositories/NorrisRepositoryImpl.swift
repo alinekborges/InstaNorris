@@ -24,4 +24,10 @@ class NorrisRepositoryImpl: NorrisRepository {
             .asObservable()
     }
     
+    func search(_ query: String) -> Observable<SearchResponse> {
+        return self.service.search(query)
+            .map(SearchResponse.self)
+            .asObservable()
+    }
+    
 }
