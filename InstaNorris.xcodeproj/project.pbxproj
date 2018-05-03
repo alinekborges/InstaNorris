@@ -33,8 +33,9 @@
 		40BCC7C3209AB36B009279FA /* FactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7C2209AB36B009279FA /* FactCell.swift */; };
 		40BCC7C5209AB3AF009279FA /* FactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7C4209AB3AF009279FA /* FactViewModel.swift */; };
 		40DA7BCA209AB5660016B326 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA7BC9209AB5660016B326 /* UIColor+Utils.swift */; };
-		40DA7BCE209AB8840016B326 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA7BCD209AB8840016B326 /* R.generated.swift */; };
 		40DA7BD0209B3E2F0016B326 /* UITextFIeld+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA7BCF209B3E2F0016B326 /* UITextFIeld+Utils.swift */; };
+		40DA7BD2209B3FF40016B326 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA7BD1209B3FF40016B326 /* R.generated.swift */; };
+		40DA7BF2209B4BD10016B326 /* HeaderView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA7BF1209B4BD10016B326 /* HeaderView+Rx.swift */; };
 		626A356D802BA04F15EF2C0A /* Pods_InstaNorrisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE77A4F49C701B10B4FE1A7 /* Pods_InstaNorrisTests.framework */; };
 		E123DA4ACB802F70168853F9 /* Pods_InstaNorris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CA89E0A059D94CD92D2FD3 /* Pods_InstaNorris.framework */; };
 /* End PBXBuildFile section */
@@ -79,8 +80,9 @@
 		40BCC7C2209AB36B009279FA /* FactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactCell.swift; sourceTree = "<group>"; };
 		40BCC7C4209AB3AF009279FA /* FactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewModel.swift; sourceTree = "<group>"; };
 		40DA7BC9209AB5660016B326 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
-		40DA7BCD209AB8840016B326 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = "../../../InstaNorris copy/R.generated.swift"; sourceTree = "<group>"; };
 		40DA7BCF209B3E2F0016B326 /* UITextFIeld+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextFIeld+Utils.swift"; sourceTree = "<group>"; };
+		40DA7BD1209B3FF40016B326 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		40DA7BF1209B4BD10016B326 /* HeaderView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeaderView+Rx.swift"; sourceTree = "<group>"; };
 		44DB4F89243AFA231A1D36F9 /* Pods-InstaNorris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaNorris.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris.release.xcconfig"; sourceTree = "<group>"; };
 		73CA89E0A059D94CD92D2FD3 /* Pods_InstaNorris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaNorris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CDA602A63EB08B8C09599D1 /* Pods-InstaNorris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaNorris.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris.debug.xcconfig"; sourceTree = "<group>"; };
@@ -194,7 +196,7 @@
 		405D44B02098D5BF00160077 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				40DA7BCD209AB8840016B326 /* R.generated.swift */,
+				40DA7BD1209B3FF40016B326 /* R.generated.swift */,
 				405D44BF2098D63E00160077 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -203,6 +205,8 @@
 		405D44B12098D5C500160077 /* RxExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				40BCC7BB2098FBE7009279FA /* NSObject+Rx.swift */,
+				40DA7BF1209B4BD10016B326 /* HeaderView+Rx.swift */,
 			);
 			path = RxExtensions;
 			sourceTree = "<group>";
@@ -222,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				405D44C92098D64D00160077 /* Networking+Utils.swift */,
-				40BCC7BB2098FBE7009279FA /* NSObject+Rx.swift */,
 				40BCC7BD2098FC08009279FA /* UIView+Constraints.swift */,
 				40DA7BC9209AB5660016B326 /* UIColor+Utils.swift */,
 				40DA7BCF209B3E2F0016B326 /* UITextFIeld+Utils.swift */,
@@ -542,7 +545,7 @@
 				405D44C82098D64800160077 /* NorrisServiceImpl.swift in Sources */,
 				40BCC7C5209AB3AF009279FA /* FactViewModel.swift in Sources */,
 				40BCC7C3209AB36B009279FA /* FactCell.swift in Sources */,
-				40DA7BCE209AB8840016B326 /* R.generated.swift in Sources */,
+				40DA7BD2209B3FF40016B326 /* R.generated.swift in Sources */,
 				405D44BA2098D62800160077 /* MainView.swift in Sources */,
 				405D44BE2098D63700160077 /* NorrisRepository.swift in Sources */,
 				405D44AC2098D58E00160077 /* DefaultContainer.swift in Sources */,
@@ -551,6 +554,7 @@
 				405D44C52098D64800160077 /* NorrisService.swift in Sources */,
 				40BCC7B62098F1D3009279FA /* SearchResponse.swift in Sources */,
 				405D44C62098D64800160077 /* Constants.swift in Sources */,
+				40DA7BF2209B4BD10016B326 /* HeaderView+Rx.swift in Sources */,
 				40BCC7BA2098F982009279FA /* HeaderView.swift in Sources */,
 				40BCC7BC2098FBE7009279FA /* NSObject+Rx.swift in Sources */,
 				40BCC7BE2098FC08009279FA /* UIView+Constraints.swift in Sources */,

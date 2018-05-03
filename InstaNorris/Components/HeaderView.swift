@@ -11,10 +11,24 @@ import UIKit
 
 class HeaderView: UIView {
     
-    let maxHeight: CGFloat = 200
-    let minHeight: CGFloat = 60
+    let maxHeight: CGFloat = 160
+    let minHeight: CGFloat = 72
     
     var heightConstraint: NSLayoutConstraint!
+    
+    var title: String = "" {
+        didSet {
+            self.titleLabel.text = title
+        }
+    }
+    
+    var fractionComplete: CGFloat = 0.0 {
+        didSet {
+            self.animator?.fractionComplete = fractionComplete
+        }
+    }
+    
+    private var animator: UIViewPropertyAnimator?
     
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 30, height: self.maxHeight)
@@ -37,7 +51,7 @@ class HeaderView: UIView {
         return textField
     }()
     
-    private let searchButton: UIButton = {
+    let searchButton: UIButton = {
         let button = UIButton()
         button.setTitle("", for: .normal)
         button.setImage(UIImage(named: "search"), for: .normal)
@@ -54,14 +68,31 @@ class HeaderView: UIView {
         self.setupViews()
     }
     
-    func setupViews() {
+    private func setupViews() {
         self.backgroundColor = .slate
         self.setupConstraints()
         
         self.searchTextField.setPadding(14)
+        
+        self.setupAnimator()
     }
     
-    func setupConstraints() {
+    private func setupAnimator() {
+        
+        self.animator = UIViewPropertyAnimator(duration: 0.4, curve: .easeIn, animations: {
+            self.heightConstraint.constant = self.minHeight
+            self.searchTextField.alpha = 0
+            self.titleLabel.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            self.searchButton.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            self.superview?.layoutIfNeeded()
+            self.layoutIfNeeded()
+        })
+        
+        self.animator?.scrubsLinearly = true
+        
+    }
+    
+    private func setupConstraints() {
         
         self.addSubview(self.titleLabel)
         self.addSubview(self.searchTextField)
@@ -72,19 +103,21 @@ class HeaderView: UIView {
         self.searchButton.prepareForConstraints()
         
         self.titleLabel.pinLeft(30.0)
-        self.titleLabel.centerVertically()
+        self.titleLabel.centerVertically(6)
         
         self.searchTextField.pinLeft(30.0)
         self.searchTextField.pinRight(30.0)
-        self.searchTextField.pinBottom(20.0)
+        self.searchTextField.pinBottom(12.0)
         self.searchTextField.constraintHeight(32.0)
         
-        self.searchButton.centerYAnchor.constraint(equalTo: self.searchTextField.centerYAnchor).isActive = true
+        self.searchButton.pinBottom(18.0)
         self.searchButton.pinRight(36.0)
         self.searchButton.constraintHeight(20.0)
         self.searchButton.constraintWidth(20.0)
         
-        self.constraintHeight(self.maxHeight)
+        self.heightConstraint = self.constraintHeight(self.maxHeight)
+        
+        self.layoutIfNeeded()
         
     }
     
