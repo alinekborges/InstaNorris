@@ -16,7 +16,7 @@ struct Fact: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case category
-        case icon_url
+        case iconUrl
         case id
         case value
     }
@@ -30,7 +30,7 @@ struct Fact: Decodable {
             self.category = ["unknown"]
         }
         
-        self.iconUrl = try container.decode(String.self, forKey: .icon_url)
+        self.iconUrl = try container.decode(String.self, forKey: .iconUrl)
         self.id = try container.decode(String.self, forKey: .id)
         self.value = try container.decode(String.self, forKey: .value)
         
