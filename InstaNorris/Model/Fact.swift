@@ -16,7 +16,7 @@ struct Fact: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case category
-        case iconUrl
+        case iconUrl = "icon_url"
         case id
         case value
     }

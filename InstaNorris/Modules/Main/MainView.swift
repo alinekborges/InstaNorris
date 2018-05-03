@@ -32,11 +32,6 @@ class MainView: UIViewController {
         self.configureViews()
         self.setupViewModel()
         self.setupBindings()
-        
-        //self.tableView.delegate = self
-        self.tableView.dataSource = self
-        
-        self.tableView.contentInset.top = self.headerView.maxHeight
     }
     
 }
@@ -48,31 +43,25 @@ extension MainView {
     }
     
     func configureViews() {
-        
+        self.tableView.contentInset.top = self.headerView.maxHeight
+        self.tableView.register(cellType: FactCell.self)
+        self.tableView.estimatedRowHeight = 200
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func setupBindings() {
+    
+        self.viewModel.results
+            .drive(tableView.rx
+                .items(cellIdentifier: "FactCell",
+                       cellType: FactCell.self)) { _, element, cell in
+                        cell.bind(element)
+            }.disposed(by: rx.disposeBag)
         
         self.tableView.rx.contentOffset
             .map { $0.y }
             .map { ($0 + self.headerView.maxHeight) / (self.headerView.minHeight + self.headerView.maxHeight) }
             .bind(to: self.headerView.rx.fractionComplete)
             .disposed(by: rx.disposeBag)
-        
-    }
-}
-
-extension MainView: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
     }
 }

@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import Reusable
+
+class FactCell: UITableViewCell, NibReusable {
+    
+    @IBOutlet weak var factLabel: UILabel!
+    
+    func bind(_ fact: Fact) {
+        self.factLabel.text = fact.value
+    }
+    
+}
