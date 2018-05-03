@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainView" customModule="InstaNorris" customModuleProvider="target">
             <connections>
+                <outlet property="headerView" destination="XmI-yI-Xbw" id="Ifk-H7-tBG"/>
+                <outlet property="tableView" destination="Qbv-lJ-et2" id="i07-7X-k37"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,8 +21,31 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="0.1333333333" green="0.59215686270000001" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qbv-lJ-et2">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XmI-yI-Xbw" customClass="HeaderView" customModule="InstaNorris" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" placeholder="YES" id="MMS-BQ-rqz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Qbv-lJ-et2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0vn-o1-1bf"/>
+                <constraint firstItem="XmI-yI-Xbw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Go1-LJ-nMr"/>
+                <constraint firstItem="Qbv-lJ-et2" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Oah-Un-MJo"/>
+                <constraint firstItem="XmI-yI-Xbw" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="PNz-pL-XSu"/>
+                <constraint firstItem="Qbv-lJ-et2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SrQ-BM-Ndx"/>
+                <constraint firstItem="Qbv-lJ-et2" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fWY-yU-192"/>
+                <constraint firstItem="XmI-yI-Xbw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mHW-ae-V1I"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="34.5" y="56.5"/>
         </view>
     </objects>
 </document>

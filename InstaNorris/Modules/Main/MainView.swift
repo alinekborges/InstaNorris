@@ -15,6 +15,9 @@ class MainView: UIViewController {
     var viewModel: MainViewModel!
     let repository: NorrisRepository
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerView: HeaderView!
+    
     init(repository: NorrisRepository) {
         self.repository = repository
         super.init(nibName: String(describing: MainView.self), bundle: nil)
@@ -29,6 +32,11 @@ class MainView: UIViewController {
         self.configureViews()
         self.setupViewModel()
         self.setupBindings()
+        
+        //self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
+        self.tableView.contentInset.top = self.headerView.maxHeight
     }
     
 }
@@ -44,9 +52,27 @@ extension MainView {
     }
     
     func setupBindings() {
-        self.viewModel.results
-            .drive(onNext: {
-                print($0)
-            })
+        
+        self.tableView.rx.contentOffset
+            .map { $0.y }
+            .map { ($0 + self.headerView.maxHeight) / (self.headerView.minHeight + self.headerView.maxHeight) }
+            .bind(to: self.headerView.rx.fractionComplete)
+            .disposed(by: rx.disposeBag)
+        
+    }
+}
+
+extension MainView: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 }
