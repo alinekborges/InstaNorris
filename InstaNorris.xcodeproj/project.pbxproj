@@ -26,6 +26,12 @@
 		405D44D02098D7CD00160077 /* NorrisRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44CF2098D7CD00160077 /* NorrisRepositorySpec.swift */; };
 		40BCC7B62098F1D3009279FA /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7B52098F1D3009279FA /* SearchResponse.swift */; };
 		40BCC7B82098F1F7009279FA /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7B72098F1F7009279FA /* Fact.swift */; };
+		40BCC7BA2098F982009279FA /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7B92098F982009279FA /* HeaderView.swift */; };
+		40BCC7BC2098FBE7009279FA /* NSObject+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7BB2098FBE7009279FA /* NSObject+Rx.swift */; };
+		40BCC7BE2098FC08009279FA /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7BD2098FC08009279FA /* UIView+Constraints.swift */; };
+		40BCC7C1209AB34A009279FA /* FactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40BCC7C0209AB34A009279FA /* FactCell.xib */; };
+		40BCC7C3209AB36B009279FA /* FactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7C2209AB36B009279FA /* FactCell.swift */; };
+		40BCC7C5209AB3AF009279FA /* FactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7C4209AB3AF009279FA /* FactViewModel.swift */; };
 		626A356D802BA04F15EF2C0A /* Pods_InstaNorrisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE77A4F49C701B10B4FE1A7 /* Pods_InstaNorrisTests.framework */; };
 		E123DA4ACB802F70168853F9 /* Pods_InstaNorris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CA89E0A059D94CD92D2FD3 /* Pods_InstaNorris.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +69,12 @@
 		405D44CF2098D7CD00160077 /* NorrisRepositorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NorrisRepositorySpec.swift; sourceTree = "<group>"; };
 		40BCC7B52098F1D3009279FA /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		40BCC7B72098F1F7009279FA /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
+		40BCC7B92098F982009279FA /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		40BCC7BB2098FBE7009279FA /* NSObject+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Rx.swift"; sourceTree = "<group>"; };
+		40BCC7BD2098FC08009279FA /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		40BCC7C0209AB34A009279FA /* FactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FactCell.xib; sourceTree = "<group>"; };
+		40BCC7C2209AB36B009279FA /* FactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactCell.swift; sourceTree = "<group>"; };
+		40BCC7C4209AB3AF009279FA /* FactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewModel.swift; sourceTree = "<group>"; };
 		44DB4F89243AFA231A1D36F9 /* Pods-InstaNorris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaNorris.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris.release.xcconfig"; sourceTree = "<group>"; };
 		73CA89E0A059D94CD92D2FD3 /* Pods_InstaNorris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaNorris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CDA602A63EB08B8C09599D1 /* Pods-InstaNorris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaNorris.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +163,7 @@
 		405D44AD2098D5A600160077 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				40BCC7B92098F982009279FA /* HeaderView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -202,6 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				405D44C92098D64D00160077 /* Networking+Utils.swift */,
+				40BCC7BB2098FBE7009279FA /* NSObject+Rx.swift */,
+				40BCC7BD2098FC08009279FA /* UIView+Constraints.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -209,6 +224,7 @@
 		405D44B42098D61F00160077 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				40BCC7BF209AB32F009279FA /* FactCell */,
 				405D44B72098D62800160077 /* MainView.swift */,
 				405D44B52098D62700160077 /* MainView.xib */,
 				405D44B62098D62800160077 /* MainViewModel.swift */,
@@ -239,6 +255,16 @@
 				40BCC7B72098F1F7009279FA /* Fact.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		40BCC7BF209AB32F009279FA /* FactCell */ = {
+			isa = PBXGroup;
+			children = (
+				40BCC7C0209AB34A009279FA /* FactCell.xib */,
+				40BCC7C2209AB36B009279FA /* FactCell.swift */,
+				40BCC7C4209AB3AF009279FA /* FactViewModel.swift */,
+			);
+			path = FactCell;
 			sourceTree = "<group>";
 		};
 		65ACD68DBF8AE5A66E7B9487 /* Pods */ = {
@@ -272,7 +298,7 @@
 				405D44732098C16000160077 /* Sources */,
 				405D44742098C16000160077 /* Frameworks */,
 				405D44752098C16000160077 /* Resources */,
-				9AD897B2FB9D001F9EAEED96 /* [CP] Embed Pods Frameworks */,
+				829EFB2D2365104130186814 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -291,7 +317,7 @@
 				405D44872098C16000160077 /* Sources */,
 				405D44882098C16000160077 /* Frameworks */,
 				405D44892098C16000160077 /* Resources */,
-				4955BC27058BA267FBAD025C /* [CP] Embed Pods Frameworks */,
+				BA18BD06B6358C270DA60B49 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -353,6 +379,7 @@
 				405D44B82098D62800160077 /* MainView.xib in Resources */,
 				405D44A82098D56200160077 /* Info.plist in Resources */,
 				405D44C02098D63E00160077 /* Assets.xcassets in Resources */,
+				40BCC7C1209AB34A009279FA /* FactCell.xib in Resources */,
 				405D44A52098D54B00160077 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,7 +412,41 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4955BC27058BA267FBAD025C /* [CP] Embed Pods Frameworks */ = {
+		829EFB2D2365104130186814 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA18BD06B6358C270DA60B49 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -407,42 +468,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InstaNorrisTests/Pods-InstaNorrisTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9AD897B2FB9D001F9EAEED96 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwiftUtilities/RxSwiftUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E0FF4BB9BD703EF1EAD9FBA2 /* [CP] Check Pods Manifest.lock */ = {
@@ -475,6 +500,8 @@
 				405D44C72098D64800160077 /* NorrisRouter.swift in Sources */,
 				405D44CA2098D64D00160077 /* Networking+Utils.swift in Sources */,
 				405D44C82098D64800160077 /* NorrisServiceImpl.swift in Sources */,
+				40BCC7C5209AB3AF009279FA /* FactViewModel.swift in Sources */,
+				40BCC7C3209AB36B009279FA /* FactCell.swift in Sources */,
 				405D44BA2098D62800160077 /* MainView.swift in Sources */,
 				405D44BE2098D63700160077 /* NorrisRepository.swift in Sources */,
 				405D44AC2098D58E00160077 /* DefaultContainer.swift in Sources */,
@@ -483,6 +510,9 @@
 				405D44C52098D64800160077 /* NorrisService.swift in Sources */,
 				40BCC7B62098F1D3009279FA /* SearchResponse.swift in Sources */,
 				405D44C62098D64800160077 /* Constants.swift in Sources */,
+				40BCC7BA2098F982009279FA /* HeaderView.swift in Sources */,
+				40BCC7BC2098FBE7009279FA /* NSObject+Rx.swift in Sources */,
+				40BCC7BE2098FC08009279FA /* UIView+Constraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
