@@ -16,7 +16,7 @@ class MainViewModel {
     let categories: Driver<[String]>
     let results: Driver<[Fact]>
     
-    init(repository: NorrisRepository) {
+    init(search: Observable<String>, repository: NorrisRepository) {
         self.repository = repository
         
         self.categories = self.repository.categories()

@@ -42,7 +42,7 @@ class HeaderView: UIView {
         return label
     }()
     
-    private let searchTextField: UITextField = {
+    let searchTextField: UITextField = {
        let textField = UITextField()
         textField.backgroundColor = UIColor.white.withAlphaComponent(0.2)
         textField.layer.cornerRadius = 6.0

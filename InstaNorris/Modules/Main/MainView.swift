@@ -39,7 +39,7 @@ class MainView: UIViewController {
 extension MainView {
     
     func setupViewModel() {
-        self.viewModel = MainViewModel(repository: self.repository)
+        self.viewModel = MainViewModel(search: self.headerView.rx.search, repository: self.repository)
     }
     
     func configureViews() {
@@ -63,5 +63,10 @@ extension MainView {
             .map { ($0 + self.headerView.maxHeight) / (self.headerView.minHeight + self.headerView.maxHeight) }
             .bind(to: self.headerView.rx.fractionComplete)
             .disposed(by: rx.disposeBag)
+        
+        self.headerView.searchTextField.rx.controlEvent(.editingDidBegin)
+            .subscribe(onNext: {
+                print("editing begin")
+            })
     }
 }

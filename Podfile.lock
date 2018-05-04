@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.2)
+  - CloudTagView (3.0.0)
   - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
@@ -27,6 +28,7 @@ PODS:
   - Swinject (2.0.0)
 
 DEPENDENCIES:
+  - CloudTagView
   - Moya/RxSwift
   - Nimble
   - Quick
@@ -42,6 +44,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - CloudTagView
     - Moya
     - Nimble
     - Quick
@@ -58,6 +61,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  CloudTagView: c4eebbb9cf88d8de849e4ae0c3323e95ccc236b2
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Nimble: 391f07782af4b37914f9bd7b2ffbb952731b8202
   Quick: 03278013f71aa05fe9ecabc94fbcc6835f1ee76f
@@ -72,6 +76,6 @@ SPEC CHECKSUMS:
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
   Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
 
-PODFILE CHECKSUM: af1b289070fb47127fa87f58d9ad21f1c8ba4a82
+PODFILE CHECKSUM: 02c70916f5bb715a508c903afd391f6ea5286ae1
 
 COCOAPODS: 1.5.0
