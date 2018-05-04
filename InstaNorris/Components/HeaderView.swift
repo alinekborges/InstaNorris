@@ -81,8 +81,8 @@ class HeaderView: UIView {
         
         self.animator = UIViewPropertyAnimator(duration: 0.4, curve: .easeIn, animations: {
             self.heightConstraint.constant = self.minHeight
-            self.searchTextField.alpha = 0
-            self.titleLabel.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            //self.searchTextField.alpha = 0
+            self.titleLabel.alpha = 0
             self.searchButton.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
             self.superview?.layoutIfNeeded()
             self.layoutIfNeeded()

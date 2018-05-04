@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Swinject
 
 class MainView: UIViewController {
     
@@ -17,9 +18,12 @@ class MainView: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: HeaderView!
+    @IBOutlet weak var searchContainer: UIView!
+    let searchView: SearchView
     
-    init(repository: NorrisRepository) {
+    init(searchView: SearchView, repository: NorrisRepository) {
         self.repository = repository
+        self.searchView = searchView
         super.init(nibName: String(describing: MainView.self), bundle: nil)
     }
     
@@ -47,6 +51,8 @@ extension MainView {
         self.tableView.register(cellType: FactCell.self)
         self.tableView.estimatedRowHeight = 200
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        self.configureSearchView()
     }
     
     func setupBindings() {
@@ -66,7 +72,19 @@ extension MainView {
         
         self.headerView.searchTextField.rx.controlEvent(.editingDidBegin)
             .subscribe(onNext: {
+                self.searchContainer.isHidden = false
+            }).disposed(by: rx.disposeBag)
+        
+        self.headerView.searchTextField.rx.controlEvent(.editingDidEnd)
+            .subscribe(onNext: {
                 print("editing begin")
-            })
+            }).disposed(by: rx.disposeBag)
+    }
+    
+    func configureSearchView() {
+        self.searchContainer.addSubview(searchView.view)
+        self.addChildViewController(self.searchView)
+        self.searchView.view.prepareForConstraints()
+        self.searchView.view.pinEdgesToSuperview()
     }
 }

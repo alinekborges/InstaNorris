@@ -26,12 +26,14 @@ final class DefaultContainer {
 extension DefaultContainer {
     
     func registerViews() {
-        self.container.register(MainView.self) { resolver in
-            MainView(repository: resolver.resolve(NorrisRepository.self)!)
-        }
         
         self.container.register(SearchView.self) { resolver in
             SearchView(norrisRepository: resolver.resolve(NorrisRepository.self)!)
+        }
+        
+        self.container.register(MainView.self) { resolver in
+            MainView(searchView: resolver.resolve(SearchView.self)!,
+                repository: resolver.resolve(NorrisRepository.self)!)
         }
     }
     
