@@ -35,6 +35,10 @@ class MainView: UIViewController {
         super.viewDidLoad()
         self.configureViews()
         self.setupViewModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         self.setupBindings()
     }
     
@@ -53,12 +57,13 @@ extension MainView {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
         self.configureSearchView()
+        self.searchView.delegate = self
     }
     
     func setupBindings() {
     
         self.viewModel.results
-            .drive(tableView.rx
+            .bind(to: tableView.rx
                 .items(cellIdentifier: "FactCell",
                        cellType: FactCell.self)) { _, element, cell in
                         cell.bind(element)
@@ -77,7 +82,7 @@ extension MainView {
         
         self.headerView.searchTextField.rx.controlEvent(.editingDidEnd)
             .subscribe(onNext: {
-                print("editing begin")
+                print("editing ended")
             }).disposed(by: rx.disposeBag)
     }
     
@@ -86,5 +91,15 @@ extension MainView {
         self.addChildViewController(self.searchView)
         self.searchView.view.prepareForConstraints()
         self.searchView.view.pinEdgesToSuperview()
+    }
+}
+
+extension MainView: SearchDelegate {
+    func dismiss() {
+        self.searchContainer.isHidden = true
+    }
+    
+    func searchCategory(_ category: String) {
+        self.viewModel.search.onNext(category)
     }
 }
