@@ -36,6 +36,7 @@
 		40BCC7C1209AB34A009279FA /* FactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40BCC7C0209AB34A009279FA /* FactCell.xib */; };
 		40BCC7C3209AB36B009279FA /* FactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7C2209AB36B009279FA /* FactCell.swift */; };
 		40BCC7C5209AB3AF009279FA /* FactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7C4209AB3AF009279FA /* FactViewModel.swift */; };
+		40C22EA520ABA46D0032FB70 /* CloudTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C22EA420ABA46D0032FB70 /* CloudTagView.swift */; };
 		40DA7BCA209AB5660016B326 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA7BC9209AB5660016B326 /* UIColor+Utils.swift */; };
 		40DA7BD0209B3E2F0016B326 /* UITextFIeld+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA7BCF209B3E2F0016B326 /* UITextFIeld+Utils.swift */; };
 		40DA7BD2209B3FF40016B326 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA7BD1209B3FF40016B326 /* R.generated.swift */; };
@@ -87,6 +88,7 @@
 		40BCC7C0209AB34A009279FA /* FactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FactCell.xib; sourceTree = "<group>"; };
 		40BCC7C2209AB36B009279FA /* FactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactCell.swift; sourceTree = "<group>"; };
 		40BCC7C4209AB3AF009279FA /* FactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewModel.swift; sourceTree = "<group>"; };
+		40C22EA420ABA46D0032FB70 /* CloudTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTagView.swift; sourceTree = "<group>"; };
 		40DA7BC9209AB5660016B326 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		40DA7BCF209B3E2F0016B326 /* UITextFIeld+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextFIeld+Utils.swift"; sourceTree = "<group>"; };
 		40DA7BD1209B3FF40016B326 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				40BCC7B92098F982009279FA /* HeaderView.swift */,
+				40C22EA420ABA46D0032FB70 /* CloudTagView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -483,7 +486,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/CloudTagView/CloudTagView.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
@@ -496,7 +498,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CloudTagView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
@@ -575,6 +576,7 @@
 				405D44B92098D62800160077 /* MainViewModel.swift in Sources */,
 				401FBBEA209BA33A00F3B174 /* SearchView.swift in Sources */,
 				405D44BD2098D63700160077 /* NorrisRepositoryImpl.swift in Sources */,
+				40C22EA520ABA46D0032FB70 /* CloudTagView.swift in Sources */,
 				405D44C52098D64800160077 /* NorrisService.swift in Sources */,
 				40BCC7B62098F1D3009279FA /* SearchResponse.swift in Sources */,
 				401FBBEE209BA61A00F3B174 /* Rx+Utils.swift in Sources */,

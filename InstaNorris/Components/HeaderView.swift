@@ -24,7 +24,7 @@ class HeaderView: UIView {
     
     var fractionComplete: CGFloat = 0.0 {
         didSet {
-            self.animator?.fractionComplete = fractionComplete
+           //self.animator?.fractionComplete = fractionComplete
         }
     }
     

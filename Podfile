@@ -11,7 +11,6 @@ def common_pods
   pod 'SwiftLint'
   pod 'R.swift'
   pod 'ReachabilitySwift'
-  pod 'CloudTagView'
 end
 
 target 'InstaNorris' do

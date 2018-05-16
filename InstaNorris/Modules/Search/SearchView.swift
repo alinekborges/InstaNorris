@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import CloudTagView
+
 
 protocol SearchDelegate: class {
     func searchCategory(_ category: String)
@@ -50,24 +50,12 @@ extension SearchView {
     }
     
     func configureViews() {
-        //self.cloudTagView.removeOnDismiss = false
-        self.cloudTagView.delegate = self
     }
     
     func setupBindings() {
         self.viewModel.categories
             .drive(onNext: { [weak self] categories in
-                for category in categories {
-                    let tagView = TagView(text: category)
-                    //tagView.iconImage = nil
-                    self?.cloudTagView.tags.append(tagView)
-                }
-            }).disposed(by: rx.disposeBag)
-    }
-}
 
-extension SearchView: TagViewDelegate {
-    func tagTouched(_ tag: TagView) {
-        self.delegate?.searchCategory(tag.text)
+            }).disposed(by: rx.disposeBag)
     }
 }
