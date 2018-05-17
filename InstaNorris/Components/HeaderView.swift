@@ -24,7 +24,7 @@ class HeaderView: UIView {
     
     var fractionComplete: CGFloat = 0.0 {
         didSet {
-           //self.animator?.fractionComplete = fractionComplete
+           self.animator?.fractionComplete = fractionComplete
         }
     }
     
@@ -81,7 +81,6 @@ class HeaderView: UIView {
         
         self.animator = UIViewPropertyAnimator(duration: 0.4, curve: .easeIn, animations: {
             self.heightConstraint.constant = self.minHeight
-            //self.searchTextField.alpha = 0
             self.titleLabel.alpha = 0
             self.searchButton.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
             self.superview?.layoutIfNeeded()

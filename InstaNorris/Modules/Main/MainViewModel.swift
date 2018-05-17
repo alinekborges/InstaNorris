@@ -21,10 +21,13 @@ class MainViewModel {
         self.categories = repository.categories()
             .asDriver(onErrorJustReturn: [])
         
-        self.results = self.search
-            .flatMap {
-                return repository.search($0)
-                    .map { $0.result }
-        }
+//        self.results = self.search
+//            .flatMap {
+//                return repository.search($0)
+//                    .map { $0.result }
+        
+        self.results = repository.search("teste")
+            .map { $0.result }.asObservable()
+        
     }
 }

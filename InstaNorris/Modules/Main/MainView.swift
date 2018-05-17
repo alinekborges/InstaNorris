@@ -72,6 +72,7 @@ extension MainView {
         self.tableView.rx.contentOffset
             .map { $0.y }
             .map { ($0 + self.headerView.maxHeight) / (self.headerView.minHeight + self.headerView.maxHeight) }
+            .observeOn(MainScheduler.asyncInstance)
             .bind(to: self.headerView.rx.fractionComplete)
             .disposed(by: rx.disposeBag)
         

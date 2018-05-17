@@ -14,8 +14,13 @@ import RxCocoa
 
 class CloudTagView: UIView {
     
-    var items: [String] = ["teste", "teste1", "teste2"]
-//    var items: Driver<[String]> = Driver.just(["teste", "teste1", "teste2"])
+    var items: [String] = [] {
+        didSet {
+            self.observableItems.onNext(items)
+        }
+    }
+    
+    let observableItems = PublishSubject<[String]>()
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -29,76 +34,62 @@ class CloudTagView: UIView {
     }
 
     private func setupViews() {
-        self.setupConstraints()
+        self.addSubview(self.collectionView)
         self.collectionView.register(TagCell.self, forCellWithReuseIdentifier: "TagCell")
         self.setupBindinds()
         self.collectionView.delegate = self
-        self.collectionView.dataSource = self
-    }
-    
-    private func setupConstraints() {
-        self.addSubview(self.collectionView)
-        
-        //self.collectionView.prepareForConstraints()
-        //self.collectionView.pinEdgesToSuperview()
-        //self.layoutIfNeeded()
-        
+        self.backgroundColor = .clear
+        self.collectionView.backgroundColor = .clear
     }
     
     private func setupBindinds() {
-//        self.items.drive(collectionView.rx
-//            .items(cellIdentifier: "TagCell",
-//                   cellType: TagCell.self)) { _, element, cell in
-//                    cell.titleLabel.text = element
-//            }.disposed(by: rx.disposeBag)
+        
+        observableItems
+            .bind(to: collectionView.rx
+            .items(cellIdentifier: "TagCell",
+                   cellType: TagCell.self)) { _, element, cell in
+                    cell.titleLabel.text = element
+            }.disposed(by: rx.disposeBag)
+        
     }
     
 }
 
-extension CloudTagView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension CloudTagView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView
-            .dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath)
-            as? TagCell else {
-            fatalError("Cell not typed correctly")
-        }
-        cell.titleLabel.text = "OIE"
-        cell.backgroundColor = .red
-        return cell
+        let item = self.items[indexPath.row]
+        let width = item.width(usingFont: TagCell.font) + 30
+        print("width: \(width)")
+        return CGSize(width: width, height: 22)
     }
     
 }
 
 class TagCell: UICollectionViewCell {
     
+    static var font: UIFont = UIFont.systemFont(ofSize: 16)
+    
     let titleLabel = UILabel()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func layoutSubviews() {
+        super.layoutSubviews()
         self.setupConstraints()
-        self.backgroundColor = .red
+        self.titleLabel.font = TagCell.font
+        self.backgroundColor = .slate
+        self.titleLabel.textColor = .white
+        self.layer.cornerRadius = 4.0
     }
     
     func setupConstraints() {
         self.addSubview(titleLabel)
-        //self.titleLabel.prepareForConstraints()
-        //self.titleLabel.pinEdgesToSuperview()
+        self.titleLabel.prepareForConstraints()
+        self.titleLabel.pinTop()
+        self.titleLabel.pinBottom()
+        self.titleLabel.pinLeft(4)
+        self.titleLabel.pinRight(4)
     }
     
 }
