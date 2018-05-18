@@ -63,7 +63,7 @@ extension CloudTagView: UICollectionViewDelegateFlowLayout {
         let item = self.items[indexPath.row]
         let width = item.width(usingFont: TagCell.font) + 30
         print("width: \(width)")
-        return CGSize(width: width, height: 22)
+        return CGSize(width: width, height: 26)
     }
     
 }
@@ -80,7 +80,8 @@ class TagCell: UICollectionViewCell {
         self.titleLabel.font = TagCell.font
         self.backgroundColor = .slate
         self.titleLabel.textColor = .white
-        self.layer.cornerRadius = 4.0
+        self.titleLabel.textAlignment = .center
+        self.layer.cornerRadius = 6.0
     }
     
     func setupConstraints() {

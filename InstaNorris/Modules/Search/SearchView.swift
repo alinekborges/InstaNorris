@@ -54,8 +54,7 @@ extension SearchView {
     
     func setupBindings() {
         self.viewModel.categories
-            .drive(onNext: { [weak self] categories in
-
-            }).disposed(by: rx.disposeBag)
+            .drive(self.cloudTagView.rx.items)
+            .disposed(by: rx.disposeBag)
     }
 }

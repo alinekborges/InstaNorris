@@ -79,15 +79,13 @@ class HeaderView: UIView {
     
     private func setupAnimator() {
         
-        self.animator = UIViewPropertyAnimator(duration: 0.4, curve: .easeIn, animations: {
+        self.animator = UIViewPropertyAnimator(duration: 0.4, curve: .linear, animations: {
             self.heightConstraint.constant = self.minHeight
             self.titleLabel.alpha = 0
             self.searchButton.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
             self.superview?.layoutIfNeeded()
             self.layoutIfNeeded()
         })
-        
-        self.animator?.scrubsLinearly = true
         
     }
     

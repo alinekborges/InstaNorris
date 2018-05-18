@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchView" customModule="InstaNorris" customModuleProvider="target">
             <connections>
-                <outlet property="cloudTagView" destination="Nk1-RG-rmT" id="HCn-ev-7L8"/>
+                <outlet property="cloudTagView" destination="Nk1-RG-rmT" id="utJ-f1-O8G"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
