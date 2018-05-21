@@ -14,14 +14,14 @@ extension UIView {
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func pinEdgesToSuperview() {
+    func pinEdgesToSuperview(_ offset: CGFloat = 0.0) {
         guard let superview = self.superview else {
             return
         }
-        self.leftAnchor.constraint(equalTo: superview.leftAnchor).isActive = true
-        self.rightAnchor.constraint(equalTo: superview.rightAnchor).isActive = true
-        self.bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
-        self.topAnchor.constraint(equalTo: superview.topAnchor).isActive = true
+        self.leftAnchor.constraint(equalTo: superview.leftAnchor, constant: offset).isActive = true
+        self.rightAnchor.constraint(equalTo: superview.rightAnchor, constant: offset).isActive = true
+        self.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: offset).isActive = true
+        self.topAnchor.constraint(equalTo: superview.topAnchor, constant: offset).isActive = true
     }
     
     @discardableResult

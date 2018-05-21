@@ -43,7 +43,6 @@ extension DefaultContainer {
 extension DefaultContainer {
     
     func registerServices() {
-        
         self.container.register(NorrisService.self) { _ in
             let provider = MoyaProvider<NorrisRouter>(plugins: self.getDefaultPlugins())
             return NorrisServiceImpl(provider: provider)

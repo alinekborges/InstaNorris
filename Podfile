@@ -25,6 +25,7 @@ target 'InstaNorrisTests' do
    	pod 'Nimble'
    	pod 'RxBlocking'
     pod 'KIF'
+    pod 'KIF/IdentifierTests'
 
    post_install do |installer|
      installer.pods_project.targets.each do |target|

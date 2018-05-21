@@ -20,7 +20,17 @@ class CloudTagView: UIView {
         }
     }
     
-    let observableItems = PublishSubject<[String]>()
+    private let observableItems = PublishSubject<[String]>()
+
+    init() {
+        super.init(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        self.setupViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(frame: CGRect.zero)
+        //self.setupViews()
+    }
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -32,23 +42,26 @@ class CloudTagView: UIView {
         super.awakeFromNib()
         self.setupViews()
     }
-
+    
     private func setupViews() {
         self.addSubview(self.collectionView)
         self.collectionView.register(TagCell.self, forCellWithReuseIdentifier: "TagCell")
         self.setupBindinds()
         self.collectionView.delegate = self
+        self.collectionView.prepareForConstraints()
+        self.collectionView.pinEdgesToSuperview()
         self.backgroundColor = .clear
         self.collectionView.backgroundColor = .clear
+        self.accessibilityIdentifier = "cloudTagView"
     }
     
     private func setupBindinds() {
-        
         observableItems
+            .asObservable()
             .bind(to: collectionView.rx
             .items(cellIdentifier: "TagCell",
                    cellType: TagCell.self)) { _, element, cell in
-                    cell.titleLabel.text = element
+                    cell.bind(element)
             }.disposed(by: rx.disposeBag)
         
     }
@@ -61,9 +74,8 @@ extension CloudTagView: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let item = self.items[indexPath.row]
-        let width = item.width(usingFont: TagCell.font) + 30
-        print("width: \(width)")
-        return CGSize(width: width, height: 26)
+        let width = item.width(usingFont: TagCell.font) + 20
+        return CGSize(width: width, height: 32)
     }
     
 }
@@ -74,23 +86,34 @@ class TagCell: UICollectionViewCell {
     
     let titleLabel = UILabel()
     
+    var didSetupConstraints = false
+    
+    func bind(_ string: String) {
+        self.titleLabel.text = string
+        self.accessibilityIdentifier = string
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.setupConstraints()
         self.titleLabel.font = TagCell.font
         self.backgroundColor = .slate
         self.titleLabel.textColor = .white
         self.titleLabel.textAlignment = .center
         self.layer.cornerRadius = 6.0
+        self.setupConstraints()
+        self.layoutIfNeeded()
     }
     
     func setupConstraints() {
-        self.addSubview(titleLabel)
-        self.titleLabel.prepareForConstraints()
-        self.titleLabel.pinTop()
-        self.titleLabel.pinBottom()
-        self.titleLabel.pinLeft(4)
-        self.titleLabel.pinRight(4)
+        if !didSetupConstraints {
+            didSetupConstraints = true
+            self.addSubview(titleLabel)
+            self.titleLabel.prepareForConstraints()
+            self.titleLabel.pinTop()
+            self.titleLabel.pinBottom()
+            self.titleLabel.pinLeft(0)
+            self.titleLabel.pinRight(0)
+        }
     }
     
 }

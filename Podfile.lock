@@ -3,6 +3,8 @@ PODS:
   - KIF (3.7.3):
     - KIF/Core (= 3.7.3)
   - KIF/Core (3.7.3)
+  - KIF/IdentifierTests (3.7.3):
+    - KIF/Core
   - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
@@ -31,6 +33,7 @@ PODS:
 
 DEPENDENCIES:
   - KIF
+  - KIF/IdentifierTests
   - Moya/RxSwift
   - Nimble
   - Quick
@@ -78,6 +81,6 @@ SPEC CHECKSUMS:
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
   Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
 
-PODFILE CHECKSUM: 81d9cd613d1f0b79d66937c8cca0b2716f95c534
+PODFILE CHECKSUM: 4cb5a23a36a1a7692e1a3238b60bf73dc24acfda
 
 COCOAPODS: 1.5.2

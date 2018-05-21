@@ -9,30 +9,27 @@
 import Foundation
 import KIF
 import Swinject
+import UIKit
 
 @testable import InstaNorris
 
 class BaseUITest: KIFTestCase {
     
-    let container = Container()
+    let defaultContainer = DefaultContainer()
     var window: UIWindow!
     
     override func beforeEach() {
         
-        UIView.setAnimationsEnabled(false)
+        UIView.setAnimationsEnabled(true)
         
-        self.configureContainer(container: self.container)
-        
-        let mainView = self.defaultContainer.container.resolve(MainView.self)!
+        self.configureContainer(container: self.defaultContainer.container)
         
         self.window = UIApplication.shared.keyWindow!
-        
-        window.rootViewController = mainView
         
     }
     
     func configureContainer(container: Container) {
-        fatalError("mockContainer must be override")
+        fatalError("mockContainer must be overritten")
     }
     
 }
