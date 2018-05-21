@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		401FBBEA209BA33A00F3B174 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401FBBE7209BA33A00F3B174 /* SearchView.swift */; };
+		401FBBEB209BA33A00F3B174 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401FBBE8209BA33A00F3B174 /* SearchViewModel.swift */; };
+		401FBBEC209BA33A00F3B174 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 401FBBE9209BA33A00F3B174 /* SearchView.xib */; };
+		401FBBEE209BA61A00F3B174 /* Rx+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401FBBED209BA61A00F3B174 /* Rx+Utils.swift */; };
 		405D44A52098D54B00160077 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405D44A32098D54B00160077 /* LaunchScreen.storyboard */; };
 		405D44A82098D56200160077 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 405D44A62098D56200160077 /* Info.plist */; };
 		405D44A92098D56200160077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44A72098D56200160077 /* AppDelegate.swift */; };
@@ -24,6 +28,8 @@
 		405D44CA2098D64D00160077 /* Networking+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44C92098D64D00160077 /* Networking+Utils.swift */; };
 		405D44CE2098D7BF00160077 /* MockNorrisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44CD2098D7BF00160077 /* MockNorrisService.swift */; };
 		405D44D02098D7CD00160077 /* NorrisRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44CF2098D7CD00160077 /* NorrisRepositorySpec.swift */; };
+		408606D120AF22CC00258B7A /* MockNorrisRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408606D020AF22CC00258B7A /* MockNorrisRepository.swift */; };
+		40A0B6BA20AE6E1A00FFFE6F /* KIF+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0B6B920AE6E1A00FFFE6F /* KIF+Utils.swift */; };
 		40BCC7B62098F1D3009279FA /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7B52098F1D3009279FA /* SearchResponse.swift */; };
 		40BCC7B82098F1F7009279FA /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7B72098F1F7009279FA /* Fact.swift */; };
 		40BCC7BA2098F982009279FA /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7B92098F982009279FA /* HeaderView.swift */; };
@@ -32,6 +38,12 @@
 		40BCC7C1209AB34A009279FA /* FactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40BCC7C0209AB34A009279FA /* FactCell.xib */; };
 		40BCC7C3209AB36B009279FA /* FactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7C2209AB36B009279FA /* FactCell.swift */; };
 		40BCC7C5209AB3AF009279FA /* FactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7C4209AB3AF009279FA /* FactViewModel.swift */; };
+		40C22EA520ABA46D0032FB70 /* CloudTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C22EA420ABA46D0032FB70 /* CloudTagView.swift */; };
+		40C4827B20AE438D00A12282 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4827A20AE438D00A12282 /* String+Utils.swift */; };
+		40C4827D20AE4B4B00A12282 /* CloudTagView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4827C20AE4B4B00A12282 /* CloudTagView+Rx.swift */; };
+		40C4828020AE4D2C00A12282 /* CloudTagViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4827F20AE4D2C00A12282 /* CloudTagViewSpec.swift */; };
+		40C4828320AE4E3800A12282 /* BaseUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4828220AE4E3800A12282 /* BaseUITest.swift */; };
+		40C4828520AE5AE500A12282 /* BaseUITests+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4828420AE5AE500A12282 /* BaseUITests+Utils.swift */; };
 		40DA7BCA209AB5660016B326 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA7BC9209AB5660016B326 /* UIColor+Utils.swift */; };
 		40DA7BD0209B3E2F0016B326 /* UITextFIeld+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA7BCF209B3E2F0016B326 /* UITextFIeld+Utils.swift */; };
 		40DA7BD2209B3FF40016B326 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA7BD1209B3FF40016B326 /* R.generated.swift */; };
@@ -51,6 +63,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		401FBBE7209BA33A00F3B174 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		401FBBE8209BA33A00F3B174 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		401FBBE9209BA33A00F3B174 /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
+		401FBBED209BA61A00F3B174 /* Rx+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Utils.swift"; sourceTree = "<group>"; };
 		405D44772098C16000160077 /* InstaNorris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaNorris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		405D448B2098C16000160077 /* InstaNorrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaNorrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		405D44912098C16000160077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,6 +87,8 @@
 		405D44C92098D64D00160077 /* Networking+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Networking+Utils.swift"; sourceTree = "<group>"; };
 		405D44CD2098D7BF00160077 /* MockNorrisService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNorrisService.swift; sourceTree = "<group>"; };
 		405D44CF2098D7CD00160077 /* NorrisRepositorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NorrisRepositorySpec.swift; sourceTree = "<group>"; };
+		408606D020AF22CC00258B7A /* MockNorrisRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNorrisRepository.swift; sourceTree = "<group>"; };
+		40A0B6B920AE6E1A00FFFE6F /* KIF+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KIF+Utils.swift"; sourceTree = "<group>"; };
 		40BCC7B52098F1D3009279FA /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		40BCC7B72098F1F7009279FA /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
 		40BCC7B92098F982009279FA /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -79,6 +97,12 @@
 		40BCC7C0209AB34A009279FA /* FactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FactCell.xib; sourceTree = "<group>"; };
 		40BCC7C2209AB36B009279FA /* FactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactCell.swift; sourceTree = "<group>"; };
 		40BCC7C4209AB3AF009279FA /* FactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewModel.swift; sourceTree = "<group>"; };
+		40C22EA420ABA46D0032FB70 /* CloudTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTagView.swift; sourceTree = "<group>"; };
+		40C4827A20AE438D00A12282 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
+		40C4827C20AE4B4B00A12282 /* CloudTagView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudTagView+Rx.swift"; sourceTree = "<group>"; };
+		40C4827F20AE4D2C00A12282 /* CloudTagViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTagViewSpec.swift; sourceTree = "<group>"; };
+		40C4828220AE4E3800A12282 /* BaseUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITest.swift; sourceTree = "<group>"; };
+		40C4828420AE5AE500A12282 /* BaseUITests+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseUITests+Utils.swift"; sourceTree = "<group>"; };
 		40DA7BC9209AB5660016B326 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		40DA7BCF209B3E2F0016B326 /* UITextFIeld+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextFIeld+Utils.swift"; sourceTree = "<group>"; };
 		40DA7BD1209B3FF40016B326 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -111,6 +135,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		401FBBE6209BA31100F3B174 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				401FBBE7209BA33A00F3B174 /* SearchView.swift */,
+				401FBBE8209BA33A00F3B174 /* SearchViewModel.swift */,
+				401FBBE9209BA33A00F3B174 /* SearchView.xib */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		405D446E2098C16000160077 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +187,9 @@
 		405D448E2098C16000160077 /* InstaNorrisTests */ = {
 			isa = PBXGroup;
 			children = (
+				40C4828620AE5AE800A12282 /* Utils */,
+				40C4828120AE4E2C00A12282 /* UITests */,
+				40C4827E20AE4D1E00A12282 /* Components */,
 				405D44CC2098D7AE00160077 /* Repository */,
 				405D44CB2098D7A700160077 /* Mock */,
 				405D44912098C16000160077 /* Info.plist */,
@@ -172,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				40BCC7B92098F982009279FA /* HeaderView.swift */,
+				40C22EA420ABA46D0032FB70 /* CloudTagView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -179,6 +217,7 @@
 		405D44AE2098D5AC00160077 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				401FBBE6209BA31100F3B174 /* Search */,
 				405D44B42098D61F00160077 /* Main */,
 			);
 			path = Modules;
@@ -207,6 +246,8 @@
 			children = (
 				40BCC7BB2098FBE7009279FA /* NSObject+Rx.swift */,
 				40DA7BF1209B4BD10016B326 /* HeaderView+Rx.swift */,
+				401FBBED209BA61A00F3B174 /* Rx+Utils.swift */,
+				40C4827C20AE4B4B00A12282 /* CloudTagView+Rx.swift */,
 			);
 			path = RxExtensions;
 			sourceTree = "<group>";
@@ -229,6 +270,7 @@
 				40BCC7BD2098FC08009279FA /* UIView+Constraints.swift */,
 				40DA7BC9209AB5660016B326 /* UIColor+Utils.swift */,
 				40DA7BCF209B3E2F0016B326 /* UITextFIeld+Utils.swift */,
+				40C4827A20AE438D00A12282 /* String+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -248,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				405D44CD2098D7BF00160077 /* MockNorrisService.swift */,
+				408606D020AF22CC00258B7A /* MockNorrisRepository.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -277,6 +320,31 @@
 				40BCC7C4209AB3AF009279FA /* FactViewModel.swift */,
 			);
 			path = FactCell;
+			sourceTree = "<group>";
+		};
+		40C4827E20AE4D1E00A12282 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				40C4827F20AE4D2C00A12282 /* CloudTagViewSpec.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		40C4828120AE4E2C00A12282 /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				40C4828220AE4E3800A12282 /* BaseUITest.swift */,
+			);
+			path = UITests;
+			sourceTree = "<group>";
+		};
+		40C4828620AE5AE800A12282 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				40C4828420AE5AE500A12282 /* BaseUITests+Utils.swift */,
+				40A0B6B920AE6E1A00FFFE6F /* KIF+Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		65ACD68DBF8AE5A66E7B9487 /* Pods */ = {
@@ -392,6 +460,7 @@
 			files = (
 				405D44B82098D62800160077 /* MainView.xib in Resources */,
 				405D44A82098D56200160077 /* Info.plist in Resources */,
+				401FBBEC209BA33A00F3B174 /* SearchView.xib in Resources */,
 				405D44C02098D63E00160077 /* Assets.xcassets in Resources */,
 				40BCC7C1209AB34A009279FA /* FactCell.xib in Resources */,
 				405D44A52098D54B00160077 /* LaunchScreen.storyboard in Resources */,
@@ -496,6 +565,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-InstaNorrisTests/Pods-InstaNorrisTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/KIF/KIF.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
@@ -503,6 +573,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KIF.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
@@ -550,10 +621,16 @@
 				405D44BE2098D63700160077 /* NorrisRepository.swift in Sources */,
 				405D44AC2098D58E00160077 /* DefaultContainer.swift in Sources */,
 				405D44B92098D62800160077 /* MainViewModel.swift in Sources */,
+				401FBBEA209BA33A00F3B174 /* SearchView.swift in Sources */,
+				40C4827B20AE438D00A12282 /* String+Utils.swift in Sources */,
 				405D44BD2098D63700160077 /* NorrisRepositoryImpl.swift in Sources */,
+				40C22EA520ABA46D0032FB70 /* CloudTagView.swift in Sources */,
 				405D44C52098D64800160077 /* NorrisService.swift in Sources */,
 				40BCC7B62098F1D3009279FA /* SearchResponse.swift in Sources */,
+				40C4827D20AE4B4B00A12282 /* CloudTagView+Rx.swift in Sources */,
+				401FBBEE209BA61A00F3B174 /* Rx+Utils.swift in Sources */,
 				405D44C62098D64800160077 /* Constants.swift in Sources */,
+				401FBBEB209BA33A00F3B174 /* SearchViewModel.swift in Sources */,
 				40DA7BF2209B4BD10016B326 /* HeaderView+Rx.swift in Sources */,
 				40BCC7BA2098F982009279FA /* HeaderView.swift in Sources */,
 				40BCC7BC2098FBE7009279FA /* NSObject+Rx.swift in Sources */,
@@ -566,7 +643,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40C4828320AE4E3800A12282 /* BaseUITest.swift in Sources */,
+				408606D120AF22CC00258B7A /* MockNorrisRepository.swift in Sources */,
+				40C4828020AE4D2C00A12282 /* CloudTagViewSpec.swift in Sources */,
 				405D44CE2098D7BF00160077 /* MockNorrisService.swift in Sources */,
+				40C4828520AE5AE500A12282 /* BaseUITests+Utils.swift in Sources */,
+				40A0B6BA20AE6E1A00FFFE6F /* KIF+Utils.swift in Sources */,
 				405D44D02098D7CD00160077 /* NorrisRepositorySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -708,7 +790,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68SZERZ856;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = InstaNorris/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.akb.InstaNorris;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -726,7 +810,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68SZERZ856;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = InstaNorris/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.akb.InstaNorris;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -739,7 +825,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D7B63B94BF2DC9A975189D53 /* Pods-InstaNorrisTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -759,7 +845,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8E5F55B92C6D20B8ED3BFCC5 /* Pods-InstaNorrisTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -26,8 +26,14 @@ final class DefaultContainer {
 extension DefaultContainer {
     
     func registerViews() {
+        
+        self.container.register(SearchView.self) { resolver in
+            SearchView(norrisRepository: resolver.resolve(NorrisRepository.self)!)
+        }
+        
         self.container.register(MainView.self) { resolver in
-            MainView(repository: resolver.resolve(NorrisRepository.self)!)
+            MainView(searchView: resolver.resolve(SearchView.self)!,
+                repository: resolver.resolve(NorrisRepository.self)!)
         }
     }
     
@@ -37,7 +43,6 @@ extension DefaultContainer {
 extension DefaultContainer {
     
     func registerServices() {
-        
         self.container.register(NorrisService.self) { _ in
             let provider = MoyaProvider<NorrisRouter>(plugins: self.getDefaultPlugins())
             return NorrisServiceImpl(provider: provider)

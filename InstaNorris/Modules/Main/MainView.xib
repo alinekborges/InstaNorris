@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainView" customModule="InstaNorris" customModuleProvider="target">
             <connections>
                 <outlet property="headerView" destination="XmI-yI-Xbw" id="Ifk-H7-tBG"/>
+                <outlet property="searchContainer" destination="nbR-Id-YHa" id="nK9-CV-rVX"/>
                 <outlet property="tableView" destination="Qbv-lJ-et2" id="i07-7X-k37"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -32,6 +33,11 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="160" placeholder="YES" id="MMS-BQ-rqz"/>
                     </constraints>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nbR-Id-YHa">
+                    <rect key="frame" x="0.0" y="168" width="375" height="499"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

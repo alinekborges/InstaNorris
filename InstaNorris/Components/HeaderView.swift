@@ -24,7 +24,7 @@ class HeaderView: UIView {
     
     var fractionComplete: CGFloat = 0.0 {
         didSet {
-            self.animator?.fractionComplete = fractionComplete
+           self.animator?.fractionComplete = fractionComplete
         }
     }
     
@@ -42,7 +42,7 @@ class HeaderView: UIView {
         return label
     }()
     
-    private let searchTextField: UITextField = {
+    let searchTextField: UITextField = {
        let textField = UITextField()
         textField.backgroundColor = UIColor.white.withAlphaComponent(0.2)
         textField.layer.cornerRadius = 6.0
@@ -79,16 +79,13 @@ class HeaderView: UIView {
     
     private func setupAnimator() {
         
-        self.animator = UIViewPropertyAnimator(duration: 0.4, curve: .easeIn, animations: {
+        self.animator = UIViewPropertyAnimator(duration: 0.4, curve: .linear, animations: {
             self.heightConstraint.constant = self.minHeight
-            self.searchTextField.alpha = 0
-            self.titleLabel.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            self.titleLabel.alpha = 0
             self.searchButton.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
             self.superview?.layoutIfNeeded()
             self.layoutIfNeeded()
         })
-        
-        self.animator?.scrubsLinearly = true
         
     }
     

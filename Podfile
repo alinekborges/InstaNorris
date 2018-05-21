@@ -18,11 +18,14 @@ target 'InstaNorris' do
   	common_pods
 
 target 'InstaNorrisTests' do
+    inhibit_all_warnings!
     inherit! :search_paths
     
 	pod 'Quick'
    	pod 'Nimble'
-   	pod 'RxBlocking',
+   	pod 'RxBlocking'
+    pod 'KIF'
+    pod 'KIF/IdentifierTests'
 
    post_install do |installer|
      installer.pods_project.targets.each do |target|

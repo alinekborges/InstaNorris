@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Swinject
 
 class MainView: UIViewController {
     
@@ -17,9 +18,12 @@ class MainView: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: HeaderView!
+    @IBOutlet weak var searchContainer: UIView!
+    let searchView: SearchView
     
-    init(repository: NorrisRepository) {
+    init(searchView: SearchView, repository: NorrisRepository) {
         self.repository = repository
+        self.searchView = searchView
         super.init(nibName: String(describing: MainView.self), bundle: nil)
     }
     
@@ -31,6 +35,10 @@ class MainView: UIViewController {
         super.viewDidLoad()
         self.configureViews()
         self.setupViewModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         self.setupBindings()
     }
     
@@ -39,7 +47,7 @@ class MainView: UIViewController {
 extension MainView {
     
     func setupViewModel() {
-        self.viewModel = MainViewModel(repository: self.repository)
+        self.viewModel = MainViewModel(search: self.headerView.rx.search, repository: self.repository)
     }
     
     func configureViews() {
@@ -47,12 +55,15 @@ extension MainView {
         self.tableView.register(cellType: FactCell.self)
         self.tableView.estimatedRowHeight = 200
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        self.configureSearchView()
+        self.searchView.delegate = self
     }
     
     func setupBindings() {
     
         self.viewModel.results
-            .drive(tableView.rx
+            .bind(to: tableView.rx
                 .items(cellIdentifier: "FactCell",
                        cellType: FactCell.self)) { _, element, cell in
                         cell.bind(element)
@@ -61,7 +72,35 @@ extension MainView {
         self.tableView.rx.contentOffset
             .map { $0.y }
             .map { ($0 + self.headerView.maxHeight) / (self.headerView.minHeight + self.headerView.maxHeight) }
+            .observeOn(MainScheduler.asyncInstance)
             .bind(to: self.headerView.rx.fractionComplete)
             .disposed(by: rx.disposeBag)
+        
+        self.headerView.searchTextField.rx.controlEvent(.editingDidBegin)
+            .subscribe(onNext: {
+                self.searchContainer.isHidden = false
+            }).disposed(by: rx.disposeBag)
+        
+        self.headerView.searchTextField.rx.controlEvent(.editingDidEnd)
+            .subscribe(onNext: {
+                print("editing ended")
+            }).disposed(by: rx.disposeBag)
+    }
+    
+    func configureSearchView() {
+        self.searchContainer.addSubview(searchView.view)
+        self.addChildViewController(self.searchView)
+        self.searchView.view.prepareForConstraints()
+        self.searchView.view.pinEdgesToSuperview()
+    }
+}
+
+extension MainView: SearchDelegate {
+    func dismiss() {
+        self.searchContainer.isHidden = true
+    }
+    
+    func searchCategory(_ category: String) {
+        self.viewModel.search.onNext(category)
     }
 }

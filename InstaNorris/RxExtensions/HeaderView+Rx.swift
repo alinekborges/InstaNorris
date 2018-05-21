@@ -18,8 +18,12 @@ extension Reactive where Base: HeaderView {
         }
     }
     
-    var search: ControlEvent<Void> {
+    var searchTap: ControlEvent<Void> {
         return self.base.searchButton.rx.tap
+    }
+    
+    var search: Observable<String> {
+        return self.base.searchTextField.rx.text.asObservable().unwrap()
     }
     
 }

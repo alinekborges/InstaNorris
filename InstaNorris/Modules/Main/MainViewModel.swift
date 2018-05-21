@@ -11,19 +11,23 @@ import RxCocoa
 
 class MainViewModel {
     
-    let repository: NorrisRepository
-    
     let categories: Driver<[String]>
-    let results: Driver<[Fact]>
+    let results: Observable<[Fact]>
     
-    init(repository: NorrisRepository) {
-        self.repository = repository
+    let search = PublishSubject<String>()
+    
+    init(search: Observable<String>, repository: NorrisRepository) {
         
-        self.categories = self.repository.categories()
+        self.categories = repository.categories()
             .asDriver(onErrorJustReturn: [])
         
-        self.results = self.repository.search("test")
-            .map { $0.result }
-            .asDriver(onErrorJustReturn: [])
+//        self.results = self.search
+//            .flatMap {
+//                return repository.search($0)
+//                    .map { $0.result }
+        
+        self.results = repository.search("teste")
+            .map { $0.result }.asObservable()
+        
     }
 }
