@@ -22,4 +22,6 @@ struct Constants {
     
     static let categoryCount = 8
     
+    static let savedSearchCount = 6
+    
 }

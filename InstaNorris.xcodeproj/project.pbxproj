@@ -32,6 +32,8 @@
 		408542A620B3B20E0067B39B /* RandomSampleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408542A520B3B20E0067B39B /* RandomSampleSpec.swift */; };
 		408606D120AF22CC00258B7A /* MockNorrisRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408606D020AF22CC00258B7A /* MockNorrisRepository.swift */; };
 		40A0B6BA20AE6E1A00FFFE6F /* KIF+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0B6B920AE6E1A00FFFE6F /* KIF+Utils.swift */; };
+		40A3701920B4801800D2F469 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A3701820B4801800D2F469 /* LocalStorage.swift */; };
+		40A3701C20B4810E00D2F469 /* LocalStorageImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A3701B20B4810E00D2F469 /* LocalStorageImpl.swift */; };
 		40BCC7B62098F1D3009279FA /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7B52098F1D3009279FA /* SearchResponse.swift */; };
 		40BCC7B82098F1F7009279FA /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7B72098F1F7009279FA /* Fact.swift */; };
 		40BCC7BA2098F982009279FA /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7B92098F982009279FA /* HeaderView.swift */; };
@@ -93,6 +95,8 @@
 		408542A520B3B20E0067B39B /* RandomSampleSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSampleSpec.swift; sourceTree = "<group>"; };
 		408606D020AF22CC00258B7A /* MockNorrisRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNorrisRepository.swift; sourceTree = "<group>"; };
 		40A0B6B920AE6E1A00FFFE6F /* KIF+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KIF+Utils.swift"; sourceTree = "<group>"; };
+		40A3701820B4801800D2F469 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		40A3701B20B4810E00D2F469 /* LocalStorageImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageImpl.swift; sourceTree = "<group>"; };
 		40BCC7B52098F1D3009279FA /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		40BCC7B72098F1F7009279FA /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
 		40BCC7B92098F982009279FA /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 		405D44792098C16000160077 /* InstaNorris */ = {
 			isa = PBXGroup;
 			children = (
+				40A3701A20B4802100D2F469 /* Storage */,
 				405D44D12098D98300160077 /* Model */,
 				405D44B32098D5D200160077 /* Utils */,
 				405D44B22098D5CD00160077 /* Service */,
@@ -315,6 +320,15 @@
 				40BCC7B72098F1F7009279FA /* Fact.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		40A3701A20B4802100D2F469 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				40A3701820B4801800D2F469 /* LocalStorage.swift */,
+				40A3701B20B4810E00D2F469 /* LocalStorageImpl.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		40BCC7BF209AB32F009279FA /* FactCell */ = {
@@ -635,6 +649,7 @@
 				40BCC7B62098F1D3009279FA /* SearchResponse.swift in Sources */,
 				40C4827D20AE4B4B00A12282 /* CloudTagView+Rx.swift in Sources */,
 				401FBBEE209BA61A00F3B174 /* Rx+Utils.swift in Sources */,
+				40A3701920B4801800D2F469 /* LocalStorage.swift in Sources */,
 				405D44C62098D64800160077 /* Constants.swift in Sources */,
 				401FBBEB209BA33A00F3B174 /* SearchViewModel.swift in Sources */,
 				40DA7BF2209B4BD10016B326 /* HeaderView+Rx.swift in Sources */,
@@ -643,6 +658,7 @@
 				40BCC7BC2098FBE7009279FA /* NSObject+Rx.swift in Sources */,
 				40BCC7BE2098FC08009279FA /* UIView+Constraints.swift in Sources */,
 				40DA7BCA209AB5660016B326 /* UIColor+Utils.swift in Sources */,
+				40A3701C20B4810E00D2F469 /* LocalStorageImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
