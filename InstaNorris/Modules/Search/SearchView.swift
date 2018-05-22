@@ -10,7 +10,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-
 protocol SearchDelegate: class {
     func searchCategory(_ category: String)
     func dismiss()

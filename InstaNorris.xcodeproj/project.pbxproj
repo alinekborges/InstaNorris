@@ -28,6 +28,8 @@
 		405D44CA2098D64D00160077 /* Networking+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44C92098D64D00160077 /* Networking+Utils.swift */; };
 		405D44CE2098D7BF00160077 /* MockNorrisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44CD2098D7BF00160077 /* MockNorrisService.swift */; };
 		405D44D02098D7CD00160077 /* NorrisRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44CF2098D7CD00160077 /* NorrisRepositorySpec.swift */; };
+		408542A420B38CF10067B39B /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408542A320B38CF10067B39B /* Array+Utils.swift */; };
+		408542A620B3B20E0067B39B /* RandomSampleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408542A520B3B20E0067B39B /* RandomSampleSpec.swift */; };
 		408606D120AF22CC00258B7A /* MockNorrisRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408606D020AF22CC00258B7A /* MockNorrisRepository.swift */; };
 		40A0B6BA20AE6E1A00FFFE6F /* KIF+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0B6B920AE6E1A00FFFE6F /* KIF+Utils.swift */; };
 		40BCC7B62098F1D3009279FA /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7B52098F1D3009279FA /* SearchResponse.swift */; };
@@ -87,6 +89,8 @@
 		405D44C92098D64D00160077 /* Networking+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Networking+Utils.swift"; sourceTree = "<group>"; };
 		405D44CD2098D7BF00160077 /* MockNorrisService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNorrisService.swift; sourceTree = "<group>"; };
 		405D44CF2098D7CD00160077 /* NorrisRepositorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NorrisRepositorySpec.swift; sourceTree = "<group>"; };
+		408542A320B38CF10067B39B /* Array+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
+		408542A520B3B20E0067B39B /* RandomSampleSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSampleSpec.swift; sourceTree = "<group>"; };
 		408606D020AF22CC00258B7A /* MockNorrisRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNorrisRepository.swift; sourceTree = "<group>"; };
 		40A0B6B920AE6E1A00FFFE6F /* KIF+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KIF+Utils.swift"; sourceTree = "<group>"; };
 		40BCC7B52098F1D3009279FA /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 				40DA7BC9209AB5660016B326 /* UIColor+Utils.swift */,
 				40DA7BCF209B3E2F0016B326 /* UITextFIeld+Utils.swift */,
 				40C4827A20AE438D00A12282 /* String+Utils.swift */,
+				408542A320B38CF10067B39B /* Array+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 			children = (
 				40C4828420AE5AE500A12282 /* BaseUITests+Utils.swift */,
 				40A0B6B920AE6E1A00FFFE6F /* KIF+Utils.swift */,
+				408542A520B3B20E0067B39B /* RandomSampleSpec.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -632,6 +638,7 @@
 				405D44C62098D64800160077 /* Constants.swift in Sources */,
 				401FBBEB209BA33A00F3B174 /* SearchViewModel.swift in Sources */,
 				40DA7BF2209B4BD10016B326 /* HeaderView+Rx.swift in Sources */,
+				408542A420B38CF10067B39B /* Array+Utils.swift in Sources */,
 				40BCC7BA2098F982009279FA /* HeaderView.swift in Sources */,
 				40BCC7BC2098FBE7009279FA /* NSObject+Rx.swift in Sources */,
 				40BCC7BE2098FC08009279FA /* UIView+Constraints.swift in Sources */,
@@ -650,6 +657,7 @@
 				40C4828520AE5AE500A12282 /* BaseUITests+Utils.swift in Sources */,
 				40A0B6BA20AE6E1A00FFFE6F /* KIF+Utils.swift in Sources */,
 				405D44D02098D7CD00160077 /* NorrisRepositorySpec.swift in Sources */,
+				408542A620B3B20E0067B39B /* RandomSampleSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
