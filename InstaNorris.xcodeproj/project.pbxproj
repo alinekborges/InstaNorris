@@ -259,7 +259,6 @@
 		405D44B22098D5CD00160077 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				405D44C22098D64800160077 /* Constants.swift */,
 				405D44C32098D64800160077 /* NorrisRouter.swift */,
 				405D44C12098D64800160077 /* NorrisService.swift */,
 				405D44C42098D64800160077 /* NorrisServiceImpl.swift */,
@@ -270,6 +269,7 @@
 		405D44B32098D5D200160077 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				405D44C22098D64800160077 /* Constants.swift */,
 				405D44C92098D64D00160077 /* Networking+Utils.swift */,
 				40BCC7BD2098FC08009279FA /* UIView+Constraints.swift */,
 				40DA7BC9209AB5660016B326 /* UIColor+Utils.swift */,

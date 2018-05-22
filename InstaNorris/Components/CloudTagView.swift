@@ -24,11 +24,13 @@ class CloudTagView: UIView {
 
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        self.translatesAutoresizingMaskIntoConstraints = false
         self.setupViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(frame: CGRect.zero)
+        super.init(coder: aDecoder)
+        self.translatesAutoresizingMaskIntoConstraints = false
         //self.setupViews()
     }
     

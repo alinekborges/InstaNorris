@@ -15,3 +15,11 @@ struct NetworkingConstants {
     static let baseURL = "https://api.chucknorris.io/jokes"
     
 }
+
+struct Constants {
+    
+    private init() {}
+    
+    static let categoryCount = 8
+    
+}

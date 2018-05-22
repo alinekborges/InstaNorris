@@ -16,6 +16,7 @@ class SearchViewModel {
     init(norrisRepository: NorrisRepository) {
         
         self.categories = norrisRepository.categories()
+            .map { $0.randomSample(Constants.categoryCount) }
             .asDriver(onErrorJustReturn: [])
         
     }
