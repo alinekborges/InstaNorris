@@ -34,6 +34,7 @@
 		40A0B6BA20AE6E1A00FFFE6F /* KIF+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0B6B920AE6E1A00FFFE6F /* KIF+Utils.swift */; };
 		40A3701920B4801800D2F469 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A3701820B4801800D2F469 /* LocalStorage.swift */; };
 		40A3701C20B4810E00D2F469 /* LocalStorageImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A3701B20B4810E00D2F469 /* LocalStorageImpl.swift */; };
+		40A3702420B4D56400D2F469 /* LocalStorageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A3702320B4D56400D2F469 /* LocalStorageSpec.swift */; };
 		40BCC7B62098F1D3009279FA /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7B52098F1D3009279FA /* SearchResponse.swift */; };
 		40BCC7B82098F1F7009279FA /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7B72098F1F7009279FA /* Fact.swift */; };
 		40BCC7BA2098F982009279FA /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7B92098F982009279FA /* HeaderView.swift */; };
@@ -97,6 +98,7 @@
 		40A0B6B920AE6E1A00FFFE6F /* KIF+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KIF+Utils.swift"; sourceTree = "<group>"; };
 		40A3701820B4801800D2F469 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		40A3701B20B4810E00D2F469 /* LocalStorageImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageImpl.swift; sourceTree = "<group>"; };
+		40A3702320B4D56400D2F469 /* LocalStorageSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageSpec.swift; sourceTree = "<group>"; };
 		40BCC7B52098F1D3009279FA /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		40BCC7B72098F1F7009279FA /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
 		40BCC7B92098F982009279FA /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		405D448E2098C16000160077 /* InstaNorrisTests */ = {
 			isa = PBXGroup;
 			children = (
+				40A3702220B4D52400D2F469 /* Storage */,
 				40C4828620AE5AE800A12282 /* Utils */,
 				40C4828120AE4E2C00A12282 /* UITests */,
 				40C4827E20AE4D1E00A12282 /* Components */,
@@ -327,6 +330,14 @@
 			children = (
 				40A3701820B4801800D2F469 /* LocalStorage.swift */,
 				40A3701B20B4810E00D2F469 /* LocalStorageImpl.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		40A3702220B4D52400D2F469 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				40A3702320B4D56400D2F469 /* LocalStorageSpec.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -669,6 +680,7 @@
 				40C4828320AE4E3800A12282 /* BaseUITest.swift in Sources */,
 				408606D120AF22CC00258B7A /* MockNorrisRepository.swift in Sources */,
 				40C4828020AE4D2C00A12282 /* CloudTagViewSpec.swift in Sources */,
+				40A3702420B4D56400D2F469 /* LocalStorageSpec.swift in Sources */,
 				405D44CE2098D7BF00160077 /* MockNorrisService.swift in Sources */,
 				40C4828520AE5AE500A12282 /* BaseUITests+Utils.swift in Sources */,
 				40A0B6BA20AE6E1A00FFFE6F /* KIF+Utils.swift in Sources */,
