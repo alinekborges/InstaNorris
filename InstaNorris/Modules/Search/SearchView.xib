@@ -5,13 +5,14 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14109"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchView" customModule="InstaNorris" customModuleProvider="target">
             <connections>
                 <outlet property="cloudTagView" destination="Nk1-RG-rmT" id="p2O-Q2-ewE"/>
+                <outlet property="recentSearchTableView" destination="BTJ-UF-FdE" id="UVp-Rk-0p9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,16 +22,32 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nk1-RG-rmT" customClass="CloudTagView" customModule="InstaNorris" customModuleProvider="target">
-                    <rect key="frame" x="20" y="20" width="348" height="193"/>
+                    <rect key="frame" x="20" y="20" width="348" height="120"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="193" id="scS-Uw-KC1"/>
+                        <constraint firstAttribute="height" constant="120" id="scS-Uw-KC1"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56V-JH-wLY">
+                    <rect key="frame" x="20" y="152" width="112" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BTJ-UF-FdE">
+                    <rect key="frame" x="20" y="181" width="348" height="208"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="BTJ-UF-FdE" firstAttribute="leading" secondItem="56V-JH-wLY" secondAttribute="leading" id="O3Y-qV-Nt6"/>
+                <constraint firstAttribute="bottom" secondItem="BTJ-UF-FdE" secondAttribute="bottom" constant="20" id="PKS-Hr-f8G"/>
+                <constraint firstItem="BTJ-UF-FdE" firstAttribute="trailing" secondItem="Nk1-RG-rmT" secondAttribute="trailing" id="PtN-dg-CAR"/>
+                <constraint firstItem="56V-JH-wLY" firstAttribute="leading" secondItem="Nk1-RG-rmT" secondAttribute="leading" id="S58-ON-uIr"/>
                 <constraint firstItem="Nk1-RG-rmT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="dbK-tW-UZh"/>
+                <constraint firstItem="BTJ-UF-FdE" firstAttribute="top" secondItem="56V-JH-wLY" secondAttribute="bottom" constant="8" id="hTk-eR-O1j"/>
+                <constraint firstItem="56V-JH-wLY" firstAttribute="top" secondItem="Nk1-RG-rmT" secondAttribute="bottom" constant="12" id="j3J-dl-zyv"/>
                 <constraint firstAttribute="trailing" secondItem="Nk1-RG-rmT" secondAttribute="trailing" constant="20" id="u49-Yb-FC1"/>
                 <constraint firstItem="Nk1-RG-rmT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="vlj-Cp-FQd"/>
             </constraints>

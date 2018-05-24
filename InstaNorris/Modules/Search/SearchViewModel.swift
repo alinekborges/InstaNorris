@@ -11,13 +11,30 @@ import RxCocoa
 
 class SearchViewModel {
     
-    let categories: Driver<[String]>
+    let recentSearch: Driver<[String]>
     
-    init(norrisRepository: NorrisRepository) {
+    let categories = PublishSubject<[String]>()
+    let categoriesError = PublishSubject<Error>()
+    
+    let disposeBag = DisposeBag()
+    
+    init(norrisRepository: NorrisRepository,
+         localStorage: LocalStorage) {
         
-        self.categories = norrisRepository.categories()
-            .map { $0.randomSample(Constants.categoryCount) }
+        let categoriesResult = norrisRepository.categories()
+            .asDriver(onErrorJustReturn: NorrisResponse.error(error: NorrisError(message: "default error message")))
+        
+        self.recentSearch = localStorage.lastSearch
             .asDriver(onErrorJustReturn: [])
+        
+        categoriesResult
+            .drive(onNext: { [weak self] response in
+                switch response {
+                case .success(let categories): self?.categories.onNext(categories.randomSample(Constants.categoryCount))
+                case .error(let error):
+                    self?.categoriesError.onNext(error)
+                }
+            }).disposed(by: disposeBag)
         
     }
 }

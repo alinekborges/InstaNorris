@@ -22,8 +22,11 @@ extension Reactive where Base: HeaderView {
         return self.base.searchButton.rx.tap
     }
     
-    var search: Observable<String> {
-        return self.base.searchTextField.rx.text.asObservable().unwrap()
+    var search: Driver<String> {
+        return self.base.searchTextField.rx.text
+            .asObservable()
+            .unwrap()
+            .asDriver(onErrorJustReturn: "")
     }
     
 }

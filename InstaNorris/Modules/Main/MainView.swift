@@ -47,7 +47,10 @@ class MainView: UIViewController {
 extension MainView {
     
     func setupViewModel() {
-        self.viewModel = MainViewModel(search: self.headerView.rx.search, repository: self.repository)
+        self.viewModel = MainViewModel(
+            search: self.headerView.rx.search,
+            searchTap: self.headerView.rx.searchTap.asSignal(),
+            repository: self.repository)
     }
     
     func configureViews() {
@@ -80,11 +83,10 @@ extension MainView {
             .subscribe(onNext: {
                 self.searchContainer.isHidden = false
             }).disposed(by: rx.disposeBag)
-        
-        self.headerView.searchTextField.rx.controlEvent(.editingDidEnd)
-            .subscribe(onNext: {
-                print("editing ended")
-            }).disposed(by: rx.disposeBag)
+       
+        self.headerView.rx.searchTap.bind {
+            self.searchContainer.isHidden = true
+            }.disposed(by: rx.disposeBag)
     }
     
     func configureSearchView() {
@@ -101,6 +103,6 @@ extension MainView: SearchDelegate {
     }
     
     func searchCategory(_ category: String) {
-        self.viewModel.search.onNext(category)
+        //self.viewModel.search.onNext(category)
     }
 }

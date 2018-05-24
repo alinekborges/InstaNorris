@@ -11,23 +11,29 @@ import RxCocoa
 
 class MainViewModel {
     
-    let categories: Driver<[String]>
-    let results: Observable<[Fact]>
+    let results = PublishSubject<[Fact]>()
+    let searchError = PublishSubject<Error>()
     
-    let search = PublishSubject<String>()
+    let disposeBag = DisposeBag()
     
-    init(search: Observable<String>, repository: NorrisRepository) {
+    init(search: Driver<String>, searchTap: Signal<Void>, repository: NorrisRepository) {
         
-        self.categories = repository.categories()
-            .asDriver(onErrorJustReturn: [])
-        
-//        self.results = self.search
-//            .flatMap {
-//                return repository.search($0)
-//                    .map { $0.result }
-        
-        self.results = repository.search("teste")
-            .map { $0.result }.asObservable()
+        let searchResult = searchTap.debug().withLatestFrom(search)
+            .flatMapLatest { search in
+                return repository.search(search)
+                    .map { $0 }
+                    .asDriver(onErrorJustReturn: NorrisResponse.error(error: NorrisError(message: "default error message")))
+        }
+
+        searchResult
+            .drive(onNext: { [weak self] response in
+                switch response {
+                case .success(let facts):
+                    self?.results.onNext(facts)
+                case .error(let error):
+                    self?.searchError.onNext(error)
+                }
+            }).disposed(by: disposeBag)
         
     }
 }
