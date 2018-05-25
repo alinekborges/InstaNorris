@@ -50,6 +50,7 @@ class CloudTagView: UIView {
         self.collectionView.register(TagCell.self, forCellWithReuseIdentifier: "TagCell")
         self.setupBindinds()
         self.collectionView.delegate = self
+        collectionView.allowsSelection = true
         self.collectionView.prepareForConstraints()
         self.collectionView.pinEdgesToSuperview()
         self.backgroundColor = .clear
@@ -66,19 +67,31 @@ class CloudTagView: UIView {
                     cell.bind(element)
             }.disposed(by: rx.disposeBag)
         
+//        collectionView.rx.itemSelected.subscribe(onNext: {
+//            print("selected \($0)")
+//        })
+//        
+//        collectionView.rx.modelSelected(String.self).subscribe(onNext: {
+//            print("selected: \($0)")
+//        })
+        
     }
     
 }
 
-extension CloudTagView: UICollectionViewDelegateFlowLayout {
+extension CloudTagView: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let item = self.items[indexPath.row]
-        let width = item.width(usingFont: TagCell.font) + 20
-        return CGSize(width: width, height: 32)
+        let width = item.width(usingFont: TagCell.font) + 40
+        return CGSize(width: width, height: 50)
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        print(indexPath)
+//    }
     
 }
 
@@ -93,6 +106,10 @@ class TagCell: UICollectionViewCell {
     func bind(_ string: String) {
         self.titleLabel.text = string
         self.accessibilityIdentifier = string
+        
+//        self.rx.tapGesture().when(.recognized).subscribe(onNext: {
+//            print($0)
+//        })
     }
     
     override func layoutSubviews() {

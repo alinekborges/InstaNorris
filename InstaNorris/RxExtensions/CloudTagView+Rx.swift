@@ -18,7 +18,7 @@ extension Reactive where Base: CloudTagView {
         }
     }
     
-    var categorySelected: Driver<String> {
+    var tagSelected: Driver<String> {
         return base.collectionView.rx.modelSelected(String.self)
                 .asDriver(onErrorJustReturn: "")
     }

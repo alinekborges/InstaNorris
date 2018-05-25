@@ -35,7 +35,8 @@ extension DefaultContainer {
         
         self.container.register(MainView.self) { resolver in
             MainView(searchView: resolver.resolve(SearchView.self)!,
-                repository: resolver.resolve(NorrisRepository.self)!)
+                repository: resolver.resolve(NorrisRepository.self)!,
+                localStorage: resolver.resolve(LocalStorage.self)!)
         }
     }
     

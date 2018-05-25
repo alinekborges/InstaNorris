@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,19 +34,22 @@
                         <constraint firstAttribute="height" constant="160" placeholder="YES" id="MMS-BQ-rqz"/>
                     </constraints>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nbR-Id-YHa">
-                    <rect key="frame" x="0.0" y="168" width="375" height="499"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbR-Id-YHa">
+                    <rect key="frame" x="0.0" y="160" width="375" height="507"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Qbv-lJ-et2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0vn-o1-1bf"/>
+                <constraint firstItem="nbR-Id-YHa" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="3gj-hb-ifF"/>
+                <constraint firstItem="nbR-Id-YHa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="F9o-cq-Hbl"/>
                 <constraint firstItem="XmI-yI-Xbw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Go1-LJ-nMr"/>
+                <constraint firstItem="nbR-Id-YHa" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="M43-lf-pfs"/>
                 <constraint firstItem="Qbv-lJ-et2" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Oah-Un-MJo"/>
                 <constraint firstItem="XmI-yI-Xbw" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="PNz-pL-XSu"/>
                 <constraint firstItem="Qbv-lJ-et2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SrQ-BM-Ndx"/>
+                <constraint firstItem="nbR-Id-YHa" firstAttribute="top" secondItem="XmI-yI-Xbw" secondAttribute="bottom" id="Xme-W4-OeF"/>
                 <constraint firstItem="Qbv-lJ-et2" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fWY-yU-192"/>
                 <constraint firstItem="XmI-yI-Xbw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mHW-ae-V1I"/>
             </constraints>
