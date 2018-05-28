@@ -11,6 +11,7 @@
 		401FBBEB209BA33A00F3B174 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401FBBE8209BA33A00F3B174 /* SearchViewModel.swift */; };
 		401FBBEC209BA33A00F3B174 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 401FBBE9209BA33A00F3B174 /* SearchView.xib */; };
 		401FBBEE209BA61A00F3B174 /* Rx+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401FBBED209BA61A00F3B174 /* Rx+Utils.swift */; };
+		404C80F420BB6ACA00C36D65 /* NorrisResponse+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404C80F320BB6ACA00C36D65 /* NorrisResponse+Rx.swift */; };
 		405D44A52098D54B00160077 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405D44A32098D54B00160077 /* LaunchScreen.storyboard */; };
 		405D44A82098D56200160077 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 405D44A62098D56200160077 /* Info.plist */; };
 		405D44A92098D56200160077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44A72098D56200160077 /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 		405D44CA2098D64D00160077 /* Networking+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44C92098D64D00160077 /* Networking+Utils.swift */; };
 		405D44CE2098D7BF00160077 /* MockNorrisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44CD2098D7BF00160077 /* MockNorrisService.swift */; };
 		405D44D02098D7CD00160077 /* NorrisRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44CF2098D7CD00160077 /* NorrisRepositorySpec.swift */; };
+		407A2ABF20B85A5000FCC2D1 /* SearchViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407A2ABE20B85A5000FCC2D1 /* SearchViewModelSpec.swift */; };
 		408542A420B38CF10067B39B /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408542A320B38CF10067B39B /* Array+Utils.swift */; };
 		408542A620B3B20E0067B39B /* RandomSampleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408542A520B3B20E0067B39B /* RandomSampleSpec.swift */; };
 		408606D120AF22CC00258B7A /* MockNorrisRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408606D020AF22CC00258B7A /* MockNorrisRepository.swift */; };
@@ -53,6 +55,7 @@
 		40DA7BD0209B3E2F0016B326 /* UITextFIeld+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA7BCF209B3E2F0016B326 /* UITextFIeld+Utils.swift */; };
 		40DA7BD2209B3FF40016B326 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA7BD1209B3FF40016B326 /* R.generated.swift */; };
 		40DA7BF2209B4BD10016B326 /* HeaderView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA7BF1209B4BD10016B326 /* HeaderView+Rx.swift */; };
+		40F63F7B20BAE7C6007E0328 /* MockLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F63F7A20BAE7C6007E0328 /* MockLocalStorage.swift */; };
 		626A356D802BA04F15EF2C0A /* Pods_InstaNorrisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE77A4F49C701B10B4FE1A7 /* Pods_InstaNorrisTests.framework */; };
 		E123DA4ACB802F70168853F9 /* Pods_InstaNorris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CA89E0A059D94CD92D2FD3 /* Pods_InstaNorris.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +75,7 @@
 		401FBBE8209BA33A00F3B174 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		401FBBE9209BA33A00F3B174 /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		401FBBED209BA61A00F3B174 /* Rx+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Utils.swift"; sourceTree = "<group>"; };
+		404C80F320BB6ACA00C36D65 /* NorrisResponse+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NorrisResponse+Rx.swift"; sourceTree = "<group>"; };
 		405D44772098C16000160077 /* InstaNorris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaNorris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		405D448B2098C16000160077 /* InstaNorrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaNorrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		405D44912098C16000160077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 		405D44C92098D64D00160077 /* Networking+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Networking+Utils.swift"; sourceTree = "<group>"; };
 		405D44CD2098D7BF00160077 /* MockNorrisService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNorrisService.swift; sourceTree = "<group>"; };
 		405D44CF2098D7CD00160077 /* NorrisRepositorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NorrisRepositorySpec.swift; sourceTree = "<group>"; };
+		407A2ABE20B85A5000FCC2D1 /* SearchViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelSpec.swift; sourceTree = "<group>"; };
 		408542A320B38CF10067B39B /* Array+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
 		408542A520B3B20E0067B39B /* RandomSampleSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSampleSpec.swift; sourceTree = "<group>"; };
 		408606D020AF22CC00258B7A /* MockNorrisRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNorrisRepository.swift; sourceTree = "<group>"; };
@@ -117,6 +122,7 @@
 		40DA7BCF209B3E2F0016B326 /* UITextFIeld+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextFIeld+Utils.swift"; sourceTree = "<group>"; };
 		40DA7BD1209B3FF40016B326 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		40DA7BF1209B4BD10016B326 /* HeaderView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeaderView+Rx.swift"; sourceTree = "<group>"; };
+		40F63F7A20BAE7C6007E0328 /* MockLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocalStorage.swift; sourceTree = "<group>"; };
 		44DB4F89243AFA231A1D36F9 /* Pods-InstaNorris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaNorris.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris.release.xcconfig"; sourceTree = "<group>"; };
 		73CA89E0A059D94CD92D2FD3 /* Pods_InstaNorris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaNorris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CDA602A63EB08B8C09599D1 /* Pods-InstaNorris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaNorris.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris.debug.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +204,7 @@
 		405D448E2098C16000160077 /* InstaNorrisTests */ = {
 			isa = PBXGroup;
 			children = (
+				407A2ABD20B859AB00FCC2D1 /* Modules */,
 				40A3702220B4D52400D2F469 /* Storage */,
 				40C4828620AE5AE800A12282 /* Utils */,
 				40C4828120AE4E2C00A12282 /* UITests */,
@@ -260,6 +267,7 @@
 				40DA7BF1209B4BD10016B326 /* HeaderView+Rx.swift */,
 				401FBBED209BA61A00F3B174 /* Rx+Utils.swift */,
 				40C4827C20AE4B4B00A12282 /* CloudTagView+Rx.swift */,
+				404C80F320BB6ACA00C36D65 /* NorrisResponse+Rx.swift */,
 			);
 			path = RxExtensions;
 			sourceTree = "<group>";
@@ -304,6 +312,7 @@
 			children = (
 				405D44CD2098D7BF00160077 /* MockNorrisService.swift */,
 				408606D020AF22CC00258B7A /* MockNorrisRepository.swift */,
+				40F63F7A20BAE7C6007E0328 /* MockLocalStorage.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -323,6 +332,14 @@
 				40BCC7B72098F1F7009279FA /* Fact.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		407A2ABD20B859AB00FCC2D1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				407A2ABE20B85A5000FCC2D1 /* SearchViewModelSpec.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		40A3701A20B4802100D2F469 /* Storage */ = {
@@ -660,6 +677,7 @@
 				40C22EA520ABA46D0032FB70 /* CloudTagView.swift in Sources */,
 				405D44C52098D64800160077 /* NorrisService.swift in Sources */,
 				40BCC7B62098F1D3009279FA /* SearchResponse.swift in Sources */,
+				404C80F420BB6ACA00C36D65 /* NorrisResponse+Rx.swift in Sources */,
 				40C4827D20AE4B4B00A12282 /* CloudTagView+Rx.swift in Sources */,
 				401FBBEE209BA61A00F3B174 /* Rx+Utils.swift in Sources */,
 				40A3701920B4801800D2F469 /* LocalStorage.swift in Sources */,
@@ -680,10 +698,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				40C4828320AE4E3800A12282 /* BaseUITest.swift in Sources */,
+				40F63F7B20BAE7C6007E0328 /* MockLocalStorage.swift in Sources */,
 				408606D120AF22CC00258B7A /* MockNorrisRepository.swift in Sources */,
 				40C4828020AE4D2C00A12282 /* CloudTagViewSpec.swift in Sources */,
 				40A3702420B4D56400D2F469 /* LocalStorageSpec.swift in Sources */,
 				405D44CE2098D7BF00160077 /* MockNorrisService.swift in Sources */,
+				407A2ABF20B85A5000FCC2D1 /* SearchViewModelSpec.swift in Sources */,
 				40C4828520AE5AE500A12282 /* BaseUITests+Utils.swift in Sources */,
 				40A0B6BA20AE6E1A00FFFE6F /* KIF+Utils.swift in Sources */,
 				405D44D02098D7CD00160077 /* NorrisRepositorySpec.swift in Sources */,

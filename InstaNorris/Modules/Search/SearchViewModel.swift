@@ -12,9 +12,10 @@ import RxCocoa
 class SearchViewModel {
     
     let recentSearch: Driver<[String]>
+    let isRecentSearchHidden: Driver<Bool>
     
-    let categories = PublishSubject<[String]>()
-    let categoriesError = PublishSubject<Error>()
+    let categories: Driver<[String]>
+    let categoriesError: Observable<NorrisError>
     
     let disposeBag = DisposeBag()
     
@@ -22,19 +23,35 @@ class SearchViewModel {
          localStorage: LocalStorage) {
         
         let categoriesResult = norrisRepository.categories()
-            .asDriver(onErrorJustReturn: NorrisResponse.error(error: NorrisError(message: "default error message")))
         
         self.recentSearch = localStorage.lastSearch
             .asDriver(onErrorJustReturn: [])
         
-        categoriesResult
-            .drive(onNext: { [weak self] response in
-                switch response {
-                case .success(let categories): self?.categories.onNext(categories.randomSample(Constants.categoryCount))
-                case .error(let error):
-                    self?.categoriesError.onNext(error)
-                }
-            }).disposed(by: disposeBag)
+        self.isRecentSearchHidden = self.recentSearch
+            .map { $0.count == 0 }
+            .startWith(true)
+        
+//        categoriesResult
+//            .drive(onNext: { [weak self] response in
+//                switch response {
+//                case .success(let categories): self?.categories.onNext(categories.randomSample(Constants.categoryCount))
+//                case .error(let error):
+//                    self?.categoriesError.onNext(error)
+//                }
+//            }).disposed(by: disposeBag)
+        
+        //rself.categories =
+        
+        self.categories = categoriesResult
+            .asObservable()
+            .filterSuccess()
+            .asDriver(onErrorJustReturn: [])
+        
+        self.categoriesError = categoriesResult
+            .asObservable()
+            .filterError()
+        
+        
         
     }
 }
