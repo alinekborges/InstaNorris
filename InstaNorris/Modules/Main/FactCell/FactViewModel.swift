@@ -15,6 +15,8 @@ class FactItemViewModel {
     let fact: PublishSubject<Fact>
     
     let text: Driver<String>
+    let backgroundImage: Driver<UIImage?>
+    let fontSize: Driver<CGFloat>
     
     init() {
         self.fact = PublishSubject<Fact>()
@@ -22,6 +24,15 @@ class FactItemViewModel {
         self.text = self.fact
             .map { $0.value }
             .asDriver(onErrorJustReturn: "")
+        
+        self.backgroundImage = Driver.just(Random.image)
+        
+        self.fontSize = self.text
+            .map {
+                return $0.count < 80 ?
+                    Constants.largeFontSize : Constants.mediumFontSize
+        }
+
     }
     
     func bind(_ fact: Fact) {

@@ -11,6 +11,7 @@
 		401FBBEB209BA33A00F3B174 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401FBBE8209BA33A00F3B174 /* SearchViewModel.swift */; };
 		401FBBEC209BA33A00F3B174 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 401FBBE9209BA33A00F3B174 /* SearchView.xib */; };
 		401FBBEE209BA61A00F3B174 /* Rx+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401FBBED209BA61A00F3B174 /* Rx+Utils.swift */; };
+		404B4C8320BC4F6F004830CA /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B4C8220BC4F6F004830CA /* UIView+Utils.swift */; };
 		404C80F420BB6ACA00C36D65 /* NorrisResponse+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404C80F320BB6ACA00C36D65 /* NorrisResponse+Rx.swift */; };
 		405D44A52098D54B00160077 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405D44A32098D54B00160077 /* LaunchScreen.storyboard */; };
 		405D44A82098D56200160077 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 405D44A62098D56200160077 /* Info.plist */; };
@@ -29,6 +30,9 @@
 		405D44CA2098D64D00160077 /* Networking+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44C92098D64D00160077 /* Networking+Utils.swift */; };
 		405D44CE2098D7BF00160077 /* MockNorrisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44CD2098D7BF00160077 /* MockNorrisService.swift */; };
 		405D44D02098D7CD00160077 /* NorrisRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44CF2098D7CD00160077 /* NorrisRepositorySpec.swift */; };
+		40696EC020BC301100137E48 /* RandomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40696EBF20BC301100137E48 /* RandomImage.swift */; };
+		40696EC220BC30B200137E48 /* Random+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40696EC120BC30B100137E48 /* Random+Utils.swift */; };
+		40696EC420BC3DBF00137E48 /* UILabel+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40696EC320BC3DBF00137E48 /* UILabel+Rx.swift */; };
 		407A2ABF20B85A5000FCC2D1 /* SearchViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407A2ABE20B85A5000FCC2D1 /* SearchViewModelSpec.swift */; };
 		408542A420B38CF10067B39B /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408542A320B38CF10067B39B /* Array+Utils.swift */; };
 		408542A620B3B20E0067B39B /* RandomSampleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408542A520B3B20E0067B39B /* RandomSampleSpec.swift */; };
@@ -75,6 +79,7 @@
 		401FBBE8209BA33A00F3B174 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		401FBBE9209BA33A00F3B174 /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		401FBBED209BA61A00F3B174 /* Rx+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Utils.swift"; sourceTree = "<group>"; };
+		404B4C8220BC4F6F004830CA /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		404C80F320BB6ACA00C36D65 /* NorrisResponse+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NorrisResponse+Rx.swift"; sourceTree = "<group>"; };
 		405D44772098C16000160077 /* InstaNorris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaNorris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		405D448B2098C16000160077 /* InstaNorrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaNorrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +101,9 @@
 		405D44C92098D64D00160077 /* Networking+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Networking+Utils.swift"; sourceTree = "<group>"; };
 		405D44CD2098D7BF00160077 /* MockNorrisService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNorrisService.swift; sourceTree = "<group>"; };
 		405D44CF2098D7CD00160077 /* NorrisRepositorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NorrisRepositorySpec.swift; sourceTree = "<group>"; };
+		40696EBF20BC301100137E48 /* RandomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImage.swift; sourceTree = "<group>"; };
+		40696EC120BC30B100137E48 /* Random+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Random+Utils.swift"; sourceTree = "<group>"; };
+		40696EC320BC3DBF00137E48 /* UILabel+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Rx.swift"; sourceTree = "<group>"; };
 		407A2ABE20B85A5000FCC2D1 /* SearchViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelSpec.swift; sourceTree = "<group>"; };
 		408542A320B38CF10067B39B /* Array+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
 		408542A520B3B20E0067B39B /* RandomSampleSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSampleSpec.swift; sourceTree = "<group>"; };
@@ -256,6 +264,7 @@
 			children = (
 				40DA7BD1209B3FF40016B326 /* R.generated.swift */,
 				405D44BF2098D63E00160077 /* Assets.xcassets */,
+				40696EBF20BC301100137E48 /* RandomImage.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -268,6 +277,7 @@
 				401FBBED209BA61A00F3B174 /* Rx+Utils.swift */,
 				40C4827C20AE4B4B00A12282 /* CloudTagView+Rx.swift */,
 				404C80F320BB6ACA00C36D65 /* NorrisResponse+Rx.swift */,
+				40696EC320BC3DBF00137E48 /* UILabel+Rx.swift */,
 			);
 			path = RxExtensions;
 			sourceTree = "<group>";
@@ -292,6 +302,8 @@
 				40DA7BCF209B3E2F0016B326 /* UITextFIeld+Utils.swift */,
 				40C4827A20AE438D00A12282 /* String+Utils.swift */,
 				408542A320B38CF10067B39B /* Array+Utils.swift */,
+				40696EC120BC30B100137E48 /* Random+Utils.swift */,
+				404B4C8220BC4F6F004830CA /* UIView+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -665,6 +677,8 @@
 				405D44CA2098D64D00160077 /* Networking+Utils.swift in Sources */,
 				405D44C82098D64800160077 /* NorrisServiceImpl.swift in Sources */,
 				40BCC7C5209AB3AF009279FA /* FactViewModel.swift in Sources */,
+				40696EC420BC3DBF00137E48 /* UILabel+Rx.swift in Sources */,
+				40696EC020BC301100137E48 /* RandomImage.swift in Sources */,
 				40BCC7C3209AB36B009279FA /* FactCell.swift in Sources */,
 				40DA7BD2209B3FF40016B326 /* R.generated.swift in Sources */,
 				405D44BA2098D62800160077 /* MainView.swift in Sources */,
@@ -679,6 +693,7 @@
 				40BCC7B62098F1D3009279FA /* SearchResponse.swift in Sources */,
 				404C80F420BB6ACA00C36D65 /* NorrisResponse+Rx.swift in Sources */,
 				40C4827D20AE4B4B00A12282 /* CloudTagView+Rx.swift in Sources */,
+				40696EC220BC30B200137E48 /* Random+Utils.swift in Sources */,
 				401FBBEE209BA61A00F3B174 /* Rx+Utils.swift in Sources */,
 				40A3701920B4801800D2F469 /* LocalStorage.swift in Sources */,
 				405D44C62098D64800160077 /* Constants.swift in Sources */,
@@ -689,6 +704,7 @@
 				40BCC7BC2098FBE7009279FA /* NSObject+Rx.swift in Sources */,
 				40BCC7BE2098FC08009279FA /* UIView+Constraints.swift in Sources */,
 				40DA7BCA209AB5660016B326 /* UIColor+Utils.swift in Sources */,
+				404B4C8320BC4F6F004830CA /* UIView+Utils.swift in Sources */,
 				40A3701C20B4810E00D2F469 /* LocalStorageImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

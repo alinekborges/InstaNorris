@@ -62,7 +62,7 @@ extension MainView {
         self.tableView.register(cellType: FactCell.self)
         self.tableView.estimatedRowHeight = 200
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        
+        self.tableView.allowsSelection = false
         self.configureSearchView()
         self.searchView.delegate = self
     }
@@ -72,8 +72,9 @@ extension MainView {
         self.viewModel.results
             .bind(to: tableView.rx
                 .items(cellIdentifier: "FactCell",
-                       cellType: FactCell.self)) { _, element, cell in
+                       cellType: FactCell.self)) { [weak self] _, element, cell in
                         cell.bind(element)
+                        cell.delegate = self
             }.disposed(by: rx.disposeBag)
         
         self.tableView.rx.contentOffset
@@ -113,5 +114,14 @@ extension MainView: SearchDelegate {
     
     func searchCategory(_ category: String) {
         //self.viewModel.search.onNext(category)
+    }
+}
+
+extension MainView: FactCellDelegate {
+    func share(image: UIImage?) {
+        let imageShare = [ image! ]
+        let activityViewController = UIActivityViewController(activityItems: imageShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
     }
 }
