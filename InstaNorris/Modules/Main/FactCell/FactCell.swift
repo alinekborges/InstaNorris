@@ -13,8 +13,20 @@ class FactCell: UITableViewCell, NibReusable {
     
     @IBOutlet weak var factLabel: UILabel!
     
-    func bind(_ fact: Fact) {
-        self.factLabel.text = fact.value
+    var viewModel = FactItemViewModel()
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setupBindings()
     }
     
+    func bind(_ fact: Fact) {
+        self.viewModel.bind(fact)
+    }
+    
+    func setupBindings() {
+        self.viewModel.text
+            .drive(factLabel.rx.text)
+            .disposed(by: rx.disposeBag)
+    }
 }

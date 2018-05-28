@@ -7,3 +7,25 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+
+class FactItemViewModel {
+    
+    let fact: PublishSubject<Fact>
+    
+    let text: Driver<String>
+    
+    init() {
+        self.fact = PublishSubject<Fact>()
+        
+        self.text = self.fact
+            .map { $0.value }
+            .asDriver(onErrorJustReturn: "")
+    }
+    
+    func bind(_ fact: Fact) {
+        self.fact.onNext(fact)
+    }
+    
+}

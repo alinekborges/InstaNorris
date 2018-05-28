@@ -32,14 +32,18 @@ class MainViewModel {
             defaultSearch,
             input.categorySelected)
         
-        let searchResult = searchQuery
-            .flatMapLatest { search in
-                return repositories.repository.search(search)
-                    .do(onSuccess: { _ in repositories.localStorage.addSearch(search) })
-                    .map { $0 }
-                    .asDriver(onErrorJustReturn: NorrisResponse.error(error:
-                        NorrisError(message: "default error message")))
-        }
+//        let searchResult = searchQuery
+//            .flatMapLatest { search in
+//                return repositories.repository.search(search)
+//                    .do(onSuccess: { _ in repositories.localStorage.addSearch(search) })
+//                    .map { $0 }
+//                    .asDriver(onErrorJustReturn: NorrisResponse.error(error:
+//                        NorrisError(message: "default error message")))
+//        }
+        
+        let searchResult = repositories.repository.search("teste")
+            .asDriver(onErrorJustReturn: NorrisResponse.error(error:
+                                        NorrisError(message: "default error message")))
 
         searchResult
             .drive(onNext: { [weak self] response in
