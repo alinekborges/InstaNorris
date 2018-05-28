@@ -18,13 +18,29 @@ class NorrisRepositoryImpl: NorrisRepository {
         self.service = service
     }
     
-    func categories() -> Single<[String]> {
+    func categories() -> Single<NorrisResponse<[String]>> {
         return self.service.categories()
-            .map([String].self)
+            .map { response in
+                if response.statusCode == 200 {
+                    if let categories = try? response.map([String].self) {
+                        return NorrisResponse.success(value: categories)
+                    }
+                }
+                
+                return NorrisResponse.error(error: NorrisError(message: "error.categories"))
+        }
+        
     }
     
-    func search(_ query: String) -> Single<SearchResponse> {
+    func search(_ query: String) -> Single<NorrisResponse<[Fact]>> {
         return self.service.search(query)
-            .map(SearchResponse.self)
+            .map { response in
+                if response.statusCode == 200 {
+                    if let searchResponse = try? response.map(SearchResponse.self) {
+                        return NorrisResponse.success(value: searchResponse.result)
+                    }
+                }
+                return NorrisResponse.error(error: NorrisError(message: "error.facts"))
+        }
     }
 }

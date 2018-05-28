@@ -15,15 +15,17 @@ class MainView: UIViewController {
     
     var viewModel: MainViewModel!
     let repository: NorrisRepository
+    let localStorage: LocalStorage
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: HeaderView!
     @IBOutlet weak var searchContainer: UIView!
     let searchView: SearchView
     
-    init(searchView: SearchView, repository: NorrisRepository) {
+    init(searchView: SearchView, repository: NorrisRepository, localStorage: LocalStorage) {
         self.repository = repository
         self.searchView = searchView
+        self.localStorage = localStorage
         super.init(nibName: String(describing: MainView.self), bundle: nil)
     }
     
@@ -47,7 +49,12 @@ class MainView: UIViewController {
 extension MainView {
     
     func setupViewModel() {
-        self.viewModel = MainViewModel(search: self.headerView.rx.search, repository: self.repository)
+        self.viewModel = MainViewModel(
+            input: (search: self.headerView.rx.search,
+                  searchTap: self.headerView.rx.searchTap.asSignal(),
+                  categorySelected: self.searchView.categorySelected),
+            repositories: (repository: self.repository,
+                           localStorage: localStorage))
     }
     
     func configureViews() {
@@ -80,11 +87,15 @@ extension MainView {
             .subscribe(onNext: {
                 self.searchContainer.isHidden = false
             }).disposed(by: rx.disposeBag)
+       
+        self.viewModel.searchHidden
+            .bind(to: self.searchContainer.rx.isHidden)
+            .disposed(by: rx.disposeBag)
         
-        self.headerView.searchTextField.rx.controlEvent(.editingDidEnd)
-            .subscribe(onNext: {
-                print("editing ended")
-            }).disposed(by: rx.disposeBag)
+        self.headerView.rx.searchTap.bind {
+            self.view.endEditing(true)
+        }.disposed(by: rx.disposeBag)
+        
     }
     
     func configureSearchView() {
@@ -101,6 +112,6 @@ extension MainView: SearchDelegate {
     }
     
     func searchCategory(_ category: String) {
-        self.viewModel.search.onNext(category)
+        //self.viewModel.search.onNext(category)
     }
 }

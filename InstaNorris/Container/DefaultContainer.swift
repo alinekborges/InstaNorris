@@ -18,6 +18,7 @@ final class DefaultContainer {
         self.container = Container()
         self.registerServices()
         self.registerViews()
+        self.registerStorage()
     }
     
 }
@@ -28,12 +29,14 @@ extension DefaultContainer {
     func registerViews() {
         
         self.container.register(SearchView.self) { resolver in
-            SearchView(norrisRepository: resolver.resolve(NorrisRepository.self)!)
+            SearchView(norrisRepository: resolver.resolve(NorrisRepository.self)!,
+                       localStorage: resolver.resolve(LocalStorage.self)!)
         }
         
         self.container.register(MainView.self) { resolver in
             MainView(searchView: resolver.resolve(SearchView.self)!,
-                repository: resolver.resolve(NorrisRepository.self)!)
+                repository: resolver.resolve(NorrisRepository.self)!,
+                localStorage: resolver.resolve(LocalStorage.self)!)
         }
     }
     
@@ -61,6 +64,19 @@ extension DefaultContainer {
         #else
             return []
         #endif
+    }
+    
+}
+
+//Register Storage
+extension DefaultContainer {
+    
+    func registerStorage() {
+        
+        self.container.register(LocalStorage.self) { _ in
+            return LocalStorageImpl()
+        }
+        
     }
     
 }

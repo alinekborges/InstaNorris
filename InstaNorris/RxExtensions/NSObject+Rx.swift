@@ -35,4 +35,3 @@ public extension Reactive where Base: Any {
         }
     }
 }
-

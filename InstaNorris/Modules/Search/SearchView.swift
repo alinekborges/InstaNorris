@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
-
+import RxGesture
 
 protocol SearchDelegate: class {
     func searchCategory(_ category: String)
@@ -19,14 +19,20 @@ protocol SearchDelegate: class {
 class SearchView: UIViewController {
     
     @IBOutlet weak var cloudTagView: CloudTagView!
+    @IBOutlet weak var recentSearchTableView: UITableView!
     
     var viewModel: SearchViewModel!
     let norrisRepository: NorrisRepository
+    let localStorage: LocalStorage
     
     weak var delegate: SearchDelegate?
+    
+    var categorySelected: Driver<String>!
 
-    init(norrisRepository: NorrisRepository) {
+    init(norrisRepository: NorrisRepository,
+         localStorage: LocalStorage) {
         self.norrisRepository = norrisRepository
+        self.localStorage = localStorage
         super.init(nibName: String(describing: SearchView.self), bundle: nil)
     }
     
@@ -46,15 +52,26 @@ class SearchView: UIViewController {
 extension SearchView {
     
     func setupViewModel() {
-        self.viewModel = SearchViewModel(norrisRepository: self.norrisRepository)
+        self.viewModel = SearchViewModel(
+            norrisRepository: self.norrisRepository,
+            localStorage: self.localStorage)
     }
     
     func configureViews() {
+        self.recentSearchTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     func setupBindings() {
         self.viewModel.categories
             .drive(self.cloudTagView.rx.items)
             .disposed(by: rx.disposeBag)
+        
+        self.categorySelected = self.cloudTagView.rx.tagSelected
+        
+        self.viewModel.recentSearch
+            .drive(recentSearchTableView.rx.items(cellIdentifier: "cell",
+                                                  cellType: UITableViewCell.self)) { _, element, cell in
+                cell.textLabel?.text = element
+            }.disposed(by: rx.disposeBag)
     }
 }

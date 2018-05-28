@@ -30,7 +30,13 @@ class NorrisRepositorySpec: QuickSpec {
             it("get categories with success") {
                 do {
                     let result = try subject.categories().toBlocking().first()
-                    expect(result).toNot(beNil())
+                    switch result {
+                    case .success(let value)?:
+                        expect(value).toNot(beNil())
+                    default:
+                        assert(false)
+                    }
+                    
                 } catch let error {
                     fatalError(error.localizedDescription)
                 }
@@ -39,7 +45,12 @@ class NorrisRepositorySpec: QuickSpec {
             it("search with success") {
                 do {
                     let result = try subject.search("teste").toBlocking().first()
-                    expect(result).toNot(beNil())
+                    switch result {
+                    case .success(let value)?:
+                        expect(value).toNot(beNil())
+                    default:
+                        assert(false)
+                    }
                 } catch let error {
                     fatalError(error.localizedDescription)
                 }

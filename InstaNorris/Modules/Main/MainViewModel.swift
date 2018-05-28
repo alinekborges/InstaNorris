@@ -11,23 +11,46 @@ import RxCocoa
 
 class MainViewModel {
     
-    let categories: Driver<[String]>
-    let results: Observable<[Fact]>
+    let results = PublishSubject<[Fact]>()
+    let searchError = PublishSubject<Error>()
+    let searchHidden = PublishSubject<Bool>()
     
-    let search = PublishSubject<String>()
+    let disposeBag = DisposeBag()
     
-    init(search: Observable<String>, repository: NorrisRepository) {
+    init(input:
+            (search: Driver<String>,
+            searchTap: Signal<Void>,
+            categorySelected: Driver<String>),
+         repositories:
+            (repository: NorrisRepository,
+            localStorage: LocalStorage)) {
+    
+        let defaultSearch = input.searchTap.withLatestFrom(input.search)
+            .asDriver(onErrorJustReturn: "")
         
-        self.categories = repository.categories()
-            .asDriver(onErrorJustReturn: [])
+        let searchQuery = Driver.merge(
+            defaultSearch,
+            input.categorySelected)
         
-//        self.results = self.search
-//            .flatMap {
-//                return repository.search($0)
-//                    .map { $0.result }
-        
-        self.results = repository.search("teste")
-            .map { $0.result }.asObservable()
+        let searchResult = searchQuery
+            .flatMapLatest { search in
+                return repositories.repository.search(search)
+                    .do(onSuccess: { _ in repositories.localStorage.addSearch(search) })
+                    .map { $0 }
+                    .asDriver(onErrorJustReturn: NorrisResponse.error(error:
+                        NorrisError(message: "default error message")))
+        }
+
+        searchResult
+            .drive(onNext: { [weak self] response in
+                switch response {
+                case .success(let facts):
+                    self?.results.onNext(facts)
+                    self?.searchHidden.onNext(true)
+                case .error(let error):
+                    self?.searchError.onNext(error)
+                }
+            }).disposed(by: disposeBag)
         
     }
 }

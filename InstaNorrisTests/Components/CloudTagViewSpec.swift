@@ -72,7 +72,7 @@ class CloudTagViewSpec: BaseUITest {
         
         var selectedCategory = ""
         
-        self.subject.rx.categorySelected.drive(onNext: {
+        self.subject.rx.tagSelected.drive(onNext: {
             selectedCategory = $0
         }).disposed(by: self.disposeBag)
         
