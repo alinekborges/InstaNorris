@@ -21,6 +21,16 @@ struct Fact: Decodable {
         case value
     }
     
+    init(category: [String] = [],
+         iconUrl: String = "",
+         id: String = "",
+         value: String = "") {
+        self.category = category
+        self.iconUrl = iconUrl
+        self.id = id
+        self.value = value
+    }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
