@@ -31,7 +31,7 @@ class HeaderView: UIView {
     private var animator: UIViewPropertyAnimator?
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 30, height: self.minHeight)
+        return CGSize(width: 30, height: self.maxHeight)
     }
     
     private let titleLabel: UILabel = {
@@ -100,7 +100,7 @@ class HeaderView: UIView {
         self.searchButton.prepareForConstraints()
         
         self.titleLabel.pinLeft(30.0)
-        self.titleLabel.centerVertically(6)
+        self.titleLabel.pinBottom(70.0)
         
         self.searchTextField.pinLeft(30.0)
         self.searchTextField.pinRight(30.0)
@@ -112,7 +112,7 @@ class HeaderView: UIView {
         self.searchButton.constraintHeight(20.0)
         self.searchButton.constraintWidth(20.0)
         
-        self.heightConstraint = self.constraintHeight(self.minHeight)
+        self.heightConstraint = self.constraintHeight(self.maxHeight)
         
         self.layoutIfNeeded()
         
