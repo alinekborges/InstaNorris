@@ -21,13 +21,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RvH-FR-sRq">
-                        <rect key="frame" x="0.0" y="0.0" width="544" height="543.5"/>
+                        <rect key="frame" x="0.0" y="-2" width="544" height="543.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="RvH-FR-sRq" secondAttribute="height" multiplier="1:1" id="ZTw-qn-cnf"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQC-Z2-dEO">
-                        <rect key="frame" x="0.0" y="-1" width="544" height="544"/>
+                        <rect key="frame" x="0.0" y="-3" width="544" height="544"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4T-0v-9Om">
                                 <rect key="frame" x="492" y="12" width="40" height="30"/>
@@ -58,10 +58,10 @@
                     <constraint firstItem="RvH-FR-sRq" firstAttribute="leading" secondItem="oUo-n2-mz2" secondAttribute="leading" id="ZrY-5n-6Bo"/>
                     <constraint firstItem="RQC-Z2-dEO" firstAttribute="centerY" secondItem="RvH-FR-sRq" secondAttribute="centerY" id="aEh-3b-2dh"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Wqq-8v-Epj" secondAttribute="bottom" constant="16" id="g1b-jc-DKS"/>
-                    <constraint firstItem="RvH-FR-sRq" firstAttribute="top" secondItem="oUo-n2-mz2" secondAttribute="top" id="ll9-vL-yTP"/>
+                    <constraint firstItem="RvH-FR-sRq" firstAttribute="top" secondItem="oUo-n2-mz2" secondAttribute="top" constant="-2" id="ll9-vL-yTP"/>
                     <constraint firstItem="RQC-Z2-dEO" firstAttribute="height" secondItem="RvH-FR-sRq" secondAttribute="height" id="pce-6w-GRV"/>
                     <constraint firstItem="RQC-Z2-dEO" firstAttribute="centerX" secondItem="RvH-FR-sRq" secondAttribute="centerX" id="tBd-gC-ePS"/>
-                    <constraint firstAttribute="bottom" secondItem="RvH-FR-sRq" secondAttribute="bottom" id="ws9-bo-LYg"/>
+                    <constraint firstAttribute="bottom" secondItem="RvH-FR-sRq" secondAttribute="bottom" constant="2" id="ws9-bo-LYg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

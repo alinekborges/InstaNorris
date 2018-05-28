@@ -23,13 +23,25 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_3" translatesAutoresizingMaskIntoConstraints="NO" id="ubz-NR-vh4">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2D-TJ-9AX">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XCe-7Q-cKd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <blurEffect style="light"/>
+                </visualEffectView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qbv-lJ-et2">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XmI-yI-Xbw" customClass="HeaderView" customModule="InstaNorris" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="160" placeholder="YES" id="MMS-BQ-rqz"/>
                     </constraints>
@@ -43,18 +55,29 @@
             <constraints>
                 <constraint firstItem="Qbv-lJ-et2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0vn-o1-1bf"/>
                 <constraint firstItem="nbR-Id-YHa" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="3gj-hb-ifF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ubz-NR-vh4" secondAttribute="bottom" id="DfV-Gr-TAn"/>
                 <constraint firstItem="nbR-Id-YHa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="F9o-cq-Hbl"/>
+                <constraint firstItem="e2D-TJ-9AX" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="GJH-ng-A1n"/>
                 <constraint firstItem="XmI-yI-Xbw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Go1-LJ-nMr"/>
+                <constraint firstItem="e2D-TJ-9AX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Iip-i7-VRF"/>
                 <constraint firstItem="nbR-Id-YHa" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="M43-lf-pfs"/>
                 <constraint firstItem="Qbv-lJ-et2" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Oah-Un-MJo"/>
                 <constraint firstItem="XmI-yI-Xbw" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="PNz-pL-XSu"/>
                 <constraint firstItem="Qbv-lJ-et2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SrQ-BM-Ndx"/>
+                <constraint firstItem="ubz-NR-vh4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UKx-5y-JDJ"/>
+                <constraint firstItem="ubz-NR-vh4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="WTj-V6-Hfr"/>
                 <constraint firstItem="nbR-Id-YHa" firstAttribute="top" secondItem="XmI-yI-Xbw" secondAttribute="bottom" id="Xme-W4-OeF"/>
                 <constraint firstItem="Qbv-lJ-et2" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fWY-yU-192"/>
                 <constraint firstItem="XmI-yI-Xbw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mHW-ae-V1I"/>
+                <constraint firstItem="e2D-TJ-9AX" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="p5e-co-4Ur"/>
+                <constraint firstItem="e2D-TJ-9AX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="t8L-po-Tm2"/>
+                <constraint firstItem="ubz-NR-vh4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uWr-3E-f5P"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="34.5" y="56.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="img_3" width="1536" height="1044"/>
+    </resources>
 </document>

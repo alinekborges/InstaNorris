@@ -19,8 +19,6 @@ class FactCell: UITableViewCell, NibReusable {
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var shareButton: UIButton!
     
-    var factFont: UIFont!
-    
     weak var delegate: FactCellDelegate?
     
     var viewModel = FactItemViewModel()
@@ -28,8 +26,7 @@ class FactCell: UITableViewCell, NibReusable {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setupBindings()
-        
-        self.factFont = self.factLabel.font
+        self.backgroundColor = .clear
     }
     
     func bind(_ fact: Fact) {

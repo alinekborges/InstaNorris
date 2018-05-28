@@ -58,8 +58,9 @@ extension MainView {
     }
     
     func configureViews() {
-        self.tableView.contentInset.top = self.headerView.maxHeight
+        self.tableView.contentInset.top = self.headerView.maxHeight - 20
         self.tableView.register(cellType: FactCell.self)
+        self.tableView.backgroundColor = .clear
         self.tableView.estimatedRowHeight = 200
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.allowsSelection = false

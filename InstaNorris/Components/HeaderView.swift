@@ -58,6 +58,11 @@ class HeaderView: UIView {
         return button
     }()
     
+    let blurView: UIVisualEffectView = {
+        let view = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        return view
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setupViews()
@@ -69,7 +74,8 @@ class HeaderView: UIView {
     }
     
     private func setupViews() {
-        self.backgroundColor = .slate
+        //self.backgroundColor = .slate
+        self.backgroundColor = .clear
         self.setupConstraints()
         
         self.searchTextField.setPadding(14)
@@ -91,13 +97,17 @@ class HeaderView: UIView {
     
     private func setupConstraints() {
         
+        self.addSubview(self.blurView)
         self.addSubview(self.titleLabel)
         self.addSubview(self.searchTextField)
         self.addSubview(self.searchButton)
         
+        self.blurView.prepareForConstraints()
         self.titleLabel.prepareForConstraints()
         self.searchTextField.prepareForConstraints()
         self.searchButton.prepareForConstraints()
+        
+        self.blurView.pinEdgesToSuperview()
         
         self.titleLabel.pinLeft(30.0)
         self.titleLabel.pinBottom(70.0)
@@ -111,6 +121,8 @@ class HeaderView: UIView {
         self.searchButton.pinRight(36.0)
         self.searchButton.constraintHeight(20.0)
         self.searchButton.constraintWidth(20.0)
+        
+        
         
         self.heightConstraint = self.constraintHeight(self.maxHeight)
         
