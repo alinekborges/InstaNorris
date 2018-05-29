@@ -24,6 +24,8 @@ class ErrorView: UIView, StateSubview {
         let label = UILabel()
         label.textColor = .white
         label.text = "Error!"
+        label.numberOfLines = 0
+        label.textAlignment = .center
         label.font = UIFont(name: "AmericanTypewriter", size: 20)
         return label
     }()
@@ -60,13 +62,14 @@ class ErrorView: UIView, StateSubview {
         
         imageView.prepareForConstraints()
         imageView.alpha = 0.7
-        imageView.constraintWidth(120.0)
-        imageView.constraintHeight(120.0)
+        imageView.constraintWidth(40)
+        imageView.constraintHeight(40)
         imageView.centerHorizontally()
-        imageView.centerVertically()
+        label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 32.0).isActive = true
         
         label.prepareForConstraints()
-        label.centerHorizontally()
+        label.pinLeft(32)
+        label.pinRight(32)
         label.pinBottom(130)
     }
     
