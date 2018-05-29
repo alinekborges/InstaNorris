@@ -53,6 +53,7 @@ class HeaderView: UIView {
         textField.layer.cornerRadius = 6.0
         textField.textColor = .white
         textField.tintColor = .white
+        textField.font = UIFont.boldSystemFont(ofSize: 18)
         textField.clearsOnBeginEditing = true
         return textField
     }()
@@ -126,7 +127,6 @@ class HeaderView: UIView {
         self.animator = UIViewPropertyAnimator(duration: 0.25, curve: .linear, animations: {
             self.heightConstraint.constant = self.minHeight
             self.titleLabel.alpha = 0
-            self.searchButton.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
             self.superview?.layoutIfNeeded()
             self.layoutIfNeeded()
         })
@@ -157,7 +157,7 @@ class HeaderView: UIView {
         self.searchTextField.pinLeft(30.0)
         self.searchTextField.pinRight(30.0)
         self.searchTextField.pinBottom(12.0)
-        self.searchTextField.constraintHeight(32.0)
+        self.searchTextField.constraintHeight(36.0)
         
         self.searchButton.pinBottom(18.0)
         self.searchButton.pinRight(36.0)
