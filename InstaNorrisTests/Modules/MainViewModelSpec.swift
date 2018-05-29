@@ -47,7 +47,7 @@ class MainViewModelSpec: QuickSpec {
                     
                     var result: [Fact] = []
                     
-                    subject.results.subscribe(onNext: {
+                    subject.results.drive(onNext: {
                         result = $0
                     }).disposed(by: self.rx.disposeBag)
                     
@@ -61,7 +61,7 @@ class MainViewModelSpec: QuickSpec {
                     
                     var result: [Fact] = []
                     
-                    subject.results.subscribe(onNext: {
+                    subject.results.drive(onNext: {
                         result = $0
                     }).disposed(by: self.rx.disposeBag)
                     
@@ -75,7 +75,7 @@ class MainViewModelSpec: QuickSpec {
                     
                     var result: [Fact] = []
                     
-                    subject.results.subscribe(onNext: {
+                    subject.results.drive(onNext: {
                         result = $0
                     }).disposed(by: self.rx.disposeBag)
                     
@@ -83,18 +83,6 @@ class MainViewModelSpec: QuickSpec {
                     
                     expect(result).toEventuallyNot(beEmpty(), timeout: 1)
                     
-                }
-                
-                it("hide search view on fetching") {
-                    var result: Bool = true
-                    
-                    subject.isSearchShown.subscribe(onNext: {
-                        result = $0
-                    }).disposed(by: self.rx.disposeBag)
-                    
-                    searchSubject.onNext("Test")
-                    
-                    expect(result).toEventually(beFalse(), timeout: 1)
                 }
                 
                 it("hide facts view after fetching") {
@@ -125,9 +113,9 @@ class MainViewModelSpec: QuickSpec {
                 }
                 
                 it("error") {
-                    var result: NorrisError?
+                    var result: Error?
                     
-                    subject.searchError.subscribe(onNext: {
+                    subject.searchError.drive(onNext: {
                         result = $0
                     }).disposed(by: self.rx.disposeBag)
                     

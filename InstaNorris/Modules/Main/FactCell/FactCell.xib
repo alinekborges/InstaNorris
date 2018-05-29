@@ -25,9 +25,13 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQC-Z2-dEO">
                         <rect key="frame" x="0.0" y="-3" width="544" height="544"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4T-0v-9Om">
-                                <rect key="frame" x="492" y="12" width="40" height="30"/>
-                                <state key="normal" title="Share">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4T-0v-9Om">
+                                <rect key="frame" x="492" y="16" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="cbU-gh-f1y"/>
+                                    <constraint firstAttribute="width" constant="36" id="ymP-r4-0rr"/>
+                                </constraints>
+                                <state key="normal" image="share">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -41,10 +45,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="l4T-0v-9Om" secondAttribute="trailing" constant="12" id="4Yi-HA-LNp"/>
+                            <constraint firstItem="l4T-0v-9Om" firstAttribute="top" secondItem="RQC-Z2-dEO" secondAttribute="top" constant="16" id="2ql-9K-ykB"/>
+                            <constraint firstAttribute="trailing" secondItem="l4T-0v-9Om" secondAttribute="trailing" constant="16" id="4Yi-HA-LNp"/>
                             <constraint firstAttribute="width" secondItem="RQC-Z2-dEO" secondAttribute="height" multiplier="1:1" priority="900" id="Cq4-EM-NiN"/>
                             <constraint firstAttribute="trailing" secondItem="RRT-Q1-BdM" secondAttribute="trailing" constant="8" id="Mrb-oy-9g0"/>
-                            <constraint firstItem="l4T-0v-9Om" firstAttribute="top" secondItem="RQC-Z2-dEO" secondAttribute="top" constant="12" id="dUE-ub-ogR"/>
                             <constraint firstAttribute="bottom" secondItem="RRT-Q1-BdM" secondAttribute="bottom" constant="8" id="faq-rF-gZI"/>
                             <constraint firstItem="RRT-Q1-BdM" firstAttribute="leading" secondItem="RQC-Z2-dEO" secondAttribute="leading" constant="8" id="mPN-gT-0Pm"/>
                         </constraints>
@@ -56,6 +60,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="Wqq-8v-Epj" firstAttribute="top" secondItem="oUo-n2-mz2" secondAttribute="topMargin" constant="52" id="4TY-jR-zPH"/>
                     <constraint firstItem="Wqq-8v-Epj" firstAttribute="leading" secondItem="oUo-n2-mz2" secondAttribute="leadingMargin" constant="16" id="H4Z-17-X66"/>
@@ -80,4 +85,7 @@
             <point key="canvasLocation" x="-16" y="68"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="share" width="32" height="32"/>
+    </resources>
 </document>

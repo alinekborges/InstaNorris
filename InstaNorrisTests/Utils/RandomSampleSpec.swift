@@ -29,8 +29,16 @@ class RandomSampleSpec: QuickSpec {
                 //I know there is a very small possibility that this test will fail because the random result could be identical to the original array, but I can't find a way to test it better
                 let result = subject.randomSample(subject.count)
                 
+                var isIdentical: Bool = true
                 for index in 0..<subject.count {
-                    expect(result[index]).toNot(be(subject[index]))
+                    if result[index] != subject[index] {
+                        isIdentical = false
+                        assert(true)
+                    }
+                }
+                
+                if isIdentical {
+                    assert(false)
                 }
             }
         

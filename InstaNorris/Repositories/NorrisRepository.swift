@@ -9,11 +9,9 @@
 import RxSwift
 import Moya
 
-
 protocol NorrisRepository: class {
     func categories() -> Single<NorrisResponse<[String]>>
-    func search(_ query: String) -> Single<NorrisResponse<[Fact]>>
-    func searchCategory(_ category: String) -> Single<NorrisResponse<[Fact]>>
+    func search(_ query: String) -> Single<[Fact]>
 }
 
 enum NorrisResponse<T> {
@@ -24,7 +22,7 @@ enum NorrisResponse<T> {
 struct NorrisError: LocalizedError {
     let message: String
     
-    init(message: String) {
+    init(message: String = "norris.generic.error") {
         self.message = message
     }
     
@@ -32,4 +30,3 @@ struct NorrisError: LocalizedError {
         return self.message
     }
 }
-

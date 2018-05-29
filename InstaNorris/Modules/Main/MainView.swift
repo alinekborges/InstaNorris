@@ -21,6 +21,7 @@ class MainView: UIViewController {
     @IBOutlet weak var headerView: HeaderView!
     @IBOutlet weak var searchContainer: UIView!
     let searchView: SearchView
+    var stateView: StateView!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -69,12 +70,13 @@ extension MainView {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.allowsSelection = false
         self.configureSearchView()
+        self.configureStateView()
     }
     
     func setupBindings() {
     
         self.viewModel.results
-            .bind(to: tableView.rx
+            .drive(tableView.rx
                 .items(cellIdentifier: "FactCell",
                        cellType: FactCell.self)) { [weak self] _, element, cell in
                         cell.bind(element)
@@ -112,7 +114,15 @@ extension MainView {
             }).disposed(by: rx.disposeBag)
         
         self.viewModel.searchQuery
-            .drive(self.headerView.searchTextField.rx.text)
+            .bind(to: self.headerView.searchTextField.rx.text)
+            .disposed(by: rx.disposeBag)
+        
+        self.viewModel.viewState
+            .drive(self.stateView.rx.state)
+            .disposed(by: rx.disposeBag)
+        
+        self.viewModel.isViewStateHidden
+            .drive(self.stateView.rx.isHidden)
             .disposed(by: rx.disposeBag)
     }
     
@@ -132,6 +142,14 @@ extension MainView {
         self.addChildViewController(self.searchView)
         self.searchView.view.prepareForConstraints()
         self.searchView.view.pinEdgesToSuperview()
+    }
+    
+    func configureStateView() {
+        self.stateView = StateView()
+        self.stateView.isUserInteractionEnabled = false
+        self.view.addSubview(stateView)
+        stateView.prepareForConstraints()
+        stateView.pinEdgesToSuperview()
     }
 }
 

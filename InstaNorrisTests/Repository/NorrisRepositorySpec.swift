@@ -45,12 +45,9 @@ class NorrisRepositorySpec: QuickSpec {
             it("search with success") {
                 do {
                     let result = try subject.search("teste").toBlocking().first()
-                    switch result {
-                    case .success(let value)?:
-                        expect(value).toNot(beNil())
-                    default:
-                        assert(false)
-                    }
+
+                    expect(result).toNot(beNil())
+                    expect(result!).toNot(beEmpty())
                 } catch let error {
                     fatalError(error.localizedDescription)
                 }

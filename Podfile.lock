@@ -5,6 +5,7 @@ PODS:
   - KIF/Core (3.7.3)
   - KIF/IdentifierTests (3.7.3):
     - KIF/Core
+  - lottie-ios (2.5.0)
   - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
@@ -31,12 +32,20 @@ PODS:
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
+  - RxSwiftExt (3.2.0):
+    - RxSwiftExt/Core (= 3.2.0)
+  - RxSwiftExt/Core (3.2.0):
+    - RxSwift (~> 4.0)
+  - RxSwiftUtilities (2.0.1):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
   - SwiftLint (0.25.1)
   - Swinject (2.0.0)
 
 DEPENDENCIES:
   - KIF
   - KIF/IdentifierTests
+  - lottie-ios
   - Moya/RxSwift
   - Nimble
   - Quick
@@ -47,6 +56,8 @@ DEPENDENCIES:
   - RxCocoa
   - RxGesture
   - RxSwift
+  - RxSwiftExt
+  - RxSwiftUtilities (~> 2.0.1)
   - SwiftLint
   - Swinject (~> 2.0.0)
 
@@ -54,6 +65,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - KIF
+    - lottie-ios
     - Moya
     - Nimble
     - Quick
@@ -66,12 +78,15 @@ SPEC REPOS:
     - RxCocoa
     - RxGesture
     - RxSwift
+    - RxSwiftExt
+    - RxSwiftUtilities
     - SwiftLint
     - Swinject
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   KIF: 4c23b5d24dba24d3cb6dbb9c7d325b31e526ba4a
+  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Nimble: 391f07782af4b37914f9bd7b2ffbb952731b8202
   Quick: 03278013f71aa05fe9ecabc94fbcc6835f1ee76f
@@ -84,9 +99,11 @@ SPEC CHECKSUMS:
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxGesture: c278eb05b187abd47e11e65464ae4de53ab71d95
   RxSwift: e49536837d9901277638493ea537394d4b55f570
+  RxSwiftExt: 64b7140124629a6a084159735f3714f0fb1c61d6
+  RxSwiftUtilities: 0edb01ef16c527c10fb352485b62cbd951e4a04d
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
   Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
 
-PODFILE CHECKSUM: b09da7403b8ecf7c620ca6b272ae3961cf15ffef
+PODFILE CHECKSUM: 1b084b77178ec003193b0db99e7f41ae06a2dc60
 
 COCOAPODS: 1.5.2
