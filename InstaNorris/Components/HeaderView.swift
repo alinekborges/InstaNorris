@@ -33,6 +33,7 @@ class HeaderView: UIView {
     }
     
     private var animator: UIViewPropertyAnimator?
+    private var expandAnimator: UIViewPropertyAnimator?
     
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 30, height: self.maxHeight)
@@ -88,15 +89,21 @@ class HeaderView: UIView {
     }
     
     private func setupBindings() {
-        
+        self.searchTextField.rx
+            .controlEvent(.editingDidEnd)
+            .subscribe(onNext: {
+            print("editing did end")
+        }).disposed(by: rx.disposeBag)
     }
     
     func collapse() {
         self.animator?.startAnimation()
+        
     }
     
     func expand() {
-        
+        //figure out a way to do this animated
+        self.fractionComplete = 0.0
     }
     
     private func setupAnimator() {
@@ -108,6 +115,8 @@ class HeaderView: UIView {
             self.superview?.layoutIfNeeded()
             self.layoutIfNeeded()
         })
+        
+        self.animator?.pausesOnCompletion = true
         
     }
     
