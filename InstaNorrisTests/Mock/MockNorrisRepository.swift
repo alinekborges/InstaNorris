@@ -31,16 +31,15 @@ class MockNorrisRepository: NorrisRepository {
         }
     }
 
-    func search(_ query: String) -> Single<NorrisResponse<[Fact]>> {
+    func search(_ query: String) -> Single<[Fact]> {
         if success {
-            return self.service.search(query).map { response in
-                if let searchResponse = try? response.map(SearchResponse.self) {
-                    return NorrisResponse.success(value: searchResponse.result)
-                }
-                fatalError("This should not happen")
-            }
+            return self.service.search(query)
+                .map(SearchResponse.self)
+                .map { $0.result }
         } else {
-            return Single.just(NorrisResponse.error(error: NorrisError(message: "mock api error")))
+            let subject = PublishSubject<[Fact]>()
+            subject.onError(NorrisError())
+            return subject.asSingle()
         }
     }
 
