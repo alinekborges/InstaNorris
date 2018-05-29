@@ -69,6 +69,16 @@ extension OnboardingView {
                     leadingPosition: self.view.frame.width - 280,
                     controlPoint: CGPoint(x: 0.7, y: 0.3))
         
+        addAnimator(itemPosition: 1,
+                    bottomPosition: self.view.frame.height - 300,
+                    leadingPosition: self.view.frame.width - 200,
+                    controlPoint: CGPoint(x: 0.92, y: 0.4))
+        
+        addAnimator(itemPosition: 2,
+                    bottomPosition: self.view.frame.height - 200,
+                    leadingPosition: self.view.frame.width - 240,
+                    controlPoint: CGPoint(x: 0.83, y: 0.2))
+        
         self.animators.append(largeViewAnimator)
         
     }

@@ -21,6 +21,12 @@
                 <outletCollection property="bottomConstraints" destination="CQH-ty-sJm" collectionClass="NSMutableArray" id="FfG-Gh-5WG"/>
                 <outletCollection property="leadingConstraints" destination="YxF-wd-EAh" collectionClass="NSMutableArray" id="T5Z-u9-hEf"/>
                 <outletCollection property="views" destination="yDW-Wq-T6p" collectionClass="NSMutableArray" id="lIZ-4F-u2A"/>
+                <outletCollection property="leadingConstraints" destination="5td-m6-uCs" collectionClass="NSMutableArray" id="DRa-yV-JVy"/>
+                <outletCollection property="bottomConstraints" destination="r9X-eD-7eO" collectionClass="NSMutableArray" id="qcf-mV-XWn"/>
+                <outletCollection property="views" destination="qi6-fN-O4N" collectionClass="NSMutableArray" id="NT9-1j-ejt"/>
+                <outletCollection property="leadingConstraints" destination="hSt-IB-c6U" collectionClass="NSMutableArray" id="gDb-kw-1pl"/>
+                <outletCollection property="bottomConstraints" destination="5Jb-wc-rIc" collectionClass="NSMutableArray" id="yaB-Al-gxV"/>
+                <outletCollection property="views" destination="CH2-2d-hh1" collectionClass="NSMutableArray" id="9uu-qF-lFj"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -115,7 +121,7 @@
                     </constraints>
                 </scrollView>
                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="keC-mA-JiE" userLabel="LargeView">
-                    <rect key="frame" x="80" y="327" width="140" height="140"/>
+                    <rect key="frame" x="100" y="327" width="140" height="140"/>
                     <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="keC-mA-JiE" secondAttribute="height" multiplier="1:1" id="eYR-fC-CTq"/>
@@ -133,11 +139,32 @@
                                 <constraint firstAttribute="height" constant="60" id="eie-2S-Y89"/>
                             </constraints>
                         </view>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qi6-fN-O4N" userLabel="View2">
+                            <rect key="frame" x="123" y="491" width="36" height="36"/>
+                            <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="JG9-Iz-ww7"/>
+                                <constraint firstAttribute="width" secondItem="qi6-fN-O4N" secondAttribute="height" multiplier="1:1" id="P5x-RU-oFR"/>
+                            </constraints>
+                        </view>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CH2-2d-hh1" userLabel="View3">
+                            <rect key="frame" x="50" y="403" width="24" height="24"/>
+                            <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="A8P-xA-lq2"/>
+                                <constraint firstAttribute="width" secondItem="CH2-2d-hh1" secondAttribute="height" multiplier="1:1" id="JFS-Oh-YhB"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="CH2-2d-hh1" secondAttribute="bottom" constant="240" id="5Jb-wc-rIc"/>
+                        <constraint firstItem="qi6-fN-O4N" firstAttribute="leading" secondItem="BlK-is-FjY" secondAttribute="leading" constant="123" id="5td-m6-uCs"/>
                         <constraint firstAttribute="bottom" secondItem="yDW-Wq-T6p" secondAttribute="bottom" constant="146" id="CQH-ty-sJm"/>
+                        <constraint firstItem="qi6-fN-O4N" firstAttribute="width" secondItem="qi6-fN-O4N" secondAttribute="height" multiplier="1:1" id="VjO-uq-NRZ"/>
                         <constraint firstItem="yDW-Wq-T6p" firstAttribute="leading" secondItem="BlK-is-FjY" secondAttribute="leading" constant="40" id="YxF-wd-EAh"/>
+                        <constraint firstItem="CH2-2d-hh1" firstAttribute="leading" secondItem="BlK-is-FjY" secondAttribute="leading" constant="50" id="hSt-IB-c6U"/>
+                        <constraint firstAttribute="bottom" secondItem="qi6-fN-O4N" secondAttribute="bottom" constant="140" id="r9X-eD-7eO"/>
                     </constraints>
                 </view>
             </subviews>
@@ -154,7 +181,7 @@
                 <constraint firstItem="BlK-is-FjY" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="dyu-bc-Xjq"/>
                 <constraint firstItem="BlK-is-FjY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="fkc-2e-zjj"/>
                 <constraint firstItem="tz5-90-iOr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="g8n-3L-9gI"/>
-                <constraint firstItem="keC-mA-JiE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="o3F-1M-i1r"/>
+                <constraint firstItem="keC-mA-JiE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="100" id="o3F-1M-i1r"/>
                 <constraint firstItem="NhW-X0-tbU" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="qa0-Ym-PYh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="keC-mA-JiE" secondAttribute="bottom" constant="200" id="rYO-cv-TQH"/>
                 <constraint firstItem="NhW-X0-tbU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="sI7-0i-Iy0"/>
