@@ -9,12 +9,13 @@
 import RxSwift
 import RxCocoa
 import RxSwiftUtilities
+import RxSwiftExt
 
 class MainViewModel {
     
-    let results = PublishSubject<[Fact]>()
-    let searchError = PublishSubject<NorrisError>()
-    let isSearchShown = PublishSubject<Bool>()
+    let results: Driver<[Fact]>
+    let searchError: Driver<Error>
+    let isSearchShown: PublishSubject<Bool>
     
     let isFactsShown: Driver<Bool>
     let searchQuery: Observable<String>
@@ -35,7 +36,40 @@ class MainViewModel {
         let loadingIndicator = ActivityIndicator()
         self.isLoading = loadingIndicator.asDriver()
         
-        self.isViewStateHidden = Observable.combineLatest(self.results, isSearchShown, loadingIndicator.asObservable()) { results, searchShown, isLoading in
+        //search
+        self.searchQuery = Observable.merge(
+            input.search.asObservable(),
+            input.categorySelected.asObservable(),
+            input.recentSearchSelected.asObservable())
+            .filter { !$0.isEmpty }
+        
+        let isSearchShown = PublishSubject<Bool>()
+        self.isSearchShown = isSearchShown
+        
+        let searchResult = searchQuery
+            .do(onNext: { search in
+                //side effects
+                isSearchShown.onNext(false)
+                localStorage.addSearch(search)
+            })
+            .flatMapLatest { search in
+                norrisRepository.search(search)
+                    .trackActivity(loadingIndicator)
+                    .materialize()
+            }.share()
+        
+        self.results = searchResult
+            .elements()
+            .startWith([])
+            .asDriver(onErrorJustReturn: [])
+        
+        self.searchError = searchResult
+            .errors()
+            .asDriver(onErrorJustReturn: NorrisError())
+        
+        self.isViewStateHidden = Driver.combineLatest(self.results,
+                                                      isSearchShown.asDriver(onErrorJustReturn: false),
+                                                      self.isLoading) { results, searchShown, isLoading in
                 if isLoading { return false }
                 if searchShown { return true }
                 if results.isEmpty { return false }
@@ -54,67 +88,25 @@ class MainViewModel {
         let isEmpty = self.results
             .filter { $0.isEmpty }
             .map { _ in return ViewState.empty }
-        
-        let errorWithContent = Observable.combineLatest(self.searchError, results)
-            .filter { _, results in return !results.isEmpty }
-            .map { error, _ in ViewState.errorWithContent(error: error) }
-        
-        let error = Observable.combineLatest(self.searchError, results)
-            .filter { _, results in return results.isEmpty }
-            .map { error, _ in ViewState.error(error: error) }
-        
-        let loading = loadingIndicator
-            .asObservable()
+
+        let error = self.searchError
+            .withLatestFrom(results) { error, results -> ViewState in
+                if !results.isEmpty {
+                    return ViewState.errorWithContent(error: error)
+                } else {
+                    return ViewState.error(error: error)
+                }
+        }
+
+        let loading = isLoading
             .filter { $0 == true }
             .map { _ in return ViewState.loading }
         
-        viewState = Observable.merge(isEmpty,
-                                     errorWithContent,
+        viewState = Driver.merge(isEmpty,
                                      error,
                                      loading)
             .startWith(.start)
             .asDriver(onErrorJustReturn: ViewState.error(error: NorrisError()))
-        
-        //search
-        self.searchQuery = Observable.merge(
-            input.search.asObservable(),
-            input.categorySelected.asObservable(),
-            input.recentSearchSelected.asObservable())
-            .filter { !$0.isEmpty }
-        
-        let searchResult = searchQuery
-            .do(onNext: { search in
-                //side effects
-                self.isSearchShown.onNext(false)
-                localStorage.addSearch(search)
-            })
-            .flatMap { search in
-                norrisRepository.search(search)
-                    .trackActivity(loadingIndicator)
-            }
-        
-        searchResult
-            .subscribe(onNext: { [weak self] response in
-                switch response {
-                case .success(let facts):
-                    self?.results.onNext(facts)
-                case .error(let error):
-                    self?.searchError.onNext(error)
-                }
-            }, onError: { error in
-                    let norrisError = NorrisError(message: error.localizedDescription)
-                    self.searchError.onNext(norrisError)
-            }).disposed(by: disposeBag)
-            
-//            .subscribe(onNext: { [weak self] response in
-//                switch response {
-//                case .success(let facts):
-//                    self?.results.onNext(facts)
-//                    defaultState.onNext(.none)
-//                case .error(let error):
-//                    self?.searchError.onNext(error)
-//                }
-//            }).disposed(by: disposeBag)
         
     }
 }

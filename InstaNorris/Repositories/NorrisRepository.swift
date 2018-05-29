@@ -28,5 +28,5 @@ struct NorrisError: LocalizedError {
 
 protocol NorrisRepository: class {
     func categories() -> Single<NorrisResponse<[String]>>
-    func search(_ query: String) -> Single<NorrisResponse<[Fact]>>
+    func search(_ query: String) -> Single<[Fact]>
 }

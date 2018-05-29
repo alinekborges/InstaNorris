@@ -18,8 +18,8 @@ enum ViewState {
     case loading
     case start
     case empty
-    case error(error: NorrisError)
-    case errorWithContent(error: NorrisError)
+    case error(error: Error)
+    case errorWithContent(error: Error)
     case none
 }
 
@@ -59,10 +59,10 @@ class StateView: UIView {
         case .empty:
             emptyView.show()
         case .error(let error):
-            errorView.errorMessage = error.message
+            errorView.errorMessage = error.localizedDescription
             errorView.show()
         case .errorWithContent(let error):
-            ToastView.show(error.message)
+            ToastView.show(error.localizedDescription)
         case .none:
             break
         }

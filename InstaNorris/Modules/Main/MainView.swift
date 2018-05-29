@@ -72,7 +72,7 @@ extension MainView {
     func setupBindings() {
     
         self.viewModel.results
-            .bind(to: tableView.rx
+            .drive(tableView.rx
                 .items(cellIdentifier: "FactCell",
                        cellType: FactCell.self)) { [weak self] _, element, cell in
                         cell.bind(element)

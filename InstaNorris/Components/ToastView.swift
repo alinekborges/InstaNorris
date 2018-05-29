@@ -70,7 +70,7 @@ class ToastView: UIView {
 }
 
 extension ToastView {
-    class func show(_ text: String, duration: Double = 2) {
+    class func show(_ text: String, duration: Double = 4) {
         let toast = ToastView()
         toast.show(text, duration: duration)
     }

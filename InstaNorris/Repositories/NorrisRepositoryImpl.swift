@@ -32,15 +32,9 @@ class NorrisRepositoryImpl: NorrisRepository {
         
     }
     
-    func search(_ query: String) -> Single<NorrisResponse<[Fact]>> {
+    func search(_ query: String) -> Single<[Fact]> {
         return self.service.search(query)
-            .map { response in
-                if response.statusCode == 200 {
-                    if let searchResponse = try? response.map(SearchResponse.self) {
-                        return NorrisResponse.success(value: searchResponse.result)
-                    }
-                }
-                return NorrisResponse.error(error: NorrisError(message: "error.facts"))
-        }
+            .map(SearchResponse.self)
+            .map { $0.result }
     }
 }
