@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxGesture
+import Reusable
 
 protocol SearchDelegate: class {
     func searchCategory(_ category: String)
@@ -18,9 +19,8 @@ protocol SearchDelegate: class {
 
 class SearchView: UIViewController {
     
-    @IBOutlet weak var cloudTagView: CloudTagView!
-    @IBOutlet weak var recentSearchTableView: UITableView!
-    @IBOutlet weak var cloudViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var categoriesCloudView: CloudTagView!
+    @IBOutlet weak var recentSearchCloudView: CloudTagView!
     
     var viewModel: SearchViewModel!
     let norrisRepository: NorrisRepository
@@ -43,7 +43,6 @@ class SearchView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureViews()
         self.setupViewModel()
         self.setupBindings()
     }
@@ -58,41 +57,33 @@ extension SearchView {
             localStorage: self.localStorage)
     }
     
-    func configureViews() {
-        self.recentSearchTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.recentSearchTableView.backgroundColor = .clear
-    }
-    
     func setupBindings() {
         self.viewModel.categories
-            .drive(self.cloudTagView.rx.items)
+            .drive(self.categoriesCloudView.rx.items)
             .disposed(by: rx.disposeBag)
         
-        self.categorySelected = self.cloudTagView.rx.tagSelected
+        self.categorySelected = self.categoriesCloudView.rx.tagSelected
         
         self.viewModel.recentSearch
-            .drive(recentSearchTableView.rx.items(cellIdentifier: "cell",
-                                                  cellType: UITableViewCell.self)) { _, element, cell in
-                cell.textLabel?.text = element
-            }.disposed(by: rx.disposeBag)
+            .drive(self.recentSearchCloudView.rx.items)
+            .disposed(by: rx.disposeBag)
     }
 }
 
 //Animations
 extension SearchView {
     func showAnimated() {
-        self.cloudViewTopConstraint.constant = 30
-        self.cloudTagView.alpha = 0.0
+        self.recentSearchCloudView.alpha = 0.0
+        self.categoriesCloudView.alpha = 0.0
         self.view.layoutIfNeeded()
         
-        UIView.animate(withDuration: 0.3, delay: 0.15, options: .curveEaseOut, animations: {
-            self.cloudTagView.alpha = 1.0
-            //self.cloudViewTopConstraint.constant = 20
+        UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseOut, animations: {
+            self.categoriesCloudView.alpha = 1.0
             self.view.layoutIfNeeded()
         }, completion: nil)
         
         UIView.animate(withDuration: 0.3, delay: 0.2, options: .curveEaseOut, animations: {
-            self.recentSearchTableView.alpha = 1.0
+            self.recentSearchCloudView.alpha = 1.0
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
