@@ -37,7 +37,7 @@ class LocalStorageImpl: LocalStorage {
     
     func addSearch(_ string: String) {
         let current = userDefaults.array(forKey: LocalStorageKeys.lastSearch) as? [String] ?? []
-        let newArray = self.addNewSearch(string, current: current)
+        let newArray = self.addNewSearch(string.lowercased(), current: current)
         userDefaults.set(newArray, forKey: LocalStorageKeys.lastSearch)
     }
     

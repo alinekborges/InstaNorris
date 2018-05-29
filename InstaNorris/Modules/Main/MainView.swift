@@ -51,7 +51,8 @@ extension MainView {
     func setupViewModel() {
         self.viewModel = MainViewModel(
             input: (search: self.headerView.search,
-                  categorySelected: self.searchView.categorySelected),
+                  categorySelected: self.searchView.categorySelected,
+                  recentSearchSelected: self.searchView.recentSearchSelected),
             repositories: (repository: self.repository,
                            localStorage: localStorage))
     }
@@ -64,7 +65,7 @@ extension MainView {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.allowsSelection = false
         self.configureSearchView()
-        self.searchView.delegate = self
+
     }
     
     func setupBindings() {
@@ -126,16 +127,6 @@ extension MainView {
         self.addChildViewController(self.searchView)
         self.searchView.view.prepareForConstraints()
         self.searchView.view.pinEdgesToSuperview()
-    }
-}
-
-extension MainView: SearchDelegate {
-    func dismiss() {
-        //self.searchContainer.isHidden = true
-    }
-    
-    func searchCategory(_ category: String) {
-        //self.viewModel.search.onNext(category)
     }
 }
 

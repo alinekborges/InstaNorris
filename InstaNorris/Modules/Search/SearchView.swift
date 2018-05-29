@@ -12,11 +12,6 @@ import RxCocoa
 import RxGesture
 import Reusable
 
-protocol SearchDelegate: class {
-    func searchCategory(_ category: String)
-    func dismiss()
-}
-
 class SearchView: UIViewController {
     
     @IBOutlet weak var categoriesCloudView: CloudTagView!
@@ -26,9 +21,8 @@ class SearchView: UIViewController {
     let norrisRepository: NorrisRepository
     let localStorage: LocalStorage
     
-    weak var delegate: SearchDelegate?
-    
     var categorySelected: Driver<String>!
+    var recentSearchSelected: Driver<String>!
 
     init(norrisRepository: NorrisRepository,
          localStorage: LocalStorage) {
@@ -63,6 +57,8 @@ extension SearchView {
             .disposed(by: rx.disposeBag)
         
         self.categorySelected = self.categoriesCloudView.rx.tagSelected
+        
+        self.recentSearchSelected = self.recentSearchCloudView.rx.tagSelected
         
         self.viewModel.recentSearch
             .drive(self.recentSearchCloudView.rx.items)

@@ -19,14 +19,17 @@ class MainViewModel {
     
     init(input:
             (search: Driver<String>,
-            categorySelected: Driver<String>),
+            categorySelected: Driver<String>,
+            recentSearchSelected: Driver<String>),
          repositories:
             (repository: NorrisRepository,
             localStorage: LocalStorage)) {
         
         let searchQuery = Driver.merge(
             input.search,
-            input.categorySelected)
+            input.categorySelected,
+            input.recentSearchSelected)
+            .filter { !$0.isEmpty }
         
         let searchResult = searchQuery
             .do(onNext: { search in
