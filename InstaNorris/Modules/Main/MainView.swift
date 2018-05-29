@@ -93,8 +93,10 @@ extension MainView {
             .subscribe(onNext: { [weak self] show in
                 self?.searchContainer.isHidden = !show
                 self?.animateTableView(shown: !show)
+                
                 if show {
                     self?.headerView.collapse()
+                    self?.searchView.showAnimated()
                 } else {
                     self?.headerView.expand()
                     self?.view.endEditing(true)

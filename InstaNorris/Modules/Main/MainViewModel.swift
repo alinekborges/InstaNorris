@@ -29,8 +29,9 @@ class MainViewModel {
             input.categorySelected)
         
         let searchResult = searchQuery
-            .do(onNext: { _ in
+            .do(onNext: { search in
                 self.searchShown.onNext(false)
+                repositories.localStorage.addSearch(search)
             })
             .flatMap { search in
                 repositories.repository.search(search)

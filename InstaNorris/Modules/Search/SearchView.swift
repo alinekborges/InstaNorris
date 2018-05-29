@@ -20,6 +20,7 @@ class SearchView: UIViewController {
     
     @IBOutlet weak var cloudTagView: CloudTagView!
     @IBOutlet weak var recentSearchTableView: UITableView!
+    @IBOutlet weak var cloudViewTopConstraint: NSLayoutConstraint!
     
     var viewModel: SearchViewModel!
     let norrisRepository: NorrisRepository
@@ -59,6 +60,7 @@ extension SearchView {
     
     func configureViews() {
         self.recentSearchTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.recentSearchTableView.backgroundColor = .clear
     }
     
     func setupBindings() {
@@ -73,5 +75,25 @@ extension SearchView {
                                                   cellType: UITableViewCell.self)) { _, element, cell in
                 cell.textLabel?.text = element
             }.disposed(by: rx.disposeBag)
+    }
+}
+
+//Animations
+extension SearchView {
+    func showAnimated() {
+        self.cloudViewTopConstraint.constant = 30
+        self.cloudTagView.alpha = 0.0
+        self.view.layoutIfNeeded()
+        
+        UIView.animate(withDuration: 0.3, delay: 0.15, options: .curveEaseOut, animations: {
+            self.cloudTagView.alpha = 1.0
+            //self.cloudViewTopConstraint.constant = 20
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 0.3, delay: 0.2, options: .curveEaseOut, animations: {
+            self.recentSearchTableView.alpha = 1.0
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
 }

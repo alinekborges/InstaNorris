@@ -66,7 +66,7 @@ class HeaderView: UIView {
     
     let blurView: UIVisualEffectView = {
         let view = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         return view
     }()
     
@@ -110,7 +110,6 @@ class HeaderView: UIView {
             .distinctUntilChanged()
             .unwrap()
             .asDriver(onErrorJustReturn: "")
-
     }
     
     func collapse() {

@@ -76,15 +76,15 @@ extension CloudTagView: UICollectionViewDelegateFlowLayout, UICollectionViewDele
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let item = self.items[indexPath.row]
-        let width = item.width(usingFont: TagCell.font) + 12
-        return CGSize(width: width, height: 32)
+        let width = item.width(usingFont: TagCell.font) + 16
+        return CGSize(width: width, height: 36)
     }
     
 }
 
 class TagCell: UICollectionViewCell {
     
-    static var font: UIFont = UIFont.systemFont(ofSize: 16)
+    static var font: UIFont = UIFont.boldSystemFont(ofSize: 16)
     
     let titleLabel = UILabel()
     
@@ -98,8 +98,8 @@ class TagCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.titleLabel.font = TagCell.font
-        self.backgroundColor = .slate
-        self.titleLabel.textColor = .white
+        self.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+        self.titleLabel.textColor = .slate
         self.titleLabel.textAlignment = .center
         self.layer.cornerRadius = 6.0
         self.setupConstraints()
