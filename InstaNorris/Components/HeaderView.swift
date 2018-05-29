@@ -108,7 +108,6 @@ class HeaderView: UIView {
         
         self.search = Observable.merge(editingDidEnd, searchTap)
             .withLatestFrom(self.searchTextField.rx.text.asObservable())
-            .distinctUntilChanged()
             .unwrap()
             .asDriver(onErrorJustReturn: "")
     }
