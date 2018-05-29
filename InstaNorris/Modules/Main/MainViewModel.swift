@@ -15,6 +15,8 @@ class MainViewModel {
     let searchError = PublishSubject<Error>()
     let searchShown = PublishSubject<Bool>()
     
+    let searchQuery: Driver<String>
+    
     let disposeBag = DisposeBag()
     
     init(input:
@@ -25,7 +27,7 @@ class MainViewModel {
             (repository: NorrisRepository,
             localStorage: LocalStorage)) {
         
-        let searchQuery = Driver.merge(
+        self.searchQuery = Driver.merge(
             input.search,
             input.categorySelected,
             input.recentSearchSelected)

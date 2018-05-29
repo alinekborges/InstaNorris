@@ -109,6 +109,9 @@ extension MainView {
             self.view.endEditing(true)
         }.disposed(by: rx.disposeBag)
         
+        self.viewModel.searchQuery
+            .drive(self.headerView.searchTextField.rx.text)
+            .disposed(by: rx.disposeBag)
     }
     
     func animateTableView(shown: Bool) {
