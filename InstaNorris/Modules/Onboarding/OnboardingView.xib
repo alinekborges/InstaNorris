@@ -14,6 +14,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingView" customModule="InstaNorris" customModuleProvider="target">
             <connections>
                 <outlet property="chuckNorrisImage" destination="RnG-gT-HUr" id="Vai-zD-SPN"/>
+                <outlet property="continueButton" destination="3PF-iE-ETQ" id="ABG-uV-0Mx"/>
                 <outlet property="largeView" destination="keC-mA-JiE" id="VsC-sQ-MtD"/>
                 <outlet property="largeViewBottomConstraint" destination="rYO-cv-TQH" id="cnW-bY-jec"/>
                 <outlet property="largeViewLeadingConstraint" destination="o3F-1M-i1r" id="wYl-SD-ZVD"/>
@@ -84,17 +85,25 @@
                                     <rect key="frame" x="365" y="0.0" width="365" height="667"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Chuck Norris is already hired @Stone, and all world companies. I'm not, so I hope this  app might change that&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCT-YB-HqW">
-                                            <rect key="frame" x="32" y="547" width="301" height="88"/>
+                                            <rect key="frame" x="32" y="487" width="301" height="88"/>
                                             <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="19"/>
                                             <color key="textColor" white="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PF-iE-ETQ">
+                                            <rect key="frame" x="140.5" y="600" width="83" height="30"/>
+                                            <state key="normal" title="Continue  ▶︎">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="lCT-YB-HqW" secondAttribute="bottom" constant="32" id="6yy-l4-fJe"/>
+                                        <constraint firstAttribute="bottom" secondItem="lCT-YB-HqW" secondAttribute="bottom" constant="92" id="6yy-l4-fJe"/>
+                                        <constraint firstItem="3PF-iE-ETQ" firstAttribute="centerX" secondItem="lCT-YB-HqW" secondAttribute="centerX" id="KTc-5I-FXs"/>
                                         <constraint firstItem="lCT-YB-HqW" firstAttribute="leading" secondItem="Muc-Zg-KHc" secondAttribute="leading" constant="32" id="Nml-p7-pBj"/>
                                         <constraint firstAttribute="trailing" secondItem="lCT-YB-HqW" secondAttribute="trailing" constant="32" id="UgG-TL-Z0f"/>
+                                        <constraint firstItem="3PF-iE-ETQ" firstAttribute="top" secondItem="lCT-YB-HqW" secondAttribute="bottom" constant="25" id="fs8-Hm-dL1"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -123,13 +132,13 @@
                     </constraints>
                 </scrollView>
                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="keC-mA-JiE" userLabel="LargeView">
-                    <rect key="frame" x="100" y="327" width="140" height="140"/>
+                    <rect key="frame" x="100" y="297" width="170" height="170"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chuck_norris" translatesAutoresizingMaskIntoConstraints="NO" id="RnG-gT-HUr">
-                            <rect key="frame" x="12" y="12" width="116" height="116"/>
+                            <rect key="frame" x="12" y="12" width="146" height="146"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stone_1" translatesAutoresizingMaskIntoConstraints="NO" id="eRX-OE-TfY">
-                            <rect key="frame" x="12" y="12" width="116" height="116"/>
+                            <rect key="frame" x="12" y="12" width="146" height="146"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -143,7 +152,7 @@
                         <constraint firstAttribute="trailing" secondItem="RnG-gT-HUr" secondAttribute="trailing" constant="12" id="ckX-R3-BmP"/>
                         <constraint firstAttribute="width" secondItem="keC-mA-JiE" secondAttribute="height" multiplier="1:1" id="eYR-fC-CTq"/>
                         <constraint firstItem="RnG-gT-HUr" firstAttribute="top" secondItem="keC-mA-JiE" secondAttribute="top" constant="12" id="jra-76-3df"/>
-                        <constraint firstAttribute="height" constant="140" id="zJO-Qy-5ES"/>
+                        <constraint firstAttribute="height" constant="170" id="zJO-Qy-5ES"/>
                     </constraints>
                 </view>
                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BlK-is-FjY">

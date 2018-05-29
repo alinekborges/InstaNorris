@@ -23,6 +23,8 @@ class OnboardingView: UIViewController {
     @IBOutlet var bottomConstraints: [NSLayoutConstraint]!
     @IBOutlet var views: [UIView]!
     
+    @IBOutlet weak var continueButton: UIButton!
+    
     var animators: [UIViewPropertyAnimator] = []
     
     init() {
@@ -48,7 +50,7 @@ class OnboardingView: UIViewController {
 extension OnboardingView {
     
     func configureViews() {
-        self.largeView.layer.cornerRadius = 70.0
+        self.largeView.layer.cornerRadius = largeView.frame.width / 2
         
         self.views.forEach { view in
             view.layer.cornerRadius = view.frame.width / 2
@@ -59,7 +61,7 @@ extension OnboardingView {
     
     func setupAnimators() {
         let largeViewAnimator = UIViewPropertyAnimator(duration: 0.4, curve: .easeOut) {
-            self.largeViewLeadingConstraint.constant = self.view.frame.width - 180
+            self.largeViewLeadingConstraint.constant = self.view.frame.width - 200
             self.largeViewBottomConstraint.constant = self.view.frame.height - 240
             self.largeView.layer.cornerRadius = 6.0
             self.chuckNorrisImage.alpha = 0.0
@@ -71,17 +73,17 @@ extension OnboardingView {
         
         addAnimator(itemPosition: 0,
                     bottomPosition: self.view.frame.height - 280,
-                    leadingPosition: self.view.frame.width - 280,
+                    leadingPosition: self.view.frame.width - 300,
                     controlPoint: CGPoint(x: 0.7, y: 0.3))
         
         addAnimator(itemPosition: 1,
                     bottomPosition: self.view.frame.height - 300,
-                    leadingPosition: self.view.frame.width - 200,
+                    leadingPosition: self.view.frame.width - 220,
                     controlPoint: CGPoint(x: 0.92, y: 0.4))
         
         addAnimator(itemPosition: 2,
                     bottomPosition: self.view.frame.height - 200,
-                    leadingPosition: self.view.frame.width - 240,
+                    leadingPosition: self.view.frame.width - 260,
                     controlPoint: CGPoint(x: 0.83, y: 0.2))
         
         self.animators.append(largeViewAnimator)
