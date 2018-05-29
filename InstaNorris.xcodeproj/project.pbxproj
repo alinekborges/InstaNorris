@@ -11,6 +11,8 @@
 		401FBBEB209BA33A00F3B174 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401FBBE8209BA33A00F3B174 /* SearchViewModel.swift */; };
 		401FBBEC209BA33A00F3B174 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 401FBBE9209BA33A00F3B174 /* SearchView.xib */; };
 		401FBBEE209BA61A00F3B174 /* Rx+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401FBBED209BA61A00F3B174 /* Rx+Utils.swift */; };
+		402FA50020BD65A5009A5E60 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA4FD20BD65A4009A5E60 /* OnboardingView.swift */; };
+		402FA50220BD65A5009A5E60 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 402FA4FF20BD65A4009A5E60 /* OnboardingView.xib */; };
 		404B4C8320BC4F6F004830CA /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B4C8220BC4F6F004830CA /* UIView+Utils.swift */; };
 		404B4C8520BC520C004830CA /* FactItemViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B4C8420BC520C004830CA /* FactItemViewModelSpec.swift */; };
 		404C80F420BB6ACA00C36D65 /* NorrisResponse+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404C80F320BB6ACA00C36D65 /* NorrisResponse+Rx.swift */; };
@@ -82,6 +84,8 @@
 		401FBBE8209BA33A00F3B174 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		401FBBE9209BA33A00F3B174 /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		401FBBED209BA61A00F3B174 /* Rx+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Utils.swift"; sourceTree = "<group>"; };
+		402FA4FD20BD65A4009A5E60 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		402FA4FF20BD65A4009A5E60 /* OnboardingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
 		404B4C8220BC4F6F004830CA /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		404B4C8420BC520C004830CA /* FactItemViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactItemViewModelSpec.swift; sourceTree = "<group>"; };
 		404C80F320BB6ACA00C36D65 /* NorrisResponse+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NorrisResponse+Rx.swift"; sourceTree = "<group>"; };
@@ -165,6 +169,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4012A04820BD64D300FEEBF6 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				402FA4FD20BD65A4009A5E60 /* OnboardingView.swift */,
+				402FA4FF20BD65A4009A5E60 /* OnboardingView.xib */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		401FBBE6209BA31100F3B174 /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +264,7 @@
 		405D44AE2098D5AC00160077 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4012A04820BD64D300FEEBF6 /* Onboarding */,
 				401FBBE6209BA31100F3B174 /* Search */,
 				405D44B42098D61F00160077 /* Main */,
 			);
@@ -538,6 +552,7 @@
 				405D44B82098D62800160077 /* MainView.xib in Resources */,
 				405D44A82098D56200160077 /* Info.plist in Resources */,
 				401FBBEC209BA33A00F3B174 /* SearchView.xib in Resources */,
+				402FA50220BD65A5009A5E60 /* OnboardingView.xib in Resources */,
 				405D44C02098D63E00160077 /* Assets.xcassets in Resources */,
 				40BCC7C1209AB34A009279FA /* FactCell.xib in Resources */,
 				405D44A52098D54B00160077 /* LaunchScreen.storyboard in Resources */,
@@ -698,6 +713,7 @@
 				40696EC020BC301100137E48 /* RandomImage.swift in Sources */,
 				40BCC7C3209AB36B009279FA /* FactCell.swift in Sources */,
 				40DA7BD2209B3FF40016B326 /* R.generated.swift in Sources */,
+				402FA50020BD65A5009A5E60 /* OnboardingView.swift in Sources */,
 				405D44BA2098D62800160077 /* MainView.swift in Sources */,
 				405D44BE2098D63700160077 /* NorrisRepository.swift in Sources */,
 				405D44AC2098D58E00160077 /* DefaultContainer.swift in Sources */,

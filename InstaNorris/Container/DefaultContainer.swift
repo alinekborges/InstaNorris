@@ -38,6 +38,10 @@ extension DefaultContainer {
                 repository: resolver.resolve(NorrisRepository.self)!,
                 localStorage: resolver.resolve(LocalStorage.self)!)
         }
+        
+        self.container.register(OnboardingView.self) { resolver in
+            OnboardingView()
+        }
     }
     
 }

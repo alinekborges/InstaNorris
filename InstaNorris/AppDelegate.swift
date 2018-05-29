@@ -22,13 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let currentWindow = UIWindow(frame: UIScreen.main.bounds)
         self.window = currentWindow
         
-        let mainView = self.defaultContainer.container.resolve(MainView.self)!
+        let mainView = self.defaultContainer.container.resolve(OnboardingView.self)!
         
         self.window?.rootViewController = mainView
         
         self.window?.makeKeyAndVisible()
-        
-        print("App Delegate")
         
         return true
     }
