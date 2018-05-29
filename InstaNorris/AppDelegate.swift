@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var defaultContainer: DefaultContainer!
+    var appCoordinator: AppCoordinator!
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -20,12 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.defaultContainer = DefaultContainer()
         
         let currentWindow = UIWindow(frame: UIScreen.main.bounds)
+        self.appCoordinator = AppCoordinator(window: currentWindow, container: defaultContainer.container)
+        self.appCoordinator?.start()
         self.window = currentWindow
-        
-        let mainView = self.defaultContainer.container.resolve(OnboardingView.self)!
-        
-        self.window?.rootViewController = mainView
-        
         self.window?.makeKeyAndVisible()
         
         return true

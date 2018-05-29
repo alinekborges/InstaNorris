@@ -13,6 +13,8 @@
 		401FBBEE209BA61A00F3B174 /* Rx+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401FBBED209BA61A00F3B174 /* Rx+Utils.swift */; };
 		402FA50020BD65A5009A5E60 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA4FD20BD65A4009A5E60 /* OnboardingView.swift */; };
 		402FA50220BD65A5009A5E60 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 402FA4FF20BD65A4009A5E60 /* OnboardingView.xib */; };
+		402FA50520BD9433009A5E60 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA50420BD9433009A5E60 /* Coordinator.swift */; };
+		402FA50720BD9443009A5E60 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA50620BD9443009A5E60 /* AppCoordinator.swift */; };
 		404B4C8320BC4F6F004830CA /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B4C8220BC4F6F004830CA /* UIView+Utils.swift */; };
 		404B4C8520BC520C004830CA /* FactItemViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B4C8420BC520C004830CA /* FactItemViewModelSpec.swift */; };
 		404C80F420BB6ACA00C36D65 /* NorrisResponse+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404C80F320BB6ACA00C36D65 /* NorrisResponse+Rx.swift */; };
@@ -86,6 +88,8 @@
 		401FBBED209BA61A00F3B174 /* Rx+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Utils.swift"; sourceTree = "<group>"; };
 		402FA4FD20BD65A4009A5E60 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		402FA4FF20BD65A4009A5E60 /* OnboardingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
+		402FA50420BD9433009A5E60 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		402FA50620BD9443009A5E60 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		404B4C8220BC4F6F004830CA /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		404B4C8420BC520C004830CA /* FactItemViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactItemViewModelSpec.swift; sourceTree = "<group>"; };
 		404C80F320BB6ACA00C36D65 /* NorrisResponse+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NorrisResponse+Rx.swift"; sourceTree = "<group>"; };
@@ -188,6 +192,15 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		402FA50320BD940D009A5E60 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				402FA50420BD9433009A5E60 /* Coordinator.swift */,
+				402FA50620BD9443009A5E60 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		405D446E2098C16000160077 = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +224,7 @@
 		405D44792098C16000160077 /* InstaNorris */ = {
 			isa = PBXGroup;
 			children = (
+				402FA50320BD940D009A5E60 /* Coordinator */,
 				40A3701A20B4802100D2F469 /* Storage */,
 				405D44D12098D98300160077 /* Model */,
 				405D44B32098D5D200160077 /* Utils */,
@@ -704,6 +718,7 @@
 			files = (
 				40BCC7B82098F1F7009279FA /* Fact.swift in Sources */,
 				405D44A92098D56200160077 /* AppDelegate.swift in Sources */,
+				402FA50520BD9433009A5E60 /* Coordinator.swift in Sources */,
 				40DA7BD0209B3E2F0016B326 /* UITextFIeld+Utils.swift in Sources */,
 				405D44C72098D64800160077 /* NorrisRouter.swift in Sources */,
 				405D44CA2098D64D00160077 /* Networking+Utils.swift in Sources */,
@@ -713,6 +728,7 @@
 				40696EC020BC301100137E48 /* RandomImage.swift in Sources */,
 				40BCC7C3209AB36B009279FA /* FactCell.swift in Sources */,
 				40DA7BD2209B3FF40016B326 /* R.generated.swift in Sources */,
+				402FA50720BD9443009A5E60 /* AppCoordinator.swift in Sources */,
 				402FA50020BD65A5009A5E60 /* OnboardingView.swift in Sources */,
 				405D44BA2098D62800160077 /* MainView.swift in Sources */,
 				405D44BE2098D63700160077 /* NorrisRepository.swift in Sources */,
