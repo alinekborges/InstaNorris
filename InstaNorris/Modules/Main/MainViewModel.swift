@@ -19,6 +19,7 @@ class MainViewModel {
     let searchQuery: Observable<String>
     
     let viewState: Driver<ViewState>
+    let isViewStateHidden: Driver<Bool>
     
     let disposeBag = DisposeBag()
     
@@ -29,10 +30,13 @@ class MainViewModel {
          norrisRepository: NorrisRepository,
          localStorage: LocalStorage) {
         
+        self.isViewStateHidden = self.results
+            .map { !$0.isEmpty }
+            .asDriver(onErrorJustReturn: false)
+        
         //view states
         let isEmpty = self.results
             .filter { $0.isEmpty }
-            .skip(1)
             .map { _ in return ViewState.empty }
         
         let errorWithContent = Observable.combineLatest(self.searchError, results)
@@ -43,14 +47,9 @@ class MainViewModel {
             .filter { _, results in return results.isEmpty }
             .map { error, _ in ViewState.error(error: error) }
         
-        //let loading =
-        
-        let defaultState = PublishSubject<ViewState>()
-        
         viewState = Observable.merge(isEmpty,
                                      errorWithContent,
-                                     error,
-                                     defaultState)
+                                     error)
             .startWith(.start)
             .asDriver(onErrorJustReturn: ViewState.error(error: NorrisError()))
         
@@ -80,7 +79,6 @@ class MainViewModel {
                 switch response {
                 case .success(let facts):
                     self?.results.onNext(facts)
-                    defaultState.onNext(.none)
                 case .error(let error):
                     self?.searchError.onNext(error)
                 }

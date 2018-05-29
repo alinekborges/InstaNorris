@@ -21,7 +21,7 @@ class MainView: UIViewController {
     @IBOutlet weak var headerView: HeaderView!
     @IBOutlet weak var searchContainer: UIView!
     let searchView: SearchView
-    var stateView: StatesView!
+    var stateView: StateView!
     
     init(searchView: SearchView, repository: NorrisRepository, localStorage: LocalStorage) {
         self.norrisRepository = repository
@@ -116,6 +116,10 @@ extension MainView {
         self.viewModel.viewState
             .drive(self.stateView.rx.state)
             .disposed(by: rx.disposeBag)
+        
+        self.viewModel.isViewStateHidden
+            .drive(self.stateView.rx.isHidden)
+            .disposed(by: rx.disposeBag)
     }
     
     func animateTableView(shown: Bool) {
@@ -137,7 +141,7 @@ extension MainView {
     }
     
     func configureStateView() {
-        self.stateView = StatesView()
+        self.stateView = StateView()
         self.stateView.isUserInteractionEnabled = false
         self.view.addSubview(stateView)
         stateView.prepareForConstraints()

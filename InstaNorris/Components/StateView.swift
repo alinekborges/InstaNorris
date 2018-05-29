@@ -18,9 +18,11 @@ enum ViewState {
     case none
 }
 
-class StatesView: UIView {
+class StateView: UIView {
     
     let testTitle = UILabel()
+    
+    var didSetupViews: Bool = false
     
     var state: ViewState = .none {
         didSet {
@@ -28,8 +30,8 @@ class StatesView: UIView {
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func layoutSubviews() {
+        super.layoutSubviews()
         self.setupViews()
     }
     
@@ -52,14 +54,17 @@ class StatesView: UIView {
     }
     
     func setupViews() {
-        self.setupConstraints()
-        self.backgroundColor = .clear
+        if !didSetupViews {
+            self.didSetupViews = true
+            self.setupConstraints()
+            self.testTitle.font = UIFont.systemFont(ofSize: 40)
+        }
     }
     
     func setupConstraints() {
         self.addSubview(testTitle)
         self.testTitle.prepareForConstraints()
-        self.testTitle.centerHorizontally()
+        self.testTitle.pinBottom(50)
         self.testTitle.centerHorizontally()
     }
 }

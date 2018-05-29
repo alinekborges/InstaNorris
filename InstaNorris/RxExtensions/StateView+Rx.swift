@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import UIKit
 
-extension Reactive where Base: StatesView {
+extension Reactive where Base: StateView {
     
     var state: Binder<ViewState> {
         return Binder(self.base) { stateView, state in
