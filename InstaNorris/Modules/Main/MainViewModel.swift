@@ -19,17 +19,13 @@ class MainViewModel {
     
     init(input:
             (search: Driver<String>,
-            searchTap: Signal<Void>,
             categorySelected: Driver<String>),
          repositories:
             (repository: NorrisRepository,
             localStorage: LocalStorage)) {
-    
-        let defaultSearch = input.searchTap.withLatestFrom(input.search)
-            .asDriver(onErrorJustReturn: "")
         
         let searchQuery = Driver.merge(
-            defaultSearch,
+            input.search,
             input.categorySelected)
         
         let searchResult = searchQuery

@@ -89,11 +89,20 @@ class HeaderView: UIView {
     }
     
     private func setupBindings() {
-        self.searchTextField.rx
+        let editingDidEnd = self.searchTextField.rx
             .controlEvent(.editingDidEnd)
-            .subscribe(onNext: {
-            print("editing did end")
-        }).disposed(by: rx.disposeBag)
+            .asObservable()
+        
+        let searchTap = self.searchButton.rx
+            .tap
+            .asObservable()
+        
+        self.search = Observable.merge(editingDidEnd, searchTap)
+            .withLatestFrom(self.searchTextField.rx.text.asObservable())
+            .distinctUntilChanged()
+            .unwrap()
+            .asDriver(onErrorJustReturn: "")
+
     }
     
     func collapse() {

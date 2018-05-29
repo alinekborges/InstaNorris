@@ -50,8 +50,7 @@ extension MainView {
     
     func setupViewModel() {
         self.viewModel = MainViewModel(
-            input: (search: self.headerView.rx.search,
-                  searchTap: self.headerView.rx.searchTap.asSignal(),
+            input: (search: self.headerView.search,
                   categorySelected: self.searchView.categorySelected),
             repositories: (repository: self.repository,
                            localStorage: localStorage))
@@ -92,7 +91,6 @@ extension MainView {
        
         self.viewModel.searchShown
             .subscribe(onNext: { [weak self] show in
-                print("show search: \(show)")
                 self?.searchContainer.isHidden = !show
                 if show {
                     self?.headerView.collapse()
