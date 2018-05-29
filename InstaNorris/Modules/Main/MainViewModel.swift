@@ -13,7 +13,7 @@ class MainViewModel {
     
     let results = PublishSubject<[Fact]>()
     let searchError = PublishSubject<Error>()
-    let searchHidden = PublishSubject<Bool>()
+    let searchShown = PublishSubject<Bool>()
     
     let disposeBag = DisposeBag()
     
@@ -32,25 +32,21 @@ class MainViewModel {
             defaultSearch,
             input.categorySelected)
         
-//        let searchResult = searchQuery
-//            .flatMapLatest { search in
-//                return repositories.repository.search(search)
-//                    .do(onSuccess: { _ in repositories.localStorage.addSearch(search) })
-//                    .map { $0 }
-//                    .asDriver(onErrorJustReturn: NorrisResponse.error(error:
-//                        NorrisError(message: "default error message")))
-//        }
+        let searchResult = searchQuery
+            .do(onNext: { _ in
+                self.searchShown.onNext(false)
+            })
+            .flatMap { search in
+                repositories.repository.search(search)
+                    .asDriver(onErrorJustReturn: NorrisResponse.error(error:
+                        NorrisError(message: "default error message")))
+            }
         
-        let searchResult = repositories.repository.search("teste")
-            .asDriver(onErrorJustReturn: NorrisResponse.error(error:
-                                        NorrisError(message: "default error message")))
-
         searchResult
             .drive(onNext: { [weak self] response in
                 switch response {
                 case .success(let facts):
                     self?.results.onNext(facts)
-                    self?.searchHidden.onNext(true)
                 case .error(let error):
                     self?.searchError.onNext(error)
                 }

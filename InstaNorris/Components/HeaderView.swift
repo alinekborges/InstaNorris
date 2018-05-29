@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 
 class HeaderView: UIView {
     
@@ -15,6 +17,8 @@ class HeaderView: UIView {
     let minHeight: CGFloat = 72
     
     var heightConstraint: NSLayoutConstraint!
+    
+    var search: Driver<String>!
     
     var title: String = "" {
         didSet {
@@ -74,13 +78,25 @@ class HeaderView: UIView {
     }
     
     private func setupViews() {
-        //self.backgroundColor = .slate
         self.backgroundColor = .clear
         self.setupConstraints()
         
         self.searchTextField.setPadding(14)
         
         self.setupAnimator()
+        self.setupBindings()
+    }
+    
+    private func setupBindings() {
+        
+    }
+    
+    func collapse() {
+        self.animator?.startAnimation()
+    }
+    
+    func expand() {
+        
     }
     
     private func setupAnimator() {

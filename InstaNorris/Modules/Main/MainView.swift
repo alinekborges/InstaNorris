@@ -87,11 +87,20 @@ extension MainView {
         
         self.headerView.searchTextField.rx.controlEvent(.editingDidBegin)
             .subscribe(onNext: {
-                self.searchContainer.isHidden = false
+                self.viewModel.searchShown.onNext(true)
             }).disposed(by: rx.disposeBag)
        
-        self.viewModel.searchHidden
-            .bind(to: self.searchContainer.rx.isHidden)
+        self.viewModel.searchShown
+            .subscribe(onNext: { [weak self] show in
+                print("show search: \(show)")
+                self?.searchContainer.isHidden = !show
+                if show {
+                    self?.headerView.collapse()
+                } else {
+                    self?.headerView.expand()
+                    self?.view.endEditing(true)
+                }
+            })
             .disposed(by: rx.disposeBag)
         
         self.headerView.rx.searchTap.bind {
@@ -110,7 +119,7 @@ extension MainView {
 
 extension MainView: SearchDelegate {
     func dismiss() {
-        self.searchContainer.isHidden = true
+        //self.searchContainer.isHidden = true
     }
     
     func searchCategory(_ category: String) {
