@@ -13,6 +13,7 @@ def common_pods
   pod 'ReachabilitySwift'
   pod 'RxGesture'
   pod 'RxSwiftUtilities', '~> 2.0.1'
+  pod 'lottie-ios'
 end
 
 target 'InstaNorris' do

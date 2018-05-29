@@ -103,7 +103,6 @@ class TagCell: UICollectionViewCell {
     
     var didSetupConstraints = false
     
-    
     func bind(_ string: String, backgroundColor: UIColor, textColor: UIColor) {
         self.titleLabel.text = string
         self.accessibilityIdentifier = string

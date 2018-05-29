@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+protocol StateSubview {
+    func show()
+    func hide()
+}
+
 enum ViewState {
     case loading
     case start
@@ -22,7 +27,16 @@ class StateView: UIView {
     
     let testTitle = UILabel()
     
-    var didSetupViews: Bool = false
+    private var didSetupViews: Bool = false
+    
+    let loadingView = LoadingView()
+    let emptyView = EmptyView()
+    let startView = StartView()
+    let errorView = ErrorView()
+    
+    var allViews: [StateSubview] {
+        return [loadingView, emptyView, startView, errorView]
+    }
     
     var state: ViewState = .none {
         didSet {
@@ -36,35 +50,53 @@ class StateView: UIView {
     }
     
     func updateState(_ state: ViewState) {
-        print("update state: \(state)")
+        allViews.forEach { $0.hide() }
         switch state {
         case .loading:
-            testTitle.text = "loading"
+            loadingView.show()
         case .start:
-            testTitle.text = "start"
+            startView.show()
         case .empty:
-            testTitle.text = "empty"
+            emptyView.show()
         case .error(let error):
-            testTitle.text = error.localizedDescription
+            errorView.errorMessage = error.message
+            errorView.show()
         case .errorWithContent(let error):
-            testTitle.text = error.localizedDescription
+            ToastView.show(error.message)
         case .none:
-            testTitle.text = "none"
+            break
         }
     }
     
-    func setupViews() {
+    private func setupViews() {
         if !didSetupViews {
             self.didSetupViews = true
             self.setupConstraints()
             self.testTitle.font = UIFont.systemFont(ofSize: 40)
+            self.backgroundColor = UIColor.red.withAlphaComponent(0.4)
         }
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         self.addSubview(testTitle)
         self.testTitle.prepareForConstraints()
         self.testTitle.pinBottom(50)
         self.testTitle.centerHorizontally()
+        
+        self.addSubview(self.loadingView)
+        self.loadingView.prepareForConstraints()
+        self.loadingView.pinEdgesToSuperview()
+        
+        self.addSubview(self.emptyView)
+        self.emptyView.prepareForConstraints()
+        self.emptyView.pinEdgesToSuperview()
+        
+        self.addSubview(self.startView)
+        self.startView.prepareForConstraints()
+        self.startView.pinEdgesToSuperview()
+        
+        self.addSubview(self.errorView)
+        self.errorView.prepareForConstraints()
+        self.errorView.pinEdgesToSuperview()
     }
 }

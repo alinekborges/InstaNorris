@@ -32,12 +32,23 @@ class MainViewModel {
          norrisRepository: NorrisRepository,
          localStorage: LocalStorage) {
         
-        self.isViewStateHidden = self.results
-            .map { !$0.isEmpty }
-            .asDriver(onErrorJustReturn: false)
-        
         let loadingIndicator = ActivityIndicator()
         self.isLoading = loadingIndicator.asDriver()
+        
+        self.isViewStateHidden = Observable.combineLatest(self.results, isSearchShown, loadingIndicator.asObservable()) { results, searchShown, isLoading in
+                if isLoading { return false }
+                if searchShown { return true }
+                if results.isEmpty { return false }
+                return true
+            }
+            .asDriver(onErrorJustReturn: false)
+        
+        self.isFactsShown = Driver.combineLatest(
+        self.isViewStateHidden,
+        isSearchShown.asDriver(onErrorJustReturn: false)) { viewStateHidden, searchShown in
+            return viewStateHidden && !searchShown
+            }
+            .asDriver(onErrorJustReturn: false)
         
         //view states
         let isEmpty = self.results
@@ -70,10 +81,6 @@ class MainViewModel {
             input.categorySelected.asObservable(),
             input.recentSearchSelected.asObservable())
             .filter { !$0.isEmpty }
-        
-        self.isFactsShown = self.isSearchShown
-            .map { !$0 }
-            .asDriver(onErrorJustReturn: true)
         
         let searchResult = searchQuery
             .do(onNext: { search in
