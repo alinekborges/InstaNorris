@@ -17,6 +17,8 @@ class OnboardingView: UIViewController {
     @IBOutlet weak var largeViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var largeView: UIView!
     
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var chuckNorrisImage: UIImageView!
     @IBOutlet var leadingConstraints: [NSLayoutConstraint]!
     @IBOutlet var bottomConstraints: [NSLayoutConstraint]!
     @IBOutlet var views: [UIView]!
@@ -60,8 +62,11 @@ extension OnboardingView {
             self.largeViewLeadingConstraint.constant = self.view.frame.width - 180
             self.largeViewBottomConstraint.constant = self.view.frame.height - 240
             self.largeView.layer.cornerRadius = 6.0
+            self.chuckNorrisImage.alpha = 0.0
+            self.logoImageView.alpha = 1.0
             self.view.layoutIfNeeded()
         }
+        
         largeViewAnimator.scrubsLinearly = false
         
         addAnimator(itemPosition: 0,

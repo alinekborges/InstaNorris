@@ -13,9 +13,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingView" customModule="InstaNorris" customModuleProvider="target">
             <connections>
+                <outlet property="chuckNorrisImage" destination="RnG-gT-HUr" id="Vai-zD-SPN"/>
                 <outlet property="largeView" destination="keC-mA-JiE" id="VsC-sQ-MtD"/>
                 <outlet property="largeViewBottomConstraint" destination="rYO-cv-TQH" id="cnW-bY-jec"/>
                 <outlet property="largeViewLeadingConstraint" destination="o3F-1M-i1r" id="wYl-SD-ZVD"/>
+                <outlet property="logoImageView" destination="eRX-OE-TfY" id="GwG-u1-X3e"/>
                 <outlet property="scrollView" destination="Ec3-N5-tkg" id="LkM-Qc-XaU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="bottomConstraints" destination="CQH-ty-sJm" collectionClass="NSMutableArray" id="FfG-Gh-5WG"/>
@@ -122,9 +124,25 @@
                 </scrollView>
                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="keC-mA-JiE" userLabel="LargeView">
                     <rect key="frame" x="100" y="327" width="140" height="140"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chuck_norris" translatesAutoresizingMaskIntoConstraints="NO" id="RnG-gT-HUr">
+                            <rect key="frame" x="12" y="12" width="116" height="116"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stone_1" translatesAutoresizingMaskIntoConstraints="NO" id="eRX-OE-TfY">
+                            <rect key="frame" x="12" y="12" width="116" height="116"/>
+                        </imageView>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="RnG-gT-HUr" secondAttribute="bottom" constant="12" id="ASU-72-LjL"/>
+                        <constraint firstItem="RnG-gT-HUr" firstAttribute="leading" secondItem="keC-mA-JiE" secondAttribute="leading" constant="12" id="Ddd-O5-Nd6"/>
+                        <constraint firstItem="eRX-OE-TfY" firstAttribute="centerY" secondItem="RnG-gT-HUr" secondAttribute="centerY" id="FOU-hM-aAE"/>
+                        <constraint firstItem="eRX-OE-TfY" firstAttribute="width" secondItem="RnG-gT-HUr" secondAttribute="width" id="PvB-5M-c73"/>
+                        <constraint firstItem="eRX-OE-TfY" firstAttribute="height" secondItem="RnG-gT-HUr" secondAttribute="height" id="WZG-ap-56o"/>
+                        <constraint firstItem="eRX-OE-TfY" firstAttribute="centerX" secondItem="RnG-gT-HUr" secondAttribute="centerX" id="cJO-ki-IrW"/>
+                        <constraint firstAttribute="trailing" secondItem="RnG-gT-HUr" secondAttribute="trailing" constant="12" id="ckX-R3-BmP"/>
                         <constraint firstAttribute="width" secondItem="keC-mA-JiE" secondAttribute="height" multiplier="1:1" id="eYR-fC-CTq"/>
+                        <constraint firstItem="RnG-gT-HUr" firstAttribute="top" secondItem="keC-mA-JiE" secondAttribute="top" constant="12" id="jra-76-3df"/>
                         <constraint firstAttribute="height" constant="140" id="zJO-Qy-5ES"/>
                     </constraints>
                 </view>
@@ -195,6 +213,8 @@
         </view>
     </objects>
     <resources>
+        <image name="chuck_norris" width="92" height="83"/>
         <image name="img_8" width="1086" height="1012"/>
+        <image name="stone_1" width="960" height="960"/>
     </resources>
 </document>
