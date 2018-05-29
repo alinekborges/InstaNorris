@@ -41,9 +41,10 @@ extension NorrisRouter: TargetType {
                         "result": [["category": ["dev"],
                                     "icon_url": "www.testurl.com",
                                     "id": "id",
-                                    "url": "www.testurl.com",
-                                    "value": "Chuck Norris doesn't need testing. Aline is not that smart, so she writes some tests"]
+                                    //"url": "www.testurl.com",
+                                    "value": "Chuck Norris doesn't need testing. Aline is not that smart, so she needs some mock data"]
                 ]] as [String: Any]
+            print("mock data")
             print(data)
             return jsonSerializedUTF8(json: data)
         }

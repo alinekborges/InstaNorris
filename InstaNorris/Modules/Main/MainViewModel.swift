@@ -12,9 +12,10 @@ import RxCocoa
 class MainViewModel {
     
     let results = PublishSubject<[Fact]>()
-    let searchError = PublishSubject<Error>()
-    let searchShown = PublishSubject<Bool>()
+    let searchError = PublishSubject<NorrisError>()
+    let isSearchShown = PublishSubject<Bool>()
     
+    let isFactsShown: Driver<Bool>
     let searchQuery: Driver<String>
     
     let disposeBag = DisposeBag()
@@ -23,9 +24,8 @@ class MainViewModel {
             (search: Driver<String>,
             categorySelected: Driver<String>,
             recentSearchSelected: Driver<String>),
-         repositories:
-            (repository: NorrisRepository,
-            localStorage: LocalStorage)) {
+            norrisRepository: NorrisRepository,
+            localStorage: LocalStorage) {
         
         self.searchQuery = Driver.merge(
             input.search,
@@ -33,13 +33,18 @@ class MainViewModel {
             input.recentSearchSelected)
             .filter { !$0.isEmpty }
         
+        self.isFactsShown = self.isSearchShown
+            .map { !$0 }
+            .asDriver(onErrorJustReturn: true)
+        
         let searchResult = searchQuery
             .do(onNext: { search in
-                self.searchShown.onNext(false)
-                repositories.localStorage.addSearch(search)
+                //side effects
+                self.isSearchShown.onNext(false)
+                localStorage.addSearch(search)
             })
             .flatMap { search in
-                repositories.repository.search(search)
+                norrisRepository.search(search)
                     .asDriver(onErrorJustReturn: NorrisResponse.error(error:
                         NorrisError(message: "default error message")))
             }

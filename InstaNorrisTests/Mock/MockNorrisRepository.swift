@@ -33,7 +33,7 @@ class MockNorrisRepository: NorrisRepository {
 
     func search(_ query: String) -> Single<NorrisResponse<[Fact]>> {
         if success {
-            return self.service.categories().map { response in
+            return self.service.search(query).map { response in
                 if let searchResponse = try? response.map(SearchResponse.self) {
                     return NorrisResponse.success(value: searchResponse.result)
                 }

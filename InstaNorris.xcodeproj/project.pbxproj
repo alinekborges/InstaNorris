@@ -51,6 +51,7 @@
 		40BCC7C3209AB36B009279FA /* FactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7C2209AB36B009279FA /* FactCell.swift */; };
 		40BCC7C5209AB3AF009279FA /* FactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7C4209AB3AF009279FA /* FactViewModel.swift */; };
 		40C22EA520ABA46D0032FB70 /* CloudTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C22EA420ABA46D0032FB70 /* CloudTagView.swift */; };
+		40C3FC9C20BCF89400072FE5 /* MainViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C3FC9B20BCF89300072FE5 /* MainViewModelSpec.swift */; };
 		40C4827B20AE438D00A12282 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4827A20AE438D00A12282 /* String+Utils.swift */; };
 		40C4827D20AE4B4B00A12282 /* CloudTagView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4827C20AE4B4B00A12282 /* CloudTagView+Rx.swift */; };
 		40C4828020AE4D2C00A12282 /* CloudTagViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4827F20AE4D2C00A12282 /* CloudTagViewSpec.swift */; };
@@ -123,6 +124,7 @@
 		40BCC7C2209AB36B009279FA /* FactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactCell.swift; sourceTree = "<group>"; };
 		40BCC7C4209AB3AF009279FA /* FactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewModel.swift; sourceTree = "<group>"; };
 		40C22EA420ABA46D0032FB70 /* CloudTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTagView.swift; sourceTree = "<group>"; };
+		40C3FC9B20BCF89300072FE5 /* MainViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelSpec.swift; sourceTree = "<group>"; };
 		40C4827A20AE438D00A12282 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		40C4827C20AE4B4B00A12282 /* CloudTagView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudTagView+Rx.swift"; sourceTree = "<group>"; };
 		40C4827F20AE4D2C00A12282 /* CloudTagViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTagViewSpec.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 			children = (
 				407A2ABE20B85A5000FCC2D1 /* SearchViewModelSpec.swift */,
 				404B4C8420BC520C004830CA /* FactItemViewModelSpec.swift */,
+				40C3FC9B20BCF89300072FE5 /* MainViewModelSpec.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -720,6 +723,7 @@
 				40F63F7B20BAE7C6007E0328 /* MockLocalStorage.swift in Sources */,
 				404B4C8520BC520C004830CA /* FactItemViewModelSpec.swift in Sources */,
 				408606D120AF22CC00258B7A /* MockNorrisRepository.swift in Sources */,
+				40C3FC9C20BCF89400072FE5 /* MainViewModelSpec.swift in Sources */,
 				40C4828020AE4D2C00A12282 /* CloudTagViewSpec.swift in Sources */,
 				40A3702420B4D56400D2F469 /* LocalStorageSpec.swift in Sources */,
 				405D44CE2098D7BF00160077 /* MockNorrisService.swift in Sources */,

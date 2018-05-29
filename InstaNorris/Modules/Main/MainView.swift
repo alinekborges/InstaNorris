@@ -14,7 +14,7 @@ import Swinject
 class MainView: UIViewController {
     
     var viewModel: MainViewModel!
-    let repository: NorrisRepository
+    let norrisRepository: NorrisRepository
     let localStorage: LocalStorage
 
     @IBOutlet weak var tableView: UITableView!
@@ -23,7 +23,7 @@ class MainView: UIViewController {
     let searchView: SearchView
     
     init(searchView: SearchView, repository: NorrisRepository, localStorage: LocalStorage) {
-        self.repository = repository
+        self.norrisRepository = repository
         self.searchView = searchView
         self.localStorage = localStorage
         super.init(nibName: String(describing: MainView.self), bundle: nil)
@@ -53,8 +53,8 @@ extension MainView {
             input: (search: self.headerView.search,
                   categorySelected: self.searchView.categorySelected,
                   recentSearchSelected: self.searchView.recentSearchSelected),
-            repositories: (repository: self.repository,
-                           localStorage: localStorage))
+            norrisRepository: self.norrisRepository,
+                           localStorage: localStorage)
     }
     
     func configureViews() {
@@ -65,7 +65,6 @@ extension MainView {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.allowsSelection = false
         self.configureSearchView()
-
     }
     
     func setupBindings() {
@@ -87,14 +86,12 @@ extension MainView {
         
         self.headerView.searchTextField.rx.controlEvent(.editingDidBegin)
             .subscribe(onNext: {
-                self.viewModel.searchShown.onNext(true)
+                self.viewModel.isSearchShown.onNext(true)
             }).disposed(by: rx.disposeBag)
        
-        self.viewModel.searchShown
+        self.viewModel.isSearchShown
             .subscribe(onNext: { [weak self] show in
                 self?.searchContainer.isHidden = !show
-                self?.animateTableView(shown: !show)
-                
                 if show {
                     self?.headerView.collapse()
                     self?.searchView.showAnimated()
@@ -105,9 +102,10 @@ extension MainView {
             })
             .disposed(by: rx.disposeBag)
         
-        self.headerView.rx.searchTap.bind {
-            self.view.endEditing(true)
-        }.disposed(by: rx.disposeBag)
+        self.viewModel.isFactsShown
+            .drive(onNext: { [weak self] shown in
+                self?.animateTableView(shown: shown)
+            }).disposed(by: rx.disposeBag)
         
         self.viewModel.searchQuery
             .drive(self.headerView.searchTextField.rx.text)
