@@ -21,6 +21,12 @@ class CloudTagView: UIView {
     }
     
     private let observableItems = PublishSubject<[String]>()
+    
+    private var tagHeight: CGFloat = 36
+    
+    private var tagBackgroundColor: UIColor = UIColor.white.withAlphaComponent(0.4)
+    
+    private var textColor: UIColor = .slate
 
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
@@ -45,6 +51,13 @@ class CloudTagView: UIView {
         self.setupViews()
     }
     
+    func configure(tagHeight: CGFloat, tagBackgroundColor: UIColor, textColor: UIColor) {
+        self.tagHeight = tagHeight
+        self.tagBackgroundColor = tagBackgroundColor
+        self.textColor = textColor
+        self.collectionView.reloadData()
+    }
+    
     private func setupViews() {
         self.addSubview(self.collectionView)
         self.collectionView.register(TagCell.self, forCellWithReuseIdentifier: "TagCell")
@@ -64,7 +77,7 @@ class CloudTagView: UIView {
             .bind(to: collectionView.rx
             .items(cellIdentifier: "TagCell",
                    cellType: TagCell.self)) { _, element, cell in
-                    cell.bind(element)
+                    cell.bind(element, backgroundColor: self.tagBackgroundColor, textColor: self.textColor)
             }.disposed(by: rx.disposeBag)
     }
     
@@ -77,7 +90,7 @@ extension CloudTagView: UICollectionViewDelegateFlowLayout, UICollectionViewDele
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let item = self.items[indexPath.row]
         let width = item.width(usingFont: TagCell.font) + 16
-        return CGSize(width: width, height: 36)
+        return CGSize(width: width, height: self.tagHeight)
     }
     
 }
@@ -90,16 +103,17 @@ class TagCell: UICollectionViewCell {
     
     var didSetupConstraints = false
     
-    func bind(_ string: String) {
+    
+    func bind(_ string: String, backgroundColor: UIColor, textColor: UIColor) {
         self.titleLabel.text = string
         self.accessibilityIdentifier = string
+        self.titleLabel.textColor = textColor
+        self.backgroundColor = backgroundColor
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         self.titleLabel.font = TagCell.font
-        self.backgroundColor = UIColor.white.withAlphaComponent(0.4)
-        self.titleLabel.textColor = .slate
         self.titleLabel.textAlignment = .center
         self.layer.cornerRadius = 6.0
         self.setupConstraints()

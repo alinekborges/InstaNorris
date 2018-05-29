@@ -18,6 +18,7 @@ class FactCell: UITableViewCell, NibReusable {
     @IBOutlet weak var factLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var categoriesCloudView: CloudTagView!
     
     weak var delegate: FactCellDelegate?
     
@@ -27,6 +28,9 @@ class FactCell: UITableViewCell, NibReusable {
         super.awakeFromNib()
         self.setupBindings()
         self.backgroundColor = .clear
+        self.categoriesCloudView.configure(tagHeight: 32.0,
+                                           tagBackgroundColor: UIColor.white.withAlphaComponent(0.2),
+                                           textColor: UIColor.white)
     }
     
     func bind(_ fact: Fact) {
@@ -50,6 +54,10 @@ class FactCell: UITableViewCell, NibReusable {
             let image = self?.asImage()
             self?.delegate?.share(image: image)
         }.disposed(by: rx.disposeBag)
+        
+        self.viewModel.categories
+            .drive(categoriesCloudView.rx.items)
+            .disposed(by: rx.disposeBag)
         
     }
 }

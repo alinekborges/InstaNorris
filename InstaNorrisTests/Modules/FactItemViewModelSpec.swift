@@ -81,6 +81,20 @@ class FactItemViewModelSpec: QuickSpec {
                     
                 }
                 
+                it("category mapping") {
+                    let fact = Fact(category: ["test"])
+                    
+                    var result: [String] = []
+                    
+                    subject.categories.drive(onNext: {
+                        result = $0
+                    }).disposed(by: self.rx.disposeBag)
+                    
+                    subject.bind(fact)
+                    
+                    expect(result.first).toEventually(match("#test"))
+                }
+                
             }
             
         }

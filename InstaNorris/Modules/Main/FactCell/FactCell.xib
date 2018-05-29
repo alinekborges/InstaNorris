@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -35,30 +34,40 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRT-Q1-BdM" customClass="CloudTagView" customModule="InstaNorris" customModuleProvider="target">
+                                <rect key="frame" x="8" y="496" width="528" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VFj-pY-vhc"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="l4T-0v-9Om" secondAttribute="trailing" constant="12" id="4Yi-HA-LNp"/>
+                            <constraint firstAttribute="trailing" secondItem="RRT-Q1-BdM" secondAttribute="trailing" constant="8" id="Mrb-oy-9g0"/>
                             <constraint firstItem="l4T-0v-9Om" firstAttribute="top" secondItem="RQC-Z2-dEO" secondAttribute="top" constant="12" id="dUE-ub-ogR"/>
+                            <constraint firstAttribute="bottom" secondItem="RRT-Q1-BdM" secondAttribute="bottom" constant="8" id="faq-rF-gZI"/>
+                            <constraint firstItem="RRT-Q1-BdM" firstAttribute="leading" secondItem="RQC-Z2-dEO" secondAttribute="leading" constant="8" id="mPN-gT-0Pm"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wqq-8v-Epj">
-                        <rect key="frame" x="36" y="47" width="472" height="470"/>
+                        <rect key="frame" x="36" y="79" width="472" height="416.5"/>
                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Wqq-8v-Epj" firstAttribute="top" secondItem="oUo-n2-mz2" secondAttribute="topMargin" constant="16" id="1wA-du-8A7"/>
+                    <constraint firstItem="Wqq-8v-Epj" firstAttribute="top" secondItem="oUo-n2-mz2" secondAttribute="topMargin" constant="48" id="4TY-jR-zPH"/>
                     <constraint firstItem="Wqq-8v-Epj" firstAttribute="leading" secondItem="oUo-n2-mz2" secondAttribute="leadingMargin" constant="16" id="H4Z-17-X66"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Wqq-8v-Epj" secondAttribute="trailing" constant="16" id="Lmc-eg-s0y"/>
                     <constraint firstAttribute="trailing" secondItem="RvH-FR-sRq" secondAttribute="trailing" id="LtI-pv-qrE"/>
                     <constraint firstItem="RQC-Z2-dEO" firstAttribute="width" secondItem="RvH-FR-sRq" secondAttribute="width" id="Oz7-Tj-DU2"/>
                     <constraint firstItem="RvH-FR-sRq" firstAttribute="leading" secondItem="oUo-n2-mz2" secondAttribute="leading" id="ZrY-5n-6Bo"/>
                     <constraint firstItem="RQC-Z2-dEO" firstAttribute="centerY" secondItem="RvH-FR-sRq" secondAttribute="centerY" id="aEh-3b-2dh"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Wqq-8v-Epj" secondAttribute="bottom" constant="16" id="g1b-jc-DKS"/>
                     <constraint firstItem="RvH-FR-sRq" firstAttribute="top" secondItem="oUo-n2-mz2" secondAttribute="top" constant="-2" id="ll9-vL-yTP"/>
+                    <constraint firstAttribute="bottom" secondItem="Wqq-8v-Epj" secondAttribute="bottom" constant="48" id="p9p-Kc-dch"/>
                     <constraint firstItem="RQC-Z2-dEO" firstAttribute="height" secondItem="RvH-FR-sRq" secondAttribute="height" id="pce-6w-GRV"/>
                     <constraint firstItem="RQC-Z2-dEO" firstAttribute="centerX" secondItem="RvH-FR-sRq" secondAttribute="centerX" id="tBd-gC-ePS"/>
                     <constraint firstAttribute="bottom" secondItem="RvH-FR-sRq" secondAttribute="bottom" constant="2" id="ws9-bo-LYg"/>
@@ -66,10 +75,11 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="backgroundImage" destination="RvH-FR-sRq" id="e61-bV-BzO"/>
+                <outlet property="categoriesCloudView" destination="RRT-Q1-BdM" id="dTa-UQ-h3B"/>
                 <outlet property="factLabel" destination="Wqq-8v-Epj" id="Gmz-1I-wCP"/>
                 <outlet property="shareButton" destination="l4T-0v-9Om" id="But-r3-dov"/>
             </connections>
-            <point key="canvasLocation" x="-16" y="68.5"/>
+            <point key="canvasLocation" x="-16" y="68"/>
         </tableViewCell>
     </objects>
 </document>

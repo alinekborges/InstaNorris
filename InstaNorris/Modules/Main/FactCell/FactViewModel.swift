@@ -17,6 +17,7 @@ class FactItemViewModel {
     let text: Driver<String>
     let backgroundImage: Driver<UIImage?>
     let fontSize: Driver<CGFloat>
+    let categories: Driver<[String]>
     
     init() {
         self.fact = PublishSubject<Fact>()
@@ -32,6 +33,11 @@ class FactItemViewModel {
                 return $0.count < 80 ?
                     Constants.largeFontSize : Constants.mediumFontSize
         }
+        
+        self.categories = self.fact
+            .map { $0.category }
+            .map { $0.map { "#\($0)" } }
+            .asDriver(onErrorJustReturn: [])
 
     }
     
