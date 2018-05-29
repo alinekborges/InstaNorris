@@ -13,6 +13,7 @@ struct LocalStorageKeys {
     private init() {}
     
     static let lastSearch = "last_search"
+    static let firstAccess = "first_access"
 
 }
 
@@ -22,6 +23,7 @@ class LocalStorageImpl: LocalStorage {
     
     init(userDefaults: UserDefaults = UserDefaults.standard) {
         self.userDefaults = userDefaults
+        userDefaults.register(defaults: [LocalStorageKeys.firstAccess: true])
     }
     
     var lastSearch: Observable<[String]> {
@@ -31,8 +33,17 @@ class LocalStorageImpl: LocalStorage {
             .unwrap()
     }
     
+    var firstAccess: Bool {
+        get {
+            return userDefaults.bool(forKey: LocalStorageKeys.firstAccess)
+        } set {
+            userDefaults.set(newValue, forKey: LocalStorageKeys.firstAccess)
+        }
+    }
+    
     func clear() {
         userDefaults.removeObject(forKey: LocalStorageKeys.lastSearch)
+        userDefaults.removeObject(forKey: LocalStorageKeys.firstAccess)
     }
     
     func addSearch(_ string: String) {

@@ -34,16 +34,28 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        showMainView()
+        if storage.firstAccess {
+            showOnboarding()
+        } else {
+            showMainView()
+        }
     }
     
     fileprivate func showOnboarding() {
         let view = container.resolve(OnboardingView.self)!
+        view.delegate = self
         self.currentView = view
     }
     
     fileprivate func showMainView() {
         let view = container.resolve(MainView.self)!
         self.currentView = view
+    }
+}
+
+extension AppCoordinator: OnboardingDelegate {
+    func navigateToMain() {
+        self.storage.firstAccess = false
+        self.showMainView()
     }
 }

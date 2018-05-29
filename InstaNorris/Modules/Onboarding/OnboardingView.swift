@@ -10,6 +10,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol OnboardingDelegate: class {
+    func navigateToMain()
+}
+
 class OnboardingView: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -24,6 +28,8 @@ class OnboardingView: UIViewController {
     @IBOutlet var views: [UIView]!
     
     @IBOutlet weak var continueButton: UIButton!
+    
+    weak var delegate: OnboardingDelegate?
     
     var animators: [UIViewPropertyAnimator] = []
     
@@ -50,6 +56,10 @@ class OnboardingView: UIViewController {
 extension OnboardingView {
     
     func configureViews() {
+        self.continueButton.rx.tap.bind {
+            self.delegate?.navigateToMain()
+        }.disposed(by: rx.disposeBag)
+        
         self.largeView.layer.cornerRadius = largeView.frame.width / 2
         
         self.views.forEach { view in

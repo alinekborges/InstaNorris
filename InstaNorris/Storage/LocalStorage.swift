@@ -14,4 +14,5 @@ protocol LocalStorage: class {
     var lastSearch: Observable<[String]> { get }
     func addSearch(_ string: String)
     func clear()
+    var firstAccess: Bool { get set }
 }
