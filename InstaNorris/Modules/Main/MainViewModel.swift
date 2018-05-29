@@ -87,6 +87,7 @@ class MainViewModel {
         //view states
         let isEmpty = self.results
             .filter { $0.isEmpty }
+            .skip(1) //to avoid catching the "startWith"
             .map { _ in return ViewState.empty }
 
         let error = self.searchError
