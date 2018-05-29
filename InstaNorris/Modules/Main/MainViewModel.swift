@@ -8,6 +8,7 @@
 
 import RxSwift
 import RxCocoa
+import RxSwiftUtilities
 
 class MainViewModel {
     
@@ -20,6 +21,7 @@ class MainViewModel {
     
     let viewState: Driver<ViewState>
     let isViewStateHidden: Driver<Bool>
+    let isLoading: Driver<Bool>
     
     let disposeBag = DisposeBag()
     
@@ -34,6 +36,9 @@ class MainViewModel {
             .map { !$0.isEmpty }
             .asDriver(onErrorJustReturn: false)
         
+        let loadingIndicator = ActivityIndicator()
+        self.isLoading = loadingIndicator.asDriver()
+        
         //view states
         let isEmpty = self.results
             .filter { $0.isEmpty }
@@ -47,9 +52,15 @@ class MainViewModel {
             .filter { _, results in return results.isEmpty }
             .map { error, _ in ViewState.error(error: error) }
         
+        let loading = loadingIndicator
+            .asObservable()
+            .filter { $0 == true }
+            .map { _ in return ViewState.loading }
+        
         viewState = Observable.merge(isEmpty,
                                      errorWithContent,
-                                     error)
+                                     error,
+                                     loading)
             .startWith(.start)
             .asDriver(onErrorJustReturn: ViewState.error(error: NorrisError()))
         
@@ -72,6 +83,7 @@ class MainViewModel {
             })
             .flatMap { search in
                 norrisRepository.search(search)
+                    .trackActivity(loadingIndicator)
             }
         
         searchResult
