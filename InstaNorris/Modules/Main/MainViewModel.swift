@@ -16,7 +16,9 @@ class MainViewModel {
     let isSearchShown = PublishSubject<Bool>()
     
     let isFactsShown: Driver<Bool>
-    let searchQuery: Driver<String>
+    let searchQuery: Observable<String>
+    
+    let viewState: Driver<ViewState>
     
     let disposeBag = DisposeBag()
     
@@ -24,13 +26,39 @@ class MainViewModel {
             (search: Driver<String>,
             categorySelected: Driver<String>,
             recentSearchSelected: Driver<String>),
-            norrisRepository: NorrisRepository,
-            localStorage: LocalStorage) {
+         norrisRepository: NorrisRepository,
+         localStorage: LocalStorage) {
         
-        self.searchQuery = Driver.merge(
-            input.search,
-            input.categorySelected,
-            input.recentSearchSelected)
+        //view states
+        let isEmpty = self.results
+            .filter { $0.isEmpty }
+            .skip(1)
+            .map { _ in return ViewState.empty }
+        
+        let errorWithContent = Observable.combineLatest(self.searchError, results)
+            .filter { _, results in return !results.isEmpty }
+            .map { error, _ in ViewState.errorWithContent(error: error) }
+        
+        let error = Observable.combineLatest(self.searchError, results)
+            .filter { _, results in return results.isEmpty }
+            .map { error, _ in ViewState.error(error: error) }
+        
+        //let loading =
+        
+        let defaultState = PublishSubject<ViewState>()
+        
+        viewState = Observable.merge(isEmpty,
+                                     errorWithContent,
+                                     error,
+                                     defaultState)
+            .startWith(.start)
+            .asDriver(onErrorJustReturn: ViewState.error(error: NorrisError()))
+        
+        //search
+        self.searchQuery = Observable.merge(
+            input.search.asObservable(),
+            input.categorySelected.asObservable(),
+            input.recentSearchSelected.asObservable())
             .filter { !$0.isEmpty }
         
         self.isFactsShown = self.isSearchShown
@@ -45,19 +73,31 @@ class MainViewModel {
             })
             .flatMap { search in
                 norrisRepository.search(search)
-                    .asDriver(onErrorJustReturn: NorrisResponse.error(error:
-                        NorrisError(message: "default error message")))
             }
         
         searchResult
-            .drive(onNext: { [weak self] response in
+            .subscribe(onNext: { [weak self] response in
                 switch response {
                 case .success(let facts):
                     self?.results.onNext(facts)
+                    defaultState.onNext(.none)
                 case .error(let error):
                     self?.searchError.onNext(error)
                 }
+            }, onError: { error in
+                    let norrisError = NorrisError(message: error.localizedDescription)
+                    self.searchError.onNext(norrisError)
             }).disposed(by: disposeBag)
+            
+//            .subscribe(onNext: { [weak self] response in
+//                switch response {
+//                case .success(let facts):
+//                    self?.results.onNext(facts)
+//                    defaultState.onNext(.none)
+//                case .error(let error):
+//                    self?.searchError.onNext(error)
+//                }
+//            }).disposed(by: disposeBag)
         
     }
 }

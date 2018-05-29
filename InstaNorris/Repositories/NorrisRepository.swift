@@ -17,7 +17,7 @@ enum NorrisResponse<T> {
 struct NorrisError: LocalizedError {
     let message: String
     
-    init(message: String) {
+    init(message: String = "norris.generic.error") {
         self.message = message
     }
     

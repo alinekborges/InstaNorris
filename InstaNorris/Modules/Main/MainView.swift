@@ -21,6 +21,7 @@ class MainView: UIViewController {
     @IBOutlet weak var headerView: HeaderView!
     @IBOutlet weak var searchContainer: UIView!
     let searchView: SearchView
+    var stateView: StatesView!
     
     init(searchView: SearchView, repository: NorrisRepository, localStorage: LocalStorage) {
         self.norrisRepository = repository
@@ -65,6 +66,7 @@ extension MainView {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.allowsSelection = false
         self.configureSearchView()
+        self.configureStateView()
     }
     
     func setupBindings() {
@@ -108,7 +110,11 @@ extension MainView {
             }).disposed(by: rx.disposeBag)
         
         self.viewModel.searchQuery
-            .drive(self.headerView.searchTextField.rx.text)
+            .bind(to: self.headerView.searchTextField.rx.text)
+            .disposed(by: rx.disposeBag)
+        
+        self.viewModel.viewState
+            .drive(self.stateView.rx.state)
             .disposed(by: rx.disposeBag)
     }
     
@@ -128,6 +134,14 @@ extension MainView {
         self.addChildViewController(self.searchView)
         self.searchView.view.prepareForConstraints()
         self.searchView.view.pinEdgesToSuperview()
+    }
+    
+    func configureStateView() {
+        self.stateView = StatesView()
+        self.stateView.isUserInteractionEnabled = false
+        self.view.addSubview(stateView)
+        stateView.prepareForConstraints()
+        stateView.pinEdgesToSuperview()
     }
 }
 

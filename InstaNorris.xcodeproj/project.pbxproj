@@ -38,6 +38,8 @@
 		408542A420B38CF10067B39B /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408542A320B38CF10067B39B /* Array+Utils.swift */; };
 		408542A620B3B20E0067B39B /* RandomSampleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408542A520B3B20E0067B39B /* RandomSampleSpec.swift */; };
 		408606D120AF22CC00258B7A /* MockNorrisRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408606D020AF22CC00258B7A /* MockNorrisRepository.swift */; };
+		40943D2C20BD599E00E0A802 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40943D2B20BD599E00E0A802 /* ViewState.swift */; };
+		40943D2E20BD5F4100E0A802 /* StateView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40943D2D20BD5F4100E0A802 /* StateView+Rx.swift */; };
 		40A0B6BA20AE6E1A00FFFE6F /* KIF+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0B6B920AE6E1A00FFFE6F /* KIF+Utils.swift */; };
 		40A3701920B4801800D2F469 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A3701820B4801800D2F469 /* LocalStorage.swift */; };
 		40A3701C20B4810E00D2F469 /* LocalStorageImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A3701B20B4810E00D2F469 /* LocalStorageImpl.swift */; };
@@ -111,6 +113,8 @@
 		408542A320B38CF10067B39B /* Array+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
 		408542A520B3B20E0067B39B /* RandomSampleSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSampleSpec.swift; sourceTree = "<group>"; };
 		408606D020AF22CC00258B7A /* MockNorrisRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNorrisRepository.swift; sourceTree = "<group>"; };
+		40943D2B20BD599E00E0A802 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		40943D2D20BD5F4100E0A802 /* StateView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StateView+Rx.swift"; sourceTree = "<group>"; };
 		40A0B6B920AE6E1A00FFFE6F /* KIF+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KIF+Utils.swift"; sourceTree = "<group>"; };
 		40A3701820B4801800D2F469 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		40A3701B20B4810E00D2F469 /* LocalStorageImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageImpl.swift; sourceTree = "<group>"; };
@@ -239,8 +243,10 @@
 		405D44AD2098D5A600160077 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				40943D2A20BD598A00E0A802 /* ViewStates */,
 				40BCC7B92098F982009279FA /* HeaderView.swift */,
 				40C22EA420ABA46D0032FB70 /* CloudTagView.swift */,
+				40943D2B20BD599E00E0A802 /* ViewState.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -282,6 +288,7 @@
 				40C4827C20AE4B4B00A12282 /* CloudTagView+Rx.swift */,
 				404C80F320BB6ACA00C36D65 /* NorrisResponse+Rx.swift */,
 				40696EC320BC3DBF00137E48 /* UILabel+Rx.swift */,
+				40943D2D20BD5F4100E0A802 /* StateView+Rx.swift */,
 			);
 			path = RxExtensions;
 			sourceTree = "<group>";
@@ -358,6 +365,13 @@
 				40C3FC9B20BCF89300072FE5 /* MainViewModelSpec.swift */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		40943D2A20BD598A00E0A802 /* ViewStates */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewStates;
 			sourceTree = "<group>";
 		};
 		40A3701A20B4802100D2F469 /* Storage */ = {
@@ -700,12 +714,14 @@
 				404C80F420BB6ACA00C36D65 /* NorrisResponse+Rx.swift in Sources */,
 				40C4827D20AE4B4B00A12282 /* CloudTagView+Rx.swift in Sources */,
 				40696EC220BC30B200137E48 /* Random+Utils.swift in Sources */,
+				40943D2E20BD5F4100E0A802 /* StateView+Rx.swift in Sources */,
 				401FBBEE209BA61A00F3B174 /* Rx+Utils.swift in Sources */,
 				40A3701920B4801800D2F469 /* LocalStorage.swift in Sources */,
 				405D44C62098D64800160077 /* Constants.swift in Sources */,
 				401FBBEB209BA33A00F3B174 /* SearchViewModel.swift in Sources */,
 				40DA7BF2209B4BD10016B326 /* HeaderView+Rx.swift in Sources */,
 				408542A420B38CF10067B39B /* Array+Utils.swift in Sources */,
+				40943D2C20BD599E00E0A802 /* ViewState.swift in Sources */,
 				40BCC7BA2098F982009279FA /* HeaderView.swift in Sources */,
 				40BCC7BC2098FBE7009279FA /* NSObject+Rx.swift in Sources */,
 				40BCC7BE2098FC08009279FA /* UIView+Constraints.swift in Sources */,
