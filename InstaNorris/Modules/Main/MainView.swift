@@ -22,6 +22,10 @@ class MainView: UIViewController {
     @IBOutlet weak var searchContainer: UIView!
     let searchView: SearchView
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     init(searchView: SearchView, repository: NorrisRepository, localStorage: LocalStorage) {
         self.norrisRepository = repository
         self.searchView = searchView
