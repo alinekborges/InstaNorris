@@ -41,9 +41,9 @@ class HeaderView: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "teste"
+        label.text = "[InstaNorris]"
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 30)
+        label.font = UIFont.systemFont(ofSize: 34)
         return label
     }()
     
@@ -53,6 +53,7 @@ class HeaderView: UIView {
         textField.layer.cornerRadius = 6.0
         textField.textColor = .white
         textField.tintColor = .white
+        textField.clearsOnBeginEditing = true
         return textField
     }()
     
@@ -117,7 +118,7 @@ class HeaderView: UIView {
     
     private func setupAnimator() {
         
-        self.animator = UIViewPropertyAnimator(duration: 0.4, curve: .linear, animations: {
+        self.animator = UIViewPropertyAnimator(duration: 0.25, curve: .linear, animations: {
             self.heightConstraint.constant = self.minHeight
             self.titleLabel.alpha = 0
             self.searchButton.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
@@ -155,8 +156,6 @@ class HeaderView: UIView {
         self.searchButton.pinRight(36.0)
         self.searchButton.constraintHeight(20.0)
         self.searchButton.constraintWidth(20.0)
-        
-        
         
         self.heightConstraint = self.constraintHeight(self.maxHeight)
         
