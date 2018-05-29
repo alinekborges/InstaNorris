@@ -73,7 +73,6 @@ class StateView: UIView {
             self.didSetupViews = true
             self.setupConstraints()
             self.testTitle.font = UIFont.systemFont(ofSize: 40)
-            self.backgroundColor = UIColor.red.withAlphaComponent(0.4)
         }
     }
     
