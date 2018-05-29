@@ -43,4 +43,16 @@ class NorrisRepositoryImpl: NorrisRepository {
                 return NorrisResponse.error(error: NorrisError(message: "error.facts"))
         }
     }
+    
+    func searchCategory(_ category: String) -> Single<NorrisResponse<[Fact]>> {
+        return self.service.searchCategory(category)
+            .map { response in
+                if response.statusCode == 200 {
+                    if let searchResponse = try? response.map(SearchResponse.self) {
+                        return NorrisResponse.success(value: searchResponse.result)
+                    }
+                }
+                return NorrisResponse.error(error: NorrisError(message: "error.facts"))
+        }
+    }
 }

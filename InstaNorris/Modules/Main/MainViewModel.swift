@@ -29,7 +29,6 @@ class MainViewModel {
         
         self.searchQuery = Driver.merge(
             input.search,
-            input.categorySelected,
             input.recentSearchSelected)
             .filter { !$0.isEmpty }
         
@@ -37,7 +36,9 @@ class MainViewModel {
             .map { !$0 }
             .asDriver(onErrorJustReturn: true)
         
-        let searchResult = searchQuery
+        let viewStateSubject = PublishSubject<ViewState>()
+        
+        let defaultSearchResult = searchQuery
             .do(onNext: { search in
                 //side effects
                 self.isSearchShown.onNext(false)
@@ -48,6 +49,20 @@ class MainViewModel {
                     .asDriver(onErrorJustReturn: NorrisResponse.error(error:
                         NorrisError(message: "default error message")))
             }
+        
+        let categorySearchResult = input.categorySelected
+            .do(onNext: { search in
+                //side effects
+                self.isSearchShown.onNext(false)
+                localStorage.addSearch(search)
+            })
+            .flatMap { search in
+                norrisRepository.searchCategory(search)
+                    .asDriver(onErrorJustReturn: NorrisResponse.error(error:
+                        NorrisError(message: "default error message")))
+        }
+        
+        let searchResult = Driver.merge(defaultSearchResult, categorySearchResult)
         
         searchResult
             .drive(onNext: { [weak self] response in
