@@ -31,27 +31,17 @@ class SearchViewModel {
             .map { $0.count == 0 }
             .startWith(true)
         
-//        categoriesResult
-//            .drive(onNext: { [weak self] response in
-//                switch response {
-//                case .success(let categories): self?.categories.onNext(categories.randomSample(Constants.categoryCount))
-//                case .error(let error):
-//                    self?.categoriesError.onNext(error)
-//                }
-//            }).disposed(by: disposeBag)
-        
-        //rself.categories =
-        
         self.categories = categoriesResult
             .asObservable()
             .filterSuccess()
+            .map { categories in
+                categories.randomSample(Constants.categoryCount)
+            }
             .asDriver(onErrorJustReturn: [])
         
         self.categoriesError = categoriesResult
             .asObservable()
             .filterError()
-        
-        
-        
+    
     }
 }

@@ -92,6 +92,7 @@ extension MainView {
         self.viewModel.searchShown
             .subscribe(onNext: { [weak self] show in
                 self?.searchContainer.isHidden = !show
+                self?.animateTableView(shown: !show)
                 if show {
                     self?.headerView.collapse()
                 } else {
@@ -105,6 +106,17 @@ extension MainView {
             self.view.endEditing(true)
         }.disposed(by: rx.disposeBag)
         
+    }
+    
+    func animateTableView(shown: Bool) {
+        UIView.animate(withDuration: 0.2) {
+            if shown {
+                self.tableView.alpha = 1.0
+            } else {
+                self.tableView.alpha = 0.0
+            }
+            self.view.layoutIfNeeded()
+        }
     }
     
     func configureSearchView() {

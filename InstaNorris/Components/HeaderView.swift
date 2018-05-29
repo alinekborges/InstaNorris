@@ -49,7 +49,7 @@ class HeaderView: UIView {
     
     let searchTextField: UITextField = {
        let textField = UITextField()
-        textField.backgroundColor = UIColor.white.withAlphaComponent(0.2)
+        textField.backgroundColor = UIColor.white.withAlphaComponent(0.25)
         textField.layer.cornerRadius = 6.0
         textField.textColor = .white
         textField.tintColor = .white
@@ -66,6 +66,13 @@ class HeaderView: UIView {
     
     let blurView: UIVisualEffectView = {
         let view = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        return view
+    }()
+    
+    let bottomLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.white.withAlphaComponent(0.6)
         return view
     }()
     
@@ -108,7 +115,6 @@ class HeaderView: UIView {
     
     func collapse() {
         self.animator?.startAnimation()
-        
     }
     
     func expand() {
@@ -136,11 +142,13 @@ class HeaderView: UIView {
         self.addSubview(self.titleLabel)
         self.addSubview(self.searchTextField)
         self.addSubview(self.searchButton)
+        self.addSubview(self.bottomLine)
         
         self.blurView.prepareForConstraints()
         self.titleLabel.prepareForConstraints()
         self.searchTextField.prepareForConstraints()
         self.searchButton.prepareForConstraints()
+        self.bottomLine.prepareForConstraints()
         
         self.blurView.pinEdgesToSuperview()
         
@@ -156,6 +164,11 @@ class HeaderView: UIView {
         self.searchButton.pinRight(36.0)
         self.searchButton.constraintHeight(20.0)
         self.searchButton.constraintWidth(20.0)
+        
+        self.bottomLine.constraintHeight(1)
+        self.bottomLine.pinRight()
+        self.bottomLine.pinLeft()
+        self.bottomLine.pinBottom()
         
         self.heightConstraint = self.constraintHeight(self.maxHeight)
         
