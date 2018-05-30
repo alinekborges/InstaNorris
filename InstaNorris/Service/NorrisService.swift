@@ -12,5 +12,4 @@ import Moya
 protocol NorrisService {
     func categories()-> Single<Response>
     func search(_ query: String) -> Single<Response>
-    func searchCategory(_ category: String) -> Single<Response>
 }

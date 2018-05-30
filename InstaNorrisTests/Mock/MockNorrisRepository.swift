@@ -16,7 +16,7 @@ class MockNorrisRepository: NorrisRepository {
     let success: Bool
     let service: NorrisService
 
-    let mockCategories = ["test1", "test2"]
+    let mockCategories = ["category1", "category2"]
     
     init(success: Bool = true, service: NorrisService = MockNorrisService()) {
         self.success = success
@@ -36,6 +36,8 @@ class MockNorrisRepository: NorrisRepository {
             return self.service.search(query)
                 .map(SearchResponse.self)
                 .map { $0.result }
+                .delaySubscription(1, scheduler: MainScheduler.instance)
+                
         } else {
             let subject = PublishSubject<[Fact]>()
             subject.onError(NorrisError())

@@ -35,4 +35,5 @@ class MockLocalStorage: LocalStorage {
         
     }
     
+    var firstAccess: Bool = false
 }

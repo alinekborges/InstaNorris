@@ -25,7 +25,11 @@ extension BaseUITest {
         tester().tapView(withAccessibilityIdentifier: accessibilityIdentifier)
     }
 
-    func getView(_ text:String) -> UIView {
+    func getView(_ text: String) -> UIView {
         return tester().waitForView(withAccessibilityLabel: text)
+    }
+    
+    func insertText(_ text: String, intoView view: String) {
+        tester().enterText(text, intoViewWithAccessibilityIdentifier: view)
     }
 }

@@ -25,8 +25,4 @@ class NorrisServiceImpl: NorrisService {
     func search(_ query: String) -> Single<Response> {
         return self.provider.rx.request(.search(query: query))
     }
-    
-    func searchCategory(_ category: String) -> Single<Response> {
-        return self.provider.rx.request(.searchCategory(category: category))
-    }
 }

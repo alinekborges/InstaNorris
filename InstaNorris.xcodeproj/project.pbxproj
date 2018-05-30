@@ -24,6 +24,8 @@
 		402FA51A20BE079A009A5E60 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA51720BE079A009A5E60 /* AboutView.swift */; };
 		402FA51C20BE079A009A5E60 /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 402FA51920BE079A009A5E60 /* AboutView.xib */; };
 		402FA51E20BE2A27009A5E60 /* URL+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA51D20BE2A27009A5E60 /* URL+Utils.swift */; };
+		402FA52120BEDE04009A5E60 /* MainFlowSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA52020BEDE04009A5E60 /* MainFlowSteps.swift */; };
+		402FA52320BEDE2E009A5E60 /* MainFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA52220BEDE2E009A5E60 /* MainFlowTests.swift */; };
 		404B4C8320BC4F6F004830CA /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B4C8220BC4F6F004830CA /* UIView+Utils.swift */; };
 		404B4C8520BC520C004830CA /* FactItemViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B4C8420BC520C004830CA /* FactItemViewModelSpec.swift */; };
 		404C80F420BB6ACA00C36D65 /* NorrisResponse+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404C80F320BB6ACA00C36D65 /* NorrisResponse+Rx.swift */; };
@@ -109,6 +111,8 @@
 		402FA51720BE079A009A5E60 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		402FA51920BE079A009A5E60 /* AboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
 		402FA51D20BE2A27009A5E60 /* URL+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Utils.swift"; sourceTree = "<group>"; };
+		402FA52020BEDE04009A5E60 /* MainFlowSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowSteps.swift; sourceTree = "<group>"; };
+		402FA52220BEDE2E009A5E60 /* MainFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowTests.swift; sourceTree = "<group>"; };
 		404B4C8220BC4F6F004830CA /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		404B4C8420BC520C004830CA /* FactItemViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactItemViewModelSpec.swift; sourceTree = "<group>"; };
 		404C80F320BB6ACA00C36D65 /* NorrisResponse+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NorrisResponse+Rx.swift"; sourceTree = "<group>"; };
@@ -228,6 +232,15 @@
 				402FA51920BE079A009A5E60 /* AboutView.xib */,
 			);
 			path = About;
+			sourceTree = "<group>";
+		};
+		402FA51F20BEDDD2009A5E60 /* MainFlow */ = {
+			isa = PBXGroup;
+			children = (
+				402FA52020BEDE04009A5E60 /* MainFlowSteps.swift */,
+				402FA52220BEDE2E009A5E60 /* MainFlowTests.swift */,
+			);
+			path = MainFlow;
 			sourceTree = "<group>";
 		};
 		405D446E2098C16000160077 = {
@@ -475,6 +488,7 @@
 		40C4828120AE4E2C00A12282 /* UITests */ = {
 			isa = PBXGroup;
 			children = (
+				402FA51F20BEDDD2009A5E60 /* MainFlow */,
 				40C4828220AE4E3800A12282 /* BaseUITest.swift */,
 			);
 			path = UITests;
@@ -821,12 +835,14 @@
 				40F63F7B20BAE7C6007E0328 /* MockLocalStorage.swift in Sources */,
 				404B4C8520BC520C004830CA /* FactItemViewModelSpec.swift in Sources */,
 				408606D120AF22CC00258B7A /* MockNorrisRepository.swift in Sources */,
+				402FA52320BEDE2E009A5E60 /* MainFlowTests.swift in Sources */,
 				40C3FC9C20BCF89400072FE5 /* MainViewModelSpec.swift in Sources */,
 				40C4828020AE4D2C00A12282 /* CloudTagViewSpec.swift in Sources */,
 				40A3702420B4D56400D2F469 /* LocalStorageSpec.swift in Sources */,
 				405D44CE2098D7BF00160077 /* MockNorrisService.swift in Sources */,
 				407A2ABF20B85A5000FCC2D1 /* SearchViewModelSpec.swift in Sources */,
 				40C4828520AE5AE500A12282 /* BaseUITests+Utils.swift in Sources */,
+				402FA52120BEDE04009A5E60 /* MainFlowSteps.swift in Sources */,
 				40A0B6BA20AE6E1A00FFFE6F /* KIF+Utils.swift in Sources */,
 				405D44D02098D7CD00160077 /* NorrisRepositorySpec.swift in Sources */,
 				408542A620B3B20E0067B39B /* RandomSampleSpec.swift in Sources */,

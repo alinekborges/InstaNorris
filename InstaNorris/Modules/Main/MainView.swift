@@ -75,6 +75,7 @@ extension MainView {
         self.tableView.estimatedRowHeight = 200
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.allowsSelection = false
+        self.tableView.accessibilityIdentifier = "facts_table_view"
         self.configureSearchView()
         self.configureStateView()
     }

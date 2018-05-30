@@ -39,6 +39,7 @@ class SearchView: UIViewController {
         super.viewDidLoad()
         self.setupViewModel()
         self.setupBindings()
+        self.view.accessibilityIdentifier = "search_view"
     }
     
 }

@@ -14,7 +14,9 @@ class AppCoordinator: Coordinator {
     
     let window: UIWindow
     let container: Container
-    let storage: LocalStorage
+    lazy var storage: LocalStorage = {
+        container.resolve(LocalStorage.self)!
+    }()
     
     var currentView: UIViewController? {
         get {
@@ -30,10 +32,10 @@ class AppCoordinator: Coordinator {
     init(window: UIWindow, container: Container) {
         self.window = window
         self.container = container
-        self.storage = container.resolve(LocalStorage.self)!
     }
     
     func start() {
+        
         if storage.firstAccess {
             showOnboarding()
         } else {

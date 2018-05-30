@@ -55,13 +55,15 @@ class HeaderView: UIView {
         textField.tintColor = .white
         textField.font = UIFont.boldSystemFont(ofSize: 18)
         textField.clearsOnBeginEditing = true
+        textField.accessibilityIdentifier = "search_input"
         return textField
     }()
     
     let searchButton: UIButton = {
         let button = UIButton()
         button.setTitle("", for: .normal)
-        button.setImage(UIImage(named: "search"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "search"), for: .normal)
+        button.accessibilityIdentifier = "search_button"
         return button
     }()
     

@@ -17,15 +17,19 @@ class BaseUITest: KIFTestCase {
     
     let defaultContainer = DefaultContainer()
     var window: UIWindow!
+    var coordinator: AppCoordinator?
     
     override func beforeEach() {
         
-        UIView.setAnimationsEnabled(true)
+        UIView.setAnimationsEnabled(false)
         
         self.configureContainer(container: self.defaultContainer.container)
         
         self.window = UIApplication.shared.keyWindow!
         
+        self.coordinator = AppCoordinator(window: window, container: self.defaultContainer.container)
+        
+        coordinator?.start()
     }
     
     func configureContainer(container: Container) {
