@@ -61,6 +61,8 @@ class MainFlowTests: BaseUITest {
     }
     
     func testSearchEmptyResults() {
+        mockRepository.emptyResponse = true
+        
         tapOnSearchView()
         fillSearch()
         tapOnSearchButton()

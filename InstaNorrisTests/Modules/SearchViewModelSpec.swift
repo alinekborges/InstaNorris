@@ -38,7 +38,7 @@ class SearchViewModelSpec: QuickSpec {
                         
                         expect(result).toNot(beEmpty())
                     } catch {
-                        assert(false, error.localizedDescription)
+                        assert(false)
                     }
                 }
                 

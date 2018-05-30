@@ -25,11 +25,21 @@ class MockNorrisRepository: NorrisRepository {
         self.service = service
     }
 
-    func categories() -> Single<NorrisResponse<[String]>> {
+    func categories() -> Single<[String]> {
         if success {
-           return Single.just(NorrisResponse.success(value: self.mockCategories))
+            if emptyResponse {
+                return Observable.just([])
+                    .delaySubscription(1, scheduler: MainScheduler.instance)
+                    .asSingle()
+            } else {
+                return Observable.just(mockCategories)
+                    .delaySubscription(1, scheduler: MainScheduler.instance)
+                    .asSingle()
+            }
         } else {
-            return Single.just(NorrisResponse.error(error: NorrisError(message: "mock api error")))
+            let subject = PublishSubject<[String]>()
+            subject.onError(NorrisError())
+            return subject.asSingle()
         }
     }
 

@@ -17,7 +17,7 @@ class StartView: UIView, StateSubview {
         let label = UILabel()
         label.textColor = .white
         label.text = "Chuck Norris can guess what you wanna search, but I will ask you to type the search above ☻"
-        label.font = UIFont(name: "AmericanTypewriter", size: 26)
+        label.font = UIFont(name: "AmericanTypewriter", size: 22)
         label.numberOfLines = 0
         label.textAlignment = .center
         return label

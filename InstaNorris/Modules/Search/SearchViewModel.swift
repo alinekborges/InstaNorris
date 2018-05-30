@@ -45,7 +45,6 @@ class SearchViewModel {
         
         self.categories = categoriesResult
             .elements()
-            .startWith([])
             .asDriver(onErrorJustReturn: [])
         
         self.categoriesError = categoriesResult
