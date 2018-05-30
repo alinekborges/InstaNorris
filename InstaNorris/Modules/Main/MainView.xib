@@ -22,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_3" translatesAutoresizingMaskIntoConstraints="NO" id="ubz-NR-vh4">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_9" translatesAutoresizingMaskIntoConstraints="NO" id="ubz-NR-vh4">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qlr-tE-Mgr">
@@ -36,6 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <color key="backgroundColor" red="0.067020126210000003" green="0.13406323580000001" blue="0.2148239213" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                     <blurEffect style="light"/>
                 </visualEffectView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qbv-lJ-et2">
@@ -85,6 +86,6 @@
         </view>
     </objects>
     <resources>
-        <image name="img_3" width="1536" height="1044"/>
+        <image name="img_9" width="1094" height="1034"/>
     </resources>
 </document>

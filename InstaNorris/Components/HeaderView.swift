@@ -20,12 +20,6 @@ class HeaderView: UIView {
     
     var search: Driver<String>!
     
-    var title: String = "" {
-        didSet {
-            self.titleLabel.text = title
-        }
-    }
-    
     var fractionComplete: CGFloat = 0.0 {
         didSet {
            self.animator?.fractionComplete = fractionComplete
@@ -39,12 +33,10 @@ class HeaderView: UIView {
         return CGSize(width: 30, height: self.maxHeight)
     }
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "[InstaNorris]"
-        label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 34)
-        return label
+    private let logo: UIImageView = {
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "logo"))
+        imageView.contentMode = .scaleAspectFit
+        return imageView
     }()
     
     let searchTextField: UITextField = {
@@ -133,7 +125,7 @@ class HeaderView: UIView {
         
         self.animator = UIViewPropertyAnimator(duration: 0.25, curve: .linear, animations: {
             self.heightConstraint.constant = self.minHeight
-            self.titleLabel.alpha = 0
+            self.logo.alpha = 0
             self.superview?.layoutIfNeeded()
             self.layoutIfNeeded()
         })
@@ -145,23 +137,24 @@ class HeaderView: UIView {
     private func setupConstraints() {
         
         self.addSubview(self.blurView)
-        self.addSubview(self.titleLabel)
         self.addSubview(self.searchTextField)
         self.addSubview(self.searchButton)
         self.addSubview(self.bottomLine)
         self.addSubview(self.infoButton)
+        self.addSubview(self.logo)
         
         self.blurView.prepareForConstraints()
-        self.titleLabel.prepareForConstraints()
         self.searchTextField.prepareForConstraints()
         self.searchButton.prepareForConstraints()
         self.bottomLine.prepareForConstraints()
         self.infoButton.prepareForConstraints()
+        self.logo.prepareForConstraints()
         
         self.blurView.pinEdgesToSuperview()
         
-        self.titleLabel.pinLeft(30.0)
-        self.titleLabel.pinBottom(70.0)
+        self.logo.pinLeft(30.0)
+        self.logo.pinBottom(50.0)
+        self.logo.pinRight(140.0)
         
         self.searchTextField.pinLeft(30.0)
         self.searchTextField.pinRight(30.0)
@@ -179,7 +172,7 @@ class HeaderView: UIView {
         self.bottomLine.pinBottom()
         
         self.infoButton.pinRight(24)
-        self.infoButton.centerYAnchor.constraint(equalTo: self.titleLabel.centerYAnchor).isActive = true
+        self.infoButton.centerYAnchor.constraint(equalTo: self.logo.centerYAnchor).isActive = true
         
         self.heightConstraint = self.constraintHeight(self.maxHeight)
         

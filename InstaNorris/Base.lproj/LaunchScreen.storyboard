@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,13 +16,52 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_9" translatesAutoresizingMaskIntoConstraints="NO" id="5kv-uA-zeH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LMg-cZ-Pc6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CJu-Pm-vFf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="y1y-Al-rVs">
+                                            <rect key="frame" x="34" y="602" width="295" height="65"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="y1y-Al-rVs" firstAttribute="centerX" secondItem="CJu-Pm-vFf" secondAttribute="centerX" id="9pA-ue-Itu"/>
+                                        <constraint firstItem="y1y-Al-rVs" firstAttribute="centerY" secondItem="CJu-Pm-vFf" secondAttribute="centerY" id="Leo-Z4-p84"/>
+                                        <constraint firstItem="y1y-Al-rVs" firstAttribute="leading" secondItem="CJu-Pm-vFf" secondAttribute="leading" constant="40" id="WlU-pT-SG6"/>
+                                        <constraint firstAttribute="trailing" secondItem="y1y-Al-rVs" secondAttribute="trailing" constant="40" id="pRe-mH-6G0"/>
+                                    </constraints>
+                                </view>
+                                <color key="backgroundColor" red="0.067020126212372619" green="0.13406323578907742" blue="0.214823921319797" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5kv-uA-zeH" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="01v-Ft-k1M"/>
+                            <constraint firstItem="LMg-cZ-Pc6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EpU-4L-Quh"/>
+                            <constraint firstItem="5kv-uA-zeH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="R3i-lM-mGG"/>
+                            <constraint firstItem="LMg-cZ-Pc6" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="RrB-Lp-5zV"/>
+                            <constraint firstItem="LMg-cZ-Pc6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="TvO-2o-Z41"/>
+                            <constraint firstItem="5kv-uA-zeH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WxD-wX-btL"/>
+                            <constraint firstItem="LMg-cZ-Pc6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Y3r-Rf-3C9"/>
+                            <constraint firstItem="5kv-uA-zeH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zjp-Od-iUc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="img_9" width="1094" height="1034"/>
+        <image name="logo" width="538" height="65"/>
+    </resources>
 </document>
