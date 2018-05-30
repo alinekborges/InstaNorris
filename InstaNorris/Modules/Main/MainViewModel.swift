@@ -48,14 +48,14 @@ class MainViewModel {
         
         let searchResult = searchQuery
             .do(onNext: { search in
-                //side effects
+                //side effects are hiding search view and adding this search recent search storage
                 isSearchShown.onNext(false)
                 localStorage.addSearch(search)
             })
             .flatMapLatest { search in
                 norrisRepository.search(search)
                     .trackActivity(loadingIndicator)
-                    .materialize()
+                    .materialize() //converts error and onNext to events
             }.share()
         
         self.results = searchResult
@@ -67,9 +67,15 @@ class MainViewModel {
             .errors()
             .asDriver(onErrorJustReturn: NorrisError())
         
-        self.isViewStateHidden = Driver.combineLatest(self.results,
-                                                      isSearchShown.asDriver(onErrorJustReturn: false),
-                                                      self.isLoading) { results, searchShown, isLoading in
+        self.viewState = MainViewModel.viewState(results: results, error: searchError, isLoading: isLoading)
+        
+        let searchShownDriver = isSearchShown.asDriver(onErrorJustReturn: false)
+        
+        //weather state view is hidden of shown
+        self.isViewStateHidden = Driver
+            .combineLatest(self.results,
+                           searchShownDriver,
+                           self.isLoading) { results, searchShown, isLoading in
                 if isLoading { return false }
                 if searchShown { return true }
                 if results.isEmpty { return false }
@@ -77,20 +83,31 @@ class MainViewModel {
             }
             .asDriver(onErrorJustReturn: false)
         
+        //the transparent background requires to hide the facts table when search is showing or when there is some state to be shown
         self.isFactsShown = Driver.combineLatest(
-        self.isViewStateHidden,
-        isSearchShown.asDriver(onErrorJustReturn: false)) { viewStateHidden, searchShown in
-            return viewStateHidden && !searchShown
+            self.isViewStateHidden,
+            searchShownDriver) { viewStateHidden, searchShown in
+                return viewStateHidden && !searchShown
             }
             .asDriver(onErrorJustReturn: false)
-        
+    }
+    
+    
+    /// Returns Observable of ViewState, based on if there is any result, any errors or is loading
+    ///
+    /// - Parameters:
+    ///   - results: Result of api jokes call
+    ///   - error: Error thrown on api call
+    ///   - isLoading: Wheater is loading or not
+    /// - Returns: Observable already mapped to view state
+    class func viewState(results: Driver<[Fact]>, error: Driver<Error>, isLoading: Driver<Bool>) -> Driver<ViewState> {
         //view states
-        let isEmpty = self.results
+        let isEmpty = results
             .filter { $0.isEmpty }
             .skip(1) //to avoid catching the "startWith"
             .map { _ in return ViewState.empty }
-
-        let error = self.searchError
+        
+        let error = error
             .withLatestFrom(results) { error, results -> ViewState in
                 if !results.isEmpty {
                     return ViewState.errorWithContent(error: error)
@@ -98,16 +115,16 @@ class MainViewModel {
                     return ViewState.error(error: error)
                 }
         }
-
+        
         let loading = isLoading
             .filter { $0 == true }
             .map { _ in return ViewState.loading }
         
-        viewState = Driver.merge(isEmpty,
-                                     error,
-                                     loading)
+        return Driver.merge(isEmpty,
+                                 error,
+                                 loading)
             .startWith(.start)
             .asDriver(onErrorJustReturn: ViewState.error(error: NorrisError()))
-        
+
     }
 }
