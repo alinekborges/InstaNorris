@@ -67,6 +67,7 @@
 		40BCC7C3209AB36B009279FA /* FactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7C2209AB36B009279FA /* FactCell.swift */; };
 		40BCC7C5209AB3AF009279FA /* FactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BCC7C4209AB3AF009279FA /* FactViewModel.swift */; };
 		40C22EA520ABA46D0032FB70 /* CloudTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C22EA420ABA46D0032FB70 /* CloudTagView.swift */; };
+		40C300C220BF14A9006C2FF5 /* Observable+Retry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C300C120BF14A9006C2FF5 /* Observable+Retry.swift */; };
 		40C3FC9C20BCF89400072FE5 /* MainViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C3FC9B20BCF89300072FE5 /* MainViewModelSpec.swift */; };
 		40C4827B20AE438D00A12282 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4827A20AE438D00A12282 /* String+Utils.swift */; };
 		40C4827D20AE4B4B00A12282 /* CloudTagView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4827C20AE4B4B00A12282 /* CloudTagView+Rx.swift */; };
@@ -156,6 +157,7 @@
 		40BCC7C2209AB36B009279FA /* FactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactCell.swift; sourceTree = "<group>"; };
 		40BCC7C4209AB3AF009279FA /* FactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewModel.swift; sourceTree = "<group>"; };
 		40C22EA420ABA46D0032FB70 /* CloudTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTagView.swift; sourceTree = "<group>"; };
+		40C300C120BF14A9006C2FF5 /* Observable+Retry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Retry.swift"; sourceTree = "<group>"; };
 		40C3FC9B20BCF89300072FE5 /* MainViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelSpec.swift; sourceTree = "<group>"; };
 		40C4827A20AE438D00A12282 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		40C4827C20AE4B4B00A12282 /* CloudTagView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudTagView+Rx.swift"; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				40C4827C20AE4B4B00A12282 /* CloudTagView+Rx.swift */,
 				40696EC320BC3DBF00137E48 /* UILabel+Rx.swift */,
 				40943D2D20BD5F4100E0A802 /* StateView+Rx.swift */,
+				40C300C120BF14A9006C2FF5 /* Observable+Retry.swift */,
 			);
 			path = RxExtensions;
 			sourceTree = "<group>";
@@ -812,6 +815,7 @@
 				40DA7BF2209B4BD10016B326 /* HeaderView+Rx.swift in Sources */,
 				408542A420B38CF10067B39B /* Array+Utils.swift in Sources */,
 				40943D2C20BD599E00E0A802 /* StateView.swift in Sources */,
+				40C300C220BF14A9006C2FF5 /* Observable+Retry.swift in Sources */,
 				40BCC7BA2098F982009279FA /* HeaderView.swift in Sources */,
 				402FA51E20BE2A27009A5E60 /* URL+Utils.swift in Sources */,
 				40BCC7BC2098FBE7009279FA /* NSObject+Rx.swift in Sources */,

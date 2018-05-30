@@ -55,6 +55,7 @@ class MainViewModel {
             .flatMapLatest { search in
                 norrisRepository.search(search)
                     .trackActivity(loadingIndicator)
+                    .retryWhenNeeded()
                     .materialize() //converts error and onNext to events
             }.share()
         

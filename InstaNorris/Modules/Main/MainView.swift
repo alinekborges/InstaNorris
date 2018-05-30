@@ -124,6 +124,7 @@ extension MainView {
             }).disposed(by: rx.disposeBag)
         
         self.viewModel.isSearchShown
+            .distinctUntilChanged()
             .subscribe(onNext: { [weak self] show in
                 self?.searchContainer.isHidden = !show
                 if show {
