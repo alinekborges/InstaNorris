@@ -8,6 +8,8 @@
 
 import RxSwift
 import RxCocoa
+import RxSwiftExt
+import RxSwiftUtilities
 
 class SearchViewModel {
     
@@ -15,16 +17,26 @@ class SearchViewModel {
     let isRecentSearchHidden: Driver<Bool>
     
     let categories: Driver<[String]>
-    let categoriesError: Observable<NorrisError>
+    let categoriesError: Driver<Error>
+    
+    let isLoading: Driver<Bool>
     
     let disposeBag = DisposeBag()
     
     init(norrisRepository: NorrisRepository,
          localStorage: LocalStorage) {
         
-        let categoriesResult = norrisRepository.categories()
+        let loadingIndicator = ActivityIndicator()
+        self.isLoading = loadingIndicator.asDriver()
         
-        self.recentSearch = localStorage.lastSearch
+        let categoriesResult = norrisRepository
+            .categories()
+            .trackActivity(loadingIndicator)
+            .materialize()
+            .share()
+        
+        self.recentSearch = localStorage
+            .lastSearch
             .asDriver(onErrorJustReturn: [])
         
         self.isRecentSearchHidden = self.recentSearch
@@ -32,16 +44,13 @@ class SearchViewModel {
             .startWith(true)
         
         self.categories = categoriesResult
-            .asObservable()
-            .filterSuccess()
-            .map { categories in
-                categories.randomSample(Constants.categoryCount)
-            }
+            .elements()
+            .startWith([])
             .asDriver(onErrorJustReturn: [])
         
         self.categoriesError = categoriesResult
-            .asObservable()
-            .filterError()
+            .errors()
+            .asDriver(onErrorJustReturn: NorrisError())
     
     }
 }

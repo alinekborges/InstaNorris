@@ -18,18 +18,9 @@ class NorrisRepositoryImpl: NorrisRepository {
         self.service = service
     }
     
-    func categories() -> Single<NorrisResponse<[String]>> {
+    func categories() -> Single<[String]> {
         return self.service.categories()
-            .map { response in
-                if response.statusCode == 200 {
-                    if let categories = try? response.map([String].self) {
-                        return NorrisResponse.success(value: categories)
-                    }
-                }
-                
-                return NorrisResponse.error(error: NorrisError(message: "error.categories"))
-        }
-        
+            .map([String].self)
     }
     
     func search(_ query: String) -> Single<[Fact]> {

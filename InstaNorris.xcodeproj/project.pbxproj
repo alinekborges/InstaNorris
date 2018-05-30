@@ -28,7 +28,6 @@
 		402FA52320BEDE2E009A5E60 /* MainFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA52220BEDE2E009A5E60 /* MainFlowTests.swift */; };
 		404B4C8320BC4F6F004830CA /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B4C8220BC4F6F004830CA /* UIView+Utils.swift */; };
 		404B4C8520BC520C004830CA /* FactItemViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B4C8420BC520C004830CA /* FactItemViewModelSpec.swift */; };
-		404C80F420BB6ACA00C36D65 /* NorrisResponse+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404C80F320BB6ACA00C36D65 /* NorrisResponse+Rx.swift */; };
 		405D44A52098D54B00160077 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405D44A32098D54B00160077 /* LaunchScreen.storyboard */; };
 		405D44A82098D56200160077 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 405D44A62098D56200160077 /* Info.plist */; };
 		405D44A92098D56200160077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44A72098D56200160077 /* AppDelegate.swift */; };
@@ -115,7 +114,6 @@
 		402FA52220BEDE2E009A5E60 /* MainFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowTests.swift; sourceTree = "<group>"; };
 		404B4C8220BC4F6F004830CA /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		404B4C8420BC520C004830CA /* FactItemViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactItemViewModelSpec.swift; sourceTree = "<group>"; };
-		404C80F320BB6ACA00C36D65 /* NorrisResponse+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NorrisResponse+Rx.swift"; sourceTree = "<group>"; };
 		405D44772098C16000160077 /* InstaNorris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaNorris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		405D448B2098C16000160077 /* InstaNorrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaNorrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		405D44912098C16000160077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -357,7 +355,6 @@
 				40DA7BF1209B4BD10016B326 /* HeaderView+Rx.swift */,
 				401FBBED209BA61A00F3B174 /* Rx+Utils.swift */,
 				40C4827C20AE4B4B00A12282 /* CloudTagView+Rx.swift */,
-				404C80F320BB6ACA00C36D65 /* NorrisResponse+Rx.swift */,
 				40696EC320BC3DBF00137E48 /* UILabel+Rx.swift */,
 				40943D2D20BD5F4100E0A802 /* StateView+Rx.swift */,
 			);
@@ -801,7 +798,6 @@
 				40C22EA520ABA46D0032FB70 /* CloudTagView.swift in Sources */,
 				405D44C52098D64800160077 /* NorrisService.swift in Sources */,
 				40BCC7B62098F1D3009279FA /* SearchResponse.swift in Sources */,
-				404C80F420BB6ACA00C36D65 /* NorrisResponse+Rx.swift in Sources */,
 				40C4827D20AE4B4B00A12282 /* CloudTagView+Rx.swift in Sources */,
 				402FA50F20BDBBD6009A5E60 /* StartView.swift in Sources */,
 				402FA51A20BE079A009A5E60 /* AboutView.swift in Sources */,

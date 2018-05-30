@@ -10,19 +10,14 @@ import RxSwift
 import Moya
 
 protocol NorrisRepository: class {
-    func categories() -> Single<NorrisResponse<[String]>>
+    func categories() -> Single<[String]>
     func search(_ query: String) -> Single<[Fact]>
-}
-
-enum NorrisResponse<T> {
-    case success(value: T)
-    case error(error: NorrisError)
 }
 
 struct NorrisError: LocalizedError {
     let message: String
     
-    init(message: String = "norris.generic.error") {
+    init(message: String = "Error! \n\n If this app was written by Chuck Norris, this would never happen") {
         self.message = message
     }
     
