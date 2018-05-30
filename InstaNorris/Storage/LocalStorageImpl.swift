@@ -54,23 +54,23 @@ class LocalStorageImpl: LocalStorage {
     
     func addNewSearch(_ string: String, current: [String]) -> [String] {
         var newArray = current
-        //if array is not full, always insert item at position 0
-        if current.count < Constants.savedSearchCount {
-            newArray.insert(string, at: 0)
-            return newArray
-        }
         
         //if there is a repeated element, remove old one
         if let index = newArray.index(of: string) {
             newArray.remove(at: index)
-        } else {
-            //if there isn't a repeated element, remove last one
-            newArray.removeLast()
         }
         
-        //add new element at first position of array
-        newArray.insert(string, at: 0)
-        return newArray
+        //if array is not full, always insert item at position 0
+        if current.count < Constants.savedSearchCount {
+            newArray.insert(string, at: 0)
+            return newArray
+        } else {
+            //add new element at first position of array.remov
+            newArray.removeLast()
+            newArray.insert(string, at: 0)
+            return newArray
+        }
+        
     }
     
 }
