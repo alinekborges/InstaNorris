@@ -16,11 +16,12 @@ public extension Observable {
     public func retryWhenNeeded() -> Observable<Element> {
         return self
             .retry(
-                .delayed(maxCount: 2, time: 4.0), shouldRetry: {error in
+                //the origin request count as a count, so as we want to be retried two times, then it needs to be 3
+                .exponentialDelayed(maxCount: 3, initial: 4.0, multiplier: 2), shouldRetry: {error in
                     guard let moyaError = error as? MoyaError else {
                         return false
                     }
-                    if case let .underlying(error, response) = moyaError {
+                    if case let .underlying(error, _) = moyaError {
                         let error = (error as NSError)
                         //Connection error
                         if error.domain == NSURLErrorDomain {
@@ -30,8 +31,7 @@ public extension Observable {
                             return true
                         }
                     }
-                    
-                    return false          
+                    return false
         })
     }
 }

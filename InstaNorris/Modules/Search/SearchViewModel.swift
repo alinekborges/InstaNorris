@@ -32,6 +32,7 @@ class SearchViewModel {
         let categoriesResult = norrisRepository
             .categories()
             .trackActivity(loadingIndicator)
+            .retryWhenNeeded()
             .materialize()
             .share()
         
