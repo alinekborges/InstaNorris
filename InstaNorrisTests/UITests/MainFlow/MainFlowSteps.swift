@@ -52,7 +52,7 @@ extension MainFlowTests {
     }
     
     func expectToSeeErrorToastView() {
-        expectToSee("error_toast_view")
+        expectToSee("toast_view")
     }
     
     func expectToSeeEmptyView() {

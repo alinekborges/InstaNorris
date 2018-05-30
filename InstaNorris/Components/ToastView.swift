@@ -35,6 +35,7 @@ class ToastView: UIView {
     func setupViews() {
         self.setupConstraints()
         self.animateShow()
+        self.accessibilityIdentifier = "toast_view"
     }
     
     func animateShow() {

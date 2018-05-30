@@ -13,10 +13,12 @@ import RxSwift
 
 class MockNorrisRepository: NorrisRepository {
 
-    let success: Bool
+    var success: Bool = true
     let service: NorrisService
 
     let mockCategories = ["category1", "category2"]
+    
+    var emptyResponse: Bool = false
     
     init(success: Bool = true, service: NorrisService = MockNorrisService()) {
         self.success = success
@@ -33,11 +35,16 @@ class MockNorrisRepository: NorrisRepository {
 
     func search(_ query: String) -> Single<[Fact]> {
         if success {
-            return self.service.search(query)
-                .map(SearchResponse.self)
-                .map { $0.result }
-                .delaySubscription(1, scheduler: MainScheduler.instance)
-                
+            if emptyResponse {
+                return Observable.just([])
+                    .delaySubscription(1, scheduler: MainScheduler.instance)
+                    .asSingle()
+            } else {
+                return self.service.search(query)
+                    .map(SearchResponse.self)
+                    .map { $0.result }
+                    .delaySubscription(1, scheduler: MainScheduler.instance)
+            }
         } else {
             let subject = PublishSubject<[Fact]>()
             subject.onError(NorrisError())

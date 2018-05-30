@@ -13,8 +13,11 @@ import RxSwift
 
 @testable import InstaNorris
 
-/// Tests mainly the happy path - no errors and checking visibility of views and user flows
+/// Tests main user paths
+
 class MainFlowTests: BaseUITest {
+    
+    let mockRepository = MockNorrisRepository()
     
     override func configureContainer(container: Container) {
         container.register(LocalStorage.self) { _ in
@@ -22,7 +25,7 @@ class MainFlowTests: BaseUITest {
         }
         
         container.register(NorrisRepository.self) { _ in
-            return MockNorrisRepository()
+            return self.mockRepository
         }
     }
     
@@ -57,4 +60,51 @@ class MainFlowTests: BaseUITest {
         expectToSeeFactsList()
     }
     
+    func testSearchEmptyResults() {
+        tapOnSearchView()
+        fillSearch()
+        tapOnSearchButton()
+        expectToSeeLoadingView()
+        expectToSeeEmptyView()
+    }
+    
+    func testSecondSearchEmpty() {
+        tapOnSearchView()
+        fillSearch()
+        tapOnSearchButton()
+        expectToSeeLoadingView()
+        expectToSeeFactsList()
+        
+        mockRepository.emptyResponse = true
+        
+        tapOnSearchView()
+        fillSearch()
+        tapOnSearchButton()
+        expectToSeeEmptyView()
+    }
+    
+    func testErrorResponse() {
+        mockRepository.success = false
+        
+        tapOnSearchView()
+        fillSearch()
+        tapOnSearchButton()
+        expectToSeeErrorView()
+        
+    }
+    
+    func testErrorWhenContentAvailable() {
+        //normal search with results
+        tapOnSearchView()
+        fillSearch()
+        tapOnSearchButton()
+        expectToSeeFactsList()
+        
+        mockRepository.success = false
+        
+        tapOnSearchView()
+        fillSearch()
+        tapOnSearchButton()
+        expectToSeeErrorToastView()
+    }
 }
