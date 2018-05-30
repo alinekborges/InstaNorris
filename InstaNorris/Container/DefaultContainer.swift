@@ -39,8 +39,12 @@ extension DefaultContainer {
                 localStorage: resolver.resolve(LocalStorage.self)!)
         }
         
-        self.container.register(OnboardingView.self) { resolver in
+        self.container.register(OnboardingView.self) { _ in
             OnboardingView()
+        }
+        
+        self.container.register(AboutView.self) { _ in
+            AboutView()
         }
     }
     

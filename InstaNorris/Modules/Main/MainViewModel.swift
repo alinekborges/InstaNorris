@@ -46,8 +46,6 @@ class MainViewModel {
         let isSearchShown = PublishSubject<Bool>()
         self.isSearchShown = isSearchShown
         
-        let viewStateSubject = PublishSubject<ViewState>()
-        
         let searchResult = searchQuery
             .do(onNext: { search in
                 //side effects

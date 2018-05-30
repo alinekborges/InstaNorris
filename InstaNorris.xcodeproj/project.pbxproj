@@ -21,6 +21,9 @@
 		402FA50F20BDBBD6009A5E60 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA50E20BDBBD6009A5E60 /* StartView.swift */; };
 		402FA51120BDBFDB009A5E60 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA51020BDBFDB009A5E60 /* ErrorView.swift */; };
 		402FA51320BDC199009A5E60 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA51220BDC199009A5E60 /* ToastView.swift */; };
+		402FA51A20BE079A009A5E60 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA51720BE079A009A5E60 /* AboutView.swift */; };
+		402FA51C20BE079A009A5E60 /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 402FA51920BE079A009A5E60 /* AboutView.xib */; };
+		402FA51E20BE2A27009A5E60 /* URL+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA51D20BE2A27009A5E60 /* URL+Utils.swift */; };
 		404B4C8320BC4F6F004830CA /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B4C8220BC4F6F004830CA /* UIView+Utils.swift */; };
 		404B4C8520BC520C004830CA /* FactItemViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B4C8420BC520C004830CA /* FactItemViewModelSpec.swift */; };
 		404C80F420BB6ACA00C36D65 /* NorrisResponse+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404C80F320BB6ACA00C36D65 /* NorrisResponse+Rx.swift */; };
@@ -103,6 +106,9 @@
 		402FA50E20BDBBD6009A5E60 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		402FA51020BDBFDB009A5E60 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		402FA51220BDC199009A5E60 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		402FA51720BE079A009A5E60 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		402FA51920BE079A009A5E60 /* AboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
+		402FA51D20BE2A27009A5E60 /* URL+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Utils.swift"; sourceTree = "<group>"; };
 		404B4C8220BC4F6F004830CA /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		404B4C8420BC520C004830CA /* FactItemViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactItemViewModelSpec.swift; sourceTree = "<group>"; };
 		404C80F320BB6ACA00C36D65 /* NorrisResponse+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NorrisResponse+Rx.swift"; sourceTree = "<group>"; };
@@ -215,6 +221,15 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		402FA51620BE0765009A5E60 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				402FA51720BE079A009A5E60 /* AboutView.swift */,
+				402FA51920BE079A009A5E60 /* AboutView.xib */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
 		405D446E2098C16000160077 = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +309,7 @@
 		405D44AE2098D5AC00160077 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				402FA51620BE0765009A5E60 /* About */,
 				4012A04820BD64D300FEEBF6 /* Onboarding */,
 				401FBBE6209BA31100F3B174 /* Search */,
 				405D44B42098D61F00160077 /* Main */,
@@ -357,6 +373,7 @@
 				408542A320B38CF10067B39B /* Array+Utils.swift */,
 				40696EC120BC30B100137E48 /* Random+Utils.swift */,
 				404B4C8220BC4F6F004830CA /* UIView+Utils.swift */,
+				402FA51D20BE2A27009A5E60 /* URL+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -586,6 +603,7 @@
 			files = (
 				405D44B82098D62800160077 /* MainView.xib in Resources */,
 				405D44A82098D56200160077 /* Info.plist in Resources */,
+				402FA51C20BE079A009A5E60 /* AboutView.xib in Resources */,
 				402FA50B20BDA26F009A5E60 /* soda_loader.json in Resources */,
 				401FBBEC209BA33A00F3B174 /* SearchView.xib in Resources */,
 				402FA50220BD65A5009A5E60 /* OnboardingView.xib in Resources */,
@@ -772,6 +790,7 @@
 				404C80F420BB6ACA00C36D65 /* NorrisResponse+Rx.swift in Sources */,
 				40C4827D20AE4B4B00A12282 /* CloudTagView+Rx.swift in Sources */,
 				402FA50F20BDBBD6009A5E60 /* StartView.swift in Sources */,
+				402FA51A20BE079A009A5E60 /* AboutView.swift in Sources */,
 				402FA51120BDBFDB009A5E60 /* ErrorView.swift in Sources */,
 				40696EC220BC30B200137E48 /* Random+Utils.swift in Sources */,
 				40943D2E20BD5F4100E0A802 /* StateView+Rx.swift in Sources */,
@@ -784,6 +803,7 @@
 				408542A420B38CF10067B39B /* Array+Utils.swift in Sources */,
 				40943D2C20BD599E00E0A802 /* StateView.swift in Sources */,
 				40BCC7BA2098F982009279FA /* HeaderView.swift in Sources */,
+				402FA51E20BE2A27009A5E60 /* URL+Utils.swift in Sources */,
 				40BCC7BC2098FBE7009279FA /* NSObject+Rx.swift in Sources */,
 				40BCC7BE2098FC08009279FA /* UIView+Constraints.swift in Sources */,
 				402FA50D20BDB7A4009A5E60 /* EmptyView.swift in Sources */,

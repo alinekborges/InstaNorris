@@ -77,6 +77,12 @@ class HeaderView: UIView {
         return view
     }()
     
+    let infoButton: UIButton = {
+        let button = UIButton(type: UIButtonType.infoLight)
+        button.tintColor = .white
+        return button
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setupViews()
@@ -141,12 +147,14 @@ class HeaderView: UIView {
         self.addSubview(self.searchTextField)
         self.addSubview(self.searchButton)
         self.addSubview(self.bottomLine)
+        self.addSubview(self.infoButton)
         
         self.blurView.prepareForConstraints()
         self.titleLabel.prepareForConstraints()
         self.searchTextField.prepareForConstraints()
         self.searchButton.prepareForConstraints()
         self.bottomLine.prepareForConstraints()
+        self.infoButton.prepareForConstraints()
         
         self.blurView.pinEdgesToSuperview()
         
@@ -167,6 +175,9 @@ class HeaderView: UIView {
         self.bottomLine.pinRight()
         self.bottomLine.pinLeft()
         self.bottomLine.pinBottom()
+        
+        self.infoButton.pinRight(24)
+        self.infoButton.centerYAnchor.constraint(equalTo: self.titleLabel.centerYAnchor).isActive = true
         
         self.heightConstraint = self.constraintHeight(self.maxHeight)
         

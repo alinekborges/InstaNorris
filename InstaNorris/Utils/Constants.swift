@@ -29,4 +29,6 @@ struct Constants {
     
     static let mediumFontSize: CGFloat = 20
     
+    static let github = "https://www.github.com/alinekborges"
+    
 }

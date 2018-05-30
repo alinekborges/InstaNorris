@@ -11,6 +11,10 @@ import RxSwift
 import RxCocoa
 import Swinject
 
+protocol MainDelegate: class {
+    func openAbout()
+}
+
 class MainView: UIViewController {
     
     var viewModel: MainViewModel!
@@ -22,6 +26,8 @@ class MainView: UIViewController {
     @IBOutlet weak var searchContainer: UIView!
     let searchView: SearchView
     var stateView: StateView!
+    
+    weak var delegate: MainDelegate?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -83,31 +89,6 @@ extension MainView {
                         cell.delegate = self
             }.disposed(by: rx.disposeBag)
         
-        self.tableView.rx.contentOffset
-            .map { $0.y }
-            .map { ($0 + self.headerView.maxHeight) / (self.headerView.minHeight + self.headerView.maxHeight) }
-            .observeOn(MainScheduler.asyncInstance)
-            .bind(to: self.headerView.rx.fractionComplete)
-            .disposed(by: rx.disposeBag)
-        
-        self.headerView.searchTextField.rx.controlEvent(.editingDidBegin)
-            .subscribe(onNext: {
-                self.viewModel.isSearchShown.onNext(true)
-            }).disposed(by: rx.disposeBag)
-       
-        self.viewModel.isSearchShown
-            .subscribe(onNext: { [weak self] show in
-                self?.searchContainer.isHidden = !show
-                if show {
-                    self?.headerView.collapse()
-                    self?.searchView.showAnimated()
-                } else {
-                    self?.headerView.expand()
-                    self?.view.endEditing(true)
-                }
-            })
-            .disposed(by: rx.disposeBag)
-        
         self.viewModel.isFactsShown
             .drive(onNext: { [weak self] shown in
                 self?.animateTableView(shown: shown)
@@ -123,6 +104,35 @@ extension MainView {
         
         self.viewModel.isViewStateHidden
             .drive(self.stateView.rx.isHidden)
+            .disposed(by: rx.disposeBag)
+        
+        self.headerView.infoButton.rx.tap.bind { [weak self] _ in
+            self?.delegate?.openAbout()
+        }.disposed(by: rx.disposeBag)
+        
+        self.tableView.rx.contentOffset
+            .map { $0.y }
+            .map { ($0 + self.headerView.maxHeight) / (self.headerView.minHeight + self.headerView.maxHeight) }
+            .observeOn(MainScheduler.asyncInstance)
+            .bind(to: self.headerView.rx.fractionComplete)
+            .disposed(by: rx.disposeBag)
+        
+        self.headerView.searchTextField.rx.controlEvent(.editingDidBegin)
+            .subscribe(onNext: {
+                self.viewModel.isSearchShown.onNext(true)
+            }).disposed(by: rx.disposeBag)
+        
+        self.viewModel.isSearchShown
+            .subscribe(onNext: { [weak self] show in
+                self?.searchContainer.isHidden = !show
+                if show {
+                    self?.headerView.collapse()
+                    self?.searchView.showAnimated()
+                } else {
+                    self?.headerView.expand()
+                    self?.view.endEditing(true)
+                }
+            })
             .disposed(by: rx.disposeBag)
     }
     

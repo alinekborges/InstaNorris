@@ -49,7 +49,15 @@ class AppCoordinator: Coordinator {
     
     fileprivate func showMainView() {
         let view = container.resolve(MainView.self)!
+        view.delegate = self
         self.currentView = view
+    }
+    
+    fileprivate func showAboutView() {
+        let view = container.resolve(AboutView.self)!
+        view.delegate = self
+        view.modalPresentationStyle = .overCurrentContext
+        self.currentView?.present(view, animated: true, completion: nil)
     }
 }
 
@@ -57,5 +65,22 @@ extension AppCoordinator: OnboardingDelegate {
     func navigateToMain() {
         self.storage.firstAccess = false
         self.showMainView()
+    }
+}
+
+extension AppCoordinator: MainDelegate {
+    func openAbout() {
+        showAboutView()
+    }
+}
+
+extension AppCoordinator: AboutDelegate {
+    func close() {
+        self.currentView?.dismiss(animated: true, completion: nil)
+    }
+    
+    func reset() {
+        self.storage.clear()
+        self.start()
     }
 }
