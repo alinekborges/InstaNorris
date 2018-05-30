@@ -986,7 +986,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8CDA602A63EB08B8C09599D1 /* Pods-InstaNorris.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68SZERZ856;
@@ -1006,7 +1006,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 44DB4F89243AFA231A1D36F9 /* Pods-InstaNorris.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68SZERZ856;

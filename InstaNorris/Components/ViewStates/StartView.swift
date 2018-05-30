@@ -23,6 +23,16 @@ class StartView: UIView, StateSubview {
         return label
     }()
     
+    let arrow: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.text = "▲"
+        label.font = UIFont.systemFont(ofSize: 100)
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        return label
+    }()
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         self.setupViews()
@@ -50,10 +60,14 @@ class StartView: UIView, StateSubview {
     
     private func setupConstraints() {
         self.addSubview(label)
+        self.addSubview(arrow)
         self.label.prepareForConstraints()
+        self.arrow.prepareForConstraints()
         self.label.pinLeft(32)
         self.label.pinRight(32)
         self.label.pinBottom(130)
+        self.label.topAnchor.constraint(equalTo: self.arrow.bottomAnchor, constant: 36).isActive = true
+        self.arrow.centerHorizontally()
     }
     
 }
