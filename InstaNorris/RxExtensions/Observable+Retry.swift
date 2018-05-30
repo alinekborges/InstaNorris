@@ -17,17 +17,17 @@ public extension Observable {
         return self
             .retry(
                 //the origin request count as a count, so as we want to be retried two times, then it needs to be 3
-                .exponentialDelayed(maxCount: 3, initial: 4.0, multiplier: 2), shouldRetry: {error in
+                .exponentialDelayed(maxCount: 3, initial: 4, multiplier: 2), shouldRetry: {error in
                     guard let moyaError = error as? MoyaError else {
                         return false
                     }
                     if case let .underlying(error, _) = moyaError {
                         let error = (error as NSError)
                         //Connection error
-                        if error.domain == NSURLErrorDomain {
-                            print("✅Connection errror!")
-                            return true
-                        } else if 500...599 ~= error.code {
+                        if error.domain == NSURLErrorDomain || 500...599 ~= error.code {
+                            #if DEBUG
+                                print("💔 retrying...")
+                            #endif
                             return true
                         }
                     }

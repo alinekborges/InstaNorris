@@ -26,7 +26,7 @@ class RandomSampleSpec: QuickSpec {
             }
             
             it("test if result is not the same as original array") {
-                //I know there is a very small possibility that this test will fail because the random result could be identical to the original array, but I can't find a way to test it better
+                //There is a very small possibility that this test can fail because the random result can be identical to the original array. But the probability of that happening is very small
                 let result = subject.randomSample(subject.count)
                 
                 var isIdentical: Bool = true
