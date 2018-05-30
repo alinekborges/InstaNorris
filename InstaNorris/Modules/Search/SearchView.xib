@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchView" customModule="InstaNorris" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="QhU-x5-lGp" id="OUn-80-jZb"/>
                 <outlet property="categoriesCloudView" destination="Nk1-RG-rmT" id="zto-qo-GzP"/>
                 <outlet property="recentSearchCloudView" destination="w2C-1a-aGc" id="0gv-15-bXn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -33,6 +34,9 @@
                         <constraint firstAttribute="height" constant="90" id="scS-Uw-KC1"/>
                     </constraints>
                 </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="QhU-x5-lGp">
+                    <rect key="frame" x="184" y="90" width="20" height="20"/>
+                </activityIndicatorView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56V-JH-wLY">
                     <rect key="frame" x="20" y="163" width="123" height="23"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
@@ -48,9 +52,11 @@
             <constraints>
                 <constraint firstItem="w2C-1a-aGc" firstAttribute="trailing" secondItem="Nk1-RG-rmT" secondAttribute="trailing" id="2io-9k-nA1"/>
                 <constraint firstItem="Nk1-RG-rmT" firstAttribute="top" secondItem="BGV-h4-yvf" secondAttribute="bottom" constant="8" id="5Bx-XV-S0H"/>
+                <constraint firstItem="QhU-x5-lGp" firstAttribute="centerY" secondItem="Nk1-RG-rmT" secondAttribute="centerY" id="9Or-yI-ZSr"/>
                 <constraint firstItem="BGV-h4-yvf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="24" id="M8i-Pl-ksv"/>
                 <constraint firstAttribute="bottom" secondItem="w2C-1a-aGc" secondAttribute="bottom" constant="20" id="Mnj-If-HMB"/>
                 <constraint firstItem="56V-JH-wLY" firstAttribute="leading" secondItem="Nk1-RG-rmT" secondAttribute="leading" id="S58-ON-uIr"/>
+                <constraint firstItem="QhU-x5-lGp" firstAttribute="centerX" secondItem="Nk1-RG-rmT" secondAttribute="centerX" id="eub-1b-vH5"/>
                 <constraint firstItem="w2C-1a-aGc" firstAttribute="top" secondItem="56V-JH-wLY" secondAttribute="bottom" constant="8" id="iC5-zb-tXf"/>
                 <constraint firstItem="56V-JH-wLY" firstAttribute="top" secondItem="Nk1-RG-rmT" secondAttribute="bottom" constant="18" id="j3J-dl-zyv"/>
                 <constraint firstItem="BGV-h4-yvf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="mg6-D5-MaO"/>

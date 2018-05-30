@@ -16,6 +16,7 @@ class SearchView: UIViewController {
     
     @IBOutlet weak var categoriesCloudView: CloudTagView!
     @IBOutlet weak var recentSearchCloudView: CloudTagView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var viewModel: SearchViewModel!
     let norrisRepository: NorrisRepository
@@ -63,6 +64,15 @@ extension SearchView {
         
         self.viewModel.recentSearch
             .drive(self.recentSearchCloudView.rx.items)
+            .disposed(by: rx.disposeBag)
+        
+        self.viewModel.isLoading
+            .map { !$0 }
+            .drive(self.activityIndicator.rx.isHidden)
+            .disposed(by: rx.disposeBag)
+        
+        self.viewModel.isLoading
+            .drive(self.activityIndicator.rx.isAnimating)
             .disposed(by: rx.disposeBag)
     }
 }

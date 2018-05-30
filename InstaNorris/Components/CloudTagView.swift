@@ -93,6 +93,15 @@ extension CloudTagView: UICollectionViewDelegateFlowLayout, UICollectionViewDele
         return CGSize(width: width, height: self.tagHeight)
     }
     
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        cell.alpha = 0.0
+        UIView.animate(withDuration: 0.2, delay: (0.02 * Double(indexPath.row)), options: .curveLinear, animations: {
+            cell.alpha = 1.0
+        }, completion: nil)
+    }
+    
 }
 
 class TagCell: UICollectionViewCell {
