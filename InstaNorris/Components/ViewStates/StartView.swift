@@ -30,6 +30,7 @@ class StartView: UIView, StateSubview {
         label.font = UIFont.systemFont(ofSize: 100)
         label.numberOfLines = 0
         label.textAlignment = .center
+        label.alpha = 0.7
         return label
     }()
     
