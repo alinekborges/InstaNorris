@@ -1,10 +1,10 @@
-![](Images/InstaNorris_timeline.gif) ![](Images/InstaNorris_search.gif)
-
 # InstaNorris
 
 Insta Norris is the best app to have a laugh on the most awesome Chuck Norris Facts, ready to be shared to your favorite social network!
 
-For the InstaNorris, I was inspired by those “landscape” with those random motivational quotes. I find them funny :p
+It was inspired on those motivational quotes with random landscape images on the background. I find them funny :p
+
+![](Images/InstaNorris_timeline.gif) ![](Images/InstaNorris_search.gif)
 
 ## Architecture
 
