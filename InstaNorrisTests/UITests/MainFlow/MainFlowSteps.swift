@@ -34,7 +34,7 @@ extension MainFlowTests {
     }
     
     func fillSearch() {
-        insertText("search", intoView: "search_input")
+        insertText("Search", intoView: "search_input")
     }
     
     // MARK: - Views expected to be seen

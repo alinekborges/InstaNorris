@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-//https://stackoverflow.com/questions/1324379/how-to-calculate-the-width-of-a-text-string-of-a-specific-font-and-font-size
+//stackoverflow.com/questions/1324379/how-to-calculate-the-width-of-a-text-string-of-a-specific-font-and-font-size
 extension String {
     
     func width(usingFont font: UIFont) -> CGFloat {

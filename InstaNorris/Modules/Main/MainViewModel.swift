@@ -54,14 +54,15 @@ class MainViewModel {
             })
             .flatMapLatest { search in
                 norrisRepository.search(search)
-                    .trackActivity(loadingIndicator)
+                    .asObservable()
                     .retryWhenNeeded()
+                    .trackActivity(loadingIndicator)
                     .materialize() //converts error and onNext to events
             }.share()
         
         self.results = searchResult
             .elements()
-            .startWith([])
+            //.startWith([])
             .asDriver(onErrorJustReturn: [])
         
         self.searchError = searchResult
@@ -77,22 +78,27 @@ class MainViewModel {
             .combineLatest(self.results,
                            searchShownDriver,
                            self.isLoading) { results, searchShown, isLoading in
-                if isLoading { return false }
                 if searchShown { return true }
+                if isLoading { return false }
                 if results.isEmpty { return false }
                 return true
             }
             .asDriver(onErrorJustReturn: false)
         
-        //the transparent background requires to hide the facts table when search is showing or when there is some state to be shown
+        //the transparent background requires to hide the facts table
+        //when search is showing or when there is some state to be shown
         self.isFactsShown = Driver.combineLatest(
             self.isViewStateHidden,
-            searchShownDriver) { viewStateHidden, searchShown in
-                return viewStateHidden && !searchShown
+            searchShownDriver,
+            self.isLoading) { viewStateHidden, searchShown, isLoading in
+                print("is facts shown? is loading \(isLoading)")
+                if isLoading { return false }
+                if searchShown { return false }
+                if !viewStateHidden { return false}
+                return true
             }
             .asDriver(onErrorJustReturn: false)
     }
-    
     
     /// Returns Observable of ViewState, based on if there is any result, any errors or is loading
     ///

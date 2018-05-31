@@ -50,7 +50,7 @@ platform :ios do
     scan(
       workspace: "InstaNorris.xcworkspace",
       scheme: "InstaNorris",
-      device: "iPhone 6",
+      device: "iPhone 8",
       clean: false
     )
   end

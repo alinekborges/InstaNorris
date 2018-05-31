@@ -72,4 +72,3 @@ class StartView: UIView, StateSubview {
     }
     
 }
-

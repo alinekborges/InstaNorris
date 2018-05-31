@@ -50,6 +50,7 @@ class StateView: UIView {
     }
     
     func updateState(_ state: ViewState) {
+        print("🔴state: \(state)")
         allViews.forEach { $0.hide() }
         switch state {
         case .loading:

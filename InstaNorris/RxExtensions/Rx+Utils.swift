@@ -25,7 +25,7 @@ extension Observable where Element: OptionalType {
 /// .Next events with Optional payload
 protocol OptionalType {
     associatedtype Wrapped
-    var asOptional:  Wrapped? { get }
+    var asOptional: Wrapped? { get }
 }
 
 /// Implementation of the OptionalType protocol by the Optional type

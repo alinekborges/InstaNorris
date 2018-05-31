@@ -39,8 +39,7 @@ func stringArrayToData(array: [String]) -> Data {
         if let encodedString = string.data(using: String.Encoding.utf8) {
             data.append(encodedString)
             data.append(terminator, length: 1)
-        }
-        else {
+        } else {
             NSLog("Cannot encode string \"\(string)\"")
         }
     }
