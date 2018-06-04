@@ -34,7 +34,9 @@ class MainViewModel {
          localStorage: LocalStorage) {
         
         let loadingIndicator = ActivityIndicator()
-        self.isLoading = loadingIndicator.asDriver()
+        self.isLoading = loadingIndicator
+            .startWith(false)
+            .asDriver()
 
         //search
         self.searchQuery = Observable.merge(
@@ -62,7 +64,7 @@ class MainViewModel {
         
         self.results = searchResult
             .elements()
-            //.startWith([])
+            .startWith([])
             .asDriver(onErrorJustReturn: [])
         
         self.searchError = searchResult
@@ -73,7 +75,7 @@ class MainViewModel {
         
         let searchShownDriver = isSearchShown.asDriver(onErrorJustReturn: false)
         
-        //weather state view is hidden of shown
+        //weather state view is hidden or shown
         self.isViewStateHidden = Driver
             .combineLatest(self.results,
                            searchShownDriver,
@@ -91,7 +93,6 @@ class MainViewModel {
             self.isViewStateHidden,
             searchShownDriver,
             self.isLoading) { viewStateHidden, searchShown, isLoading in
-                print("is facts shown? is loading \(isLoading)")
                 if isLoading { return false }
                 if searchShown { return false }
                 if !viewStateHidden { return false}
