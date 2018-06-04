@@ -1,10 +1,10 @@
-![](Images/InstaNorris_timeline.gif)
-
 # InstaNorris
 
 Insta Norris is the best app to have a laugh on the most awesome Chuck Norris Facts, ready to be shared to your favorite social network!
 
-For the InstaNorris, I was inspired by those “landscape” with those random motivational quotes. I find them funny :p
+It was inspired on those motivational quotes with random landscape images on the background. I find them funny :p
+
+![](Images/InstaNorris_timeline.gif) ![](Images/InstaNorris_search.gif)
 
 ## Architecture
 
@@ -46,8 +46,7 @@ The hole idea of the app was to have Instagram-like facts, square images ready t
 
 How did I solve this problem, without having to do a ton of code? The power of **constraints**, of course. The item layout has a view with an 1:1 aspect ratio constraint, that will keep them square, but also have the text pinned to top and bottom of the layout. By changing the 1:1 aspect ratio constraint priority to a lower number, if the text is longer, this constraint have less priority and breaks, leaving space for the text to grow as necessary
 
-![](Images/ShortFact.jpg)
-![](Images/LongFact.jpg)
+<img src="Images/ShortFact.jpg" width="280"> <img src="Images/LongFact.jpg" width="280"> 
 
 ### xCode Templates
 	
@@ -71,6 +70,6 @@ Creating view components are always helpful to separate view logic, have cleaner
 
 Showing errors to the user are usually not good, but very important to make it the best experience possible. When user has no content available, it is ok to show a full screen error - but what about when there was already some content showing? Non-interrupting errors are a way of showing the errors when content available, a feature of this app :)
 
-![](Images/ErrorWithContent.jpg)
+<img src="Images/ErrorWithContent.jpg" width="280"> 
 
 	Developed with ❤️ by Aline Borges
