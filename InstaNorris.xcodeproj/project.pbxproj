@@ -29,7 +29,6 @@
 		404B4C8320BC4F6F004830CA /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B4C8220BC4F6F004830CA /* UIView+Utils.swift */; };
 		404B4C8520BC520C004830CA /* FactItemViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B4C8420BC520C004830CA /* FactItemViewModelSpec.swift */; };
 		405D44A52098D54B00160077 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405D44A32098D54B00160077 /* LaunchScreen.storyboard */; };
-		405D44A82098D56200160077 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 405D44A62098D56200160077 /* Info.plist */; };
 		405D44A92098D56200160077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44A72098D56200160077 /* AppDelegate.swift */; };
 		405D44AC2098D58E00160077 /* DefaultContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D44AB2098D58E00160077 /* DefaultContainer.swift */; };
 		405D44B82098D62800160077 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 405D44B52098D62700160077 /* MainView.xib */; };
@@ -619,7 +618,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				405D44B82098D62800160077 /* MainView.xib in Resources */,
-				405D44A82098D56200160077 /* Info.plist in Resources */,
 				402FA51C20BE079A009A5E60 /* AboutView.xib in Resources */,
 				402FA50B20BDA26F009A5E60 /* soda_loader.json in Resources */,
 				401FBBEC209BA33A00F3B174 /* SearchView.xib in Resources */,
@@ -670,7 +668,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"\n";
 		};
 		40DA7BCC209AB8550016B326 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -684,7 +682,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		829EFB2D2365104130186814 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -989,7 +987,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 68SZERZ856;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = InstaNorris/Info.plist;
@@ -1011,7 +1009,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 68SZERZ856;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = InstaNorris/Info.plist;

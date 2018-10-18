@@ -118,9 +118,9 @@ class MainViewModel {
         let error = error
             .withLatestFrom(results) { error, results -> ViewState in
                 if !results.isEmpty {
-                    return ViewState.errorWithContent(error: error)
+                    return ViewState.errorWithContent(error)
                 } else {
-                    return ViewState.error(error: error)
+                    return ViewState.error(error)
                 }
         }
         
@@ -132,7 +132,7 @@ class MainViewModel {
                                  error,
                                  loading)
             .startWith(.start)
-            .asDriver(onErrorJustReturn: ViewState.error(error: NorrisError()))
+            .asDriver(onErrorJustReturn: ViewState.error(NorrisError()))
 
     }
 }

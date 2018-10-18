@@ -5,62 +5,29 @@
 #
 #     https://docs.fastlane.tools/actions
 #
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
 
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
+setup_travis
+
 default_platform(:ios)
 
 platform :ios do
-  before_all do
-  
-    begin
-      increment_build_number(build_number: ENV["BITRISE_BUILD_NUMBER"] || 1)
-    rescue => ex
-      UI.error(ex)
-    end
 
-    cocoapods(
-      repo_update: true
-    )
-  end
-  
-  desc "Run all lanes"
-  lane :all do
-    all_tests
-    build
+  lane :certificates do
+    match(type: "appstore", readonly: true)
   end
 
-  desc "Run all tests lanes"
-  lane :all_tests do
-    lint
-    tests
-  end
-
-  desc "Lint project"
-  lane :lint do
-    swiftlint(
-      config_file: ".swiftlint.yml",
-      ignore_exit_status: true
-    )
-  end
-
-  desc "Run all tests (beta)"
-  lane :tests do
-    scan(
-      workspace: "InstaNorris.xcworkspace",
-      scheme: "InstaNorris",
-      device: "iPhone 8",
-      clean: false
-    )
-  end
-
-  desc "Build ipa"
-  lane :build do
-    gym(
-      scheme: "InstaNorris",
-      output_name: "Insta Norris",
-      output_directory: "../deploy"
-    )
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+    certificates
+    increment_build_number(xcodeproj: "InstaNorris.xcodeproj")
+    build_app(workspace: "InstaNorris.xcworkspace", scheme: "InstaNorris")
+    upload_to_testflight
   end
 end

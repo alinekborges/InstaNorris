@@ -23,6 +23,6 @@ class NorrisServiceImpl: NorrisService {
     }
     
     func search(_ query: String) -> Single<Response> {
-        return self.provider.rx.request(.search(query: query))
+        return self.provider.rx.request(.search(query))
     }
 }

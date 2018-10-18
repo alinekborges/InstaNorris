@@ -18,8 +18,8 @@ enum ViewState {
     case loading
     case start
     case empty
-    case error(error: Error)
-    case errorWithContent(error: Error)
+    case error(Error)
+    case errorWithContent(Error)
     case none
 }
 
