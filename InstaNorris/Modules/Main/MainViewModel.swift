@@ -34,7 +34,9 @@ class MainViewModel {
          localStorage: LocalStorage) {
         
         let loadingIndicator = ActivityIndicator()
-        self.isLoading = loadingIndicator.asDriver()
+        self.isLoading = loadingIndicator
+            .startWith(false)
+            .asDriver()
 
         //search
         self.searchQuery = Observable.merge(
@@ -54,8 +56,9 @@ class MainViewModel {
             })
             .flatMapLatest { search in
                 norrisRepository.search(search)
-                    .trackActivity(loadingIndicator)
+                    .asObservable()
                     .retryWhenNeeded()
+                    .trackActivity(loadingIndicator)
                     .materialize() //converts error and onNext to events
             }.share()
         
@@ -72,27 +75,31 @@ class MainViewModel {
         
         let searchShownDriver = isSearchShown.asDriver(onErrorJustReturn: false)
         
-        //weather state view is hidden of shown
+        //weather state view is hidden or shown
         self.isViewStateHidden = Driver
             .combineLatest(self.results,
                            searchShownDriver,
                            self.isLoading) { results, searchShown, isLoading in
-                if isLoading { return false }
                 if searchShown { return true }
+                if isLoading { return false }
                 if results.isEmpty { return false }
                 return true
             }
             .asDriver(onErrorJustReturn: false)
         
-        //the transparent background requires to hide the facts table when search is showing or when there is some state to be shown
+        //the transparent background requires to hide the facts table
+        //when search is showing or when there is some state to be shown
         self.isFactsShown = Driver.combineLatest(
             self.isViewStateHidden,
-            searchShownDriver) { viewStateHidden, searchShown in
-                return viewStateHidden && !searchShown
+            searchShownDriver,
+            self.isLoading) { viewStateHidden, searchShown, isLoading in
+                if isLoading { return false }
+                if searchShown { return false }
+                if !viewStateHidden { return false}
+                return true
             }
             .asDriver(onErrorJustReturn: false)
     }
-    
     
     /// Returns Observable of ViewState, based on if there is any result, any errors or is loading
     ///
@@ -111,9 +118,9 @@ class MainViewModel {
         let error = error
             .withLatestFrom(results) { error, results -> ViewState in
                 if !results.isEmpty {
-                    return ViewState.errorWithContent(error: error)
+                    return ViewState.errorWithContent(error)
                 } else {
-                    return ViewState.error(error: error)
+                    return ViewState.error(error)
                 }
         }
         
@@ -125,7 +132,7 @@ class MainViewModel {
                                  error,
                                  loading)
             .startWith(.start)
-            .asDriver(onErrorJustReturn: ViewState.error(error: NorrisError()))
+            .asDriver(onErrorJustReturn: ViewState.error(NorrisError()))
 
     }
 }

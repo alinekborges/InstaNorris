@@ -18,8 +18,8 @@ enum ViewState {
     case loading
     case start
     case empty
-    case error(error: Error)
-    case errorWithContent(error: Error)
+    case error(Error)
+    case errorWithContent(Error)
     case none
 }
 
@@ -50,6 +50,7 @@ class StateView: UIView {
     }
     
     func updateState(_ state: ViewState) {
+        print("🔴state: \(state)")
         allViews.forEach { $0.hide() }
         switch state {
         case .loading:

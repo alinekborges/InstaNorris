@@ -10,7 +10,7 @@ import Moya
 
 enum NorrisRouter {
     case categories
-    case search(query: String)
+    case search(String)
 }
 
 extension NorrisRouter: TargetType {

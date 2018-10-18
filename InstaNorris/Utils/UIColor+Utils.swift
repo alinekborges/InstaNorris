@@ -18,6 +18,10 @@ extension UIColor {
         return UIColor(red: 80, green: 227, blue: 194)
     }
     
+    @nonobjc class var darkBlue: UIColor {
+        return UIColor(red: 17, green: 34, blue: 55)
+    }
+    
     convenience init(red: Int, green: Int, blue: Int) {
         self.init(red: CGFloat(Double(red) / 255.0),
                   green: CGFloat(Double(green) / 255.0),

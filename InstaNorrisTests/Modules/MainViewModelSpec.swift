@@ -53,7 +53,7 @@ class MainViewModelSpec: QuickSpec {
                     
                     searchSubject.onNext("Test")
                     
-                    expect(result).toEventuallyNot(beEmpty(), timeout: 1)
+                    expect(result).toEventuallyNot(beEmpty(), timeout: 5)
                     
                 }
                 
@@ -67,7 +67,7 @@ class MainViewModelSpec: QuickSpec {
                     
                     categorySubject.onNext("Test")
                     
-                    expect(result).toEventuallyNot(beEmpty(), timeout: 1)
+                    expect(result).toEventuallyNot(beEmpty(), timeout: 5)
                     
                 }
                 
@@ -81,7 +81,7 @@ class MainViewModelSpec: QuickSpec {
                     
                     recentSearchSubject.onNext("Test")
                     
-                    expect(result).toEventuallyNot(beEmpty(), timeout: 1)
+                    expect(result).toEventuallyNot(beEmpty(), timeout: 5)
                     
                 }
                 
@@ -94,7 +94,7 @@ class MainViewModelSpec: QuickSpec {
                     
                     searchSubject.onNext("Test")
                     
-                    expect(result).toEventually(beTrue(), timeout: 1)
+                    expect(result).toEventually(beTrue(), timeout: 5)
                 }
                 
             }
@@ -121,7 +121,7 @@ class MainViewModelSpec: QuickSpec {
                     
                     searchSubject.onNext("Test")
                     
-                    expect(result).toEventuallyNot(beNil(), timeout: 1)
+                    expect(result).toEventuallyNot(beNil(), timeout: 5)
                 }
                 
             }

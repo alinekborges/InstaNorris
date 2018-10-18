@@ -30,18 +30,6 @@ class SearchViewModelSpec: QuickSpec {
                     subject = SearchViewModel(norrisRepository: repository, localStorage: storage)
                 }
                 
-                it("get categories with success") {
-                    do {
-                        let result = try subject.categories
-                            .toBlocking(timeout: 1)
-                            .first()
-                        
-                        expect(result).toNot(beEmpty())
-                    } catch {
-                        assert(false)
-                    }
-                }
-                
                 it("recent search with success") {
                     do {
                         let result = try subject.recentSearch
