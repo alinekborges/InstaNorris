@@ -123,9 +123,19 @@ class HeaderView: UIView {
     
     private func setupAnimator() {
         
+        var topPadding: CGFloat = 0.0
+        
+        if #available(iOS 11.0, *) {
+            if let bla = UIApplication.shared.delegate!.window {
+                topPadding = bla?.safeAreaInsets.top ?? 0.0
+            }
+            
+        }
+        
         self.animator = UIViewPropertyAnimator(duration: 0.25, curve: .linear, animations: {
-            self.heightConstraint.constant = self.minHeight
+            self.heightConstraint.constant = self.minHeight + topPadding
             self.logo.alpha = 0
+            self.infoButton.alpha = 0
             self.superview?.layoutIfNeeded()
             self.layoutIfNeeded()
         })
@@ -174,7 +184,16 @@ class HeaderView: UIView {
         self.infoButton.pinRight(24)
         self.infoButton.centerYAnchor.constraint(equalTo: self.logo.centerYAnchor).isActive = true
         
-        self.heightConstraint = self.constraintHeight(self.maxHeight)
+        var topPadding: CGFloat = 0.0
+        
+        if #available(iOS 11.0, *) {
+            if let bla = UIApplication.shared.delegate!.window {
+                topPadding = bla?.safeAreaInsets.top ?? 0.0
+            }
+            
+        }
+        
+        self.heightConstraint = self.constraintHeight(self.maxHeight + topPadding)
         
         self.layoutIfNeeded()
         

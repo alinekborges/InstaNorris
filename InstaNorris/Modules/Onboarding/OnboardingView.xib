@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -91,7 +90,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PF-iE-ETQ">
-                                            <rect key="frame" x="140.5" y="600" width="83" height="30"/>
+                                            <rect key="frame" x="141" y="600" width="83" height="30"/>
                                             <state key="normal" title="Continue  ▶︎">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
@@ -200,7 +199,7 @@
                 <constraint firstItem="NhW-X0-tbU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BzL-F1-fan"/>
                 <constraint firstItem="Ec3-N5-tkg" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Dpq-51-DpW"/>
                 <constraint firstItem="BlK-is-FjY" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="FFZ-32-WIy"/>
-                <constraint firstItem="tz5-90-iOr" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="G2G-zt-wdL"/>
+                <constraint firstItem="tz5-90-iOr" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="G2G-zt-wdL"/>
                 <constraint firstItem="Ec3-N5-tkg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="N16-2M-f0t"/>
                 <constraint firstItem="tz5-90-iOr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WOK-kx-e31"/>
                 <constraint firstItem="Ec3-N5-tkg" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ZJI-hQ-qNn"/>
@@ -213,7 +212,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="keC-mA-JiE" secondAttribute="bottom" constant="200" id="rYO-cv-TQH"/>
                 <constraint firstItem="NhW-X0-tbU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="sI7-0i-Iy0"/>
                 <constraint firstItem="BlK-is-FjY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uIE-j2-kFY"/>
-                <constraint firstItem="NhW-X0-tbU" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="xXQ-AE-Pkz"/>
+                <constraint firstItem="NhW-X0-tbU" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="xXQ-AE-Pkz"/>
                 <constraint firstItem="tz5-90-iOr" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zJ0-bs-ies"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -59,14 +60,14 @@
             <constraints>
                 <constraint firstItem="Qbv-lJ-et2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0vn-o1-1bf"/>
                 <constraint firstItem="nbR-Id-YHa" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="3gj-hb-ifF"/>
-                <constraint firstItem="Qlr-tE-Mgr" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ASQ-ku-cYD"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ubz-NR-vh4" secondAttribute="bottom" id="DfV-Gr-TAn"/>
+                <constraint firstItem="Qlr-tE-Mgr" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="ASQ-ku-cYD"/>
+                <constraint firstAttribute="bottom" secondItem="ubz-NR-vh4" secondAttribute="bottom" id="DfV-Gr-TAn"/>
                 <constraint firstItem="nbR-Id-YHa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="F9o-cq-Hbl"/>
                 <constraint firstItem="e2D-TJ-9AX" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="GJH-ng-A1n"/>
                 <constraint firstItem="XmI-yI-Xbw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Go1-LJ-nMr"/>
                 <constraint firstItem="Qlr-tE-Mgr" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="JlM-Xq-eSM"/>
                 <constraint firstItem="nbR-Id-YHa" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="M43-lf-pfs"/>
-                <constraint firstItem="Qbv-lJ-et2" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Oah-Un-MJo"/>
+                <constraint firstItem="Qbv-lJ-et2" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="Oah-Un-MJo"/>
                 <constraint firstItem="XmI-yI-Xbw" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="PNz-pL-XSu"/>
                 <constraint firstItem="Qlr-tE-Mgr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QQw-Zz-kMl"/>
                 <constraint firstItem="Qlr-tE-Mgr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ScQ-52-FVL"/>
@@ -77,7 +78,7 @@
                 <constraint firstItem="nbR-Id-YHa" firstAttribute="top" secondItem="XmI-yI-Xbw" secondAttribute="bottom" id="Xme-W4-OeF"/>
                 <constraint firstItem="Qbv-lJ-et2" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fWY-yU-192"/>
                 <constraint firstItem="XmI-yI-Xbw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mHW-ae-V1I"/>
-                <constraint firstItem="e2D-TJ-9AX" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="p5e-co-4Ur"/>
+                <constraint firstItem="e2D-TJ-9AX" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="p5e-co-4Ur"/>
                 <constraint firstItem="e2D-TJ-9AX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="t8L-po-Tm2"/>
                 <constraint firstItem="ubz-NR-vh4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uWr-3E-f5P"/>
             </constraints>
