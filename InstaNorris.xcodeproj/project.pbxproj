@@ -76,7 +76,6 @@
 		40C4828520AE5AE500A12282 /* BaseUITests+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4828420AE5AE500A12282 /* BaseUITests+Utils.swift */; };
 		40DA7BCA209AB5660016B326 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA7BC9209AB5660016B326 /* UIColor+Utils.swift */; };
 		40DA7BD0209B3E2F0016B326 /* UITextFIeld+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA7BCF209B3E2F0016B326 /* UITextFIeld+Utils.swift */; };
-		40DA7BD2209B3FF40016B326 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA7BD1209B3FF40016B326 /* R.generated.swift */; };
 		40DA7BF2209B4BD10016B326 /* HeaderView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DA7BF1209B4BD10016B326 /* HeaderView+Rx.swift */; };
 		40F63F7B20BAE7C6007E0328 /* MockLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F63F7A20BAE7C6007E0328 /* MockLocalStorage.swift */; };
 		626A356D802BA04F15EF2C0A /* Pods_InstaNorrisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE77A4F49C701B10B4FE1A7 /* Pods_InstaNorrisTests.framework */; };
@@ -168,7 +167,6 @@
 		40C4828420AE5AE500A12282 /* BaseUITests+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseUITests+Utils.swift"; sourceTree = "<group>"; };
 		40DA7BC9209AB5660016B326 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		40DA7BCF209B3E2F0016B326 /* UITextFIeld+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextFIeld+Utils.swift"; sourceTree = "<group>"; };
-		40DA7BD1209B3FF40016B326 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		40DA7BF1209B4BD10016B326 /* HeaderView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeaderView+Rx.swift"; sourceTree = "<group>"; };
 		40F63F7A20BAE7C6007E0328 /* MockLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocalStorage.swift; sourceTree = "<group>"; };
 		44DB4F89243AFA231A1D36F9 /* Pods-InstaNorris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaNorris.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris.release.xcconfig"; sourceTree = "<group>"; };
@@ -347,7 +345,6 @@
 			isa = PBXGroup;
 			children = (
 				402FA50A20BDA26F009A5E60 /* soda_loader.json */,
-				40DA7BD1209B3FF40016B326 /* R.generated.swift */,
 				405D44BF2098D63E00160077 /* Assets.xcassets */,
 				40696EBF20BC301100137E48 /* RandomImage.swift */,
 			);
@@ -694,7 +691,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-InstaNorris/Pods-InstaNorris-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
@@ -727,7 +724,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InstaNorris/Pods-InstaNorris-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstaNorris/Pods-InstaNorris-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BA18BD06B6358C270DA60B49 /* [CP] Embed Pods Frameworks */ = {
@@ -736,7 +733,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-InstaNorrisTests/Pods-InstaNorrisTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-InstaNorrisTests/Pods-InstaNorrisTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KIF/KIF.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
@@ -753,7 +750,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InstaNorrisTests/Pods-InstaNorrisTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstaNorrisTests/Pods-InstaNorrisTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E0FF4BB9BD703EF1EAD9FBA2 /* [CP] Check Pods Manifest.lock */ = {
@@ -792,7 +789,6 @@
 				40696EC420BC3DBF00137E48 /* UILabel+Rx.swift in Sources */,
 				40696EC020BC301100137E48 /* RandomImage.swift in Sources */,
 				40BCC7C3209AB36B009279FA /* FactCell.swift in Sources */,
-				40DA7BD2209B3FF40016B326 /* R.generated.swift in Sources */,
 				402FA50720BD9443009A5E60 /* AppCoordinator.swift in Sources */,
 				402FA50020BD65A5009A5E60 /* OnboardingView.swift in Sources */,
 				402FA50920BDA146009A5E60 /* LoadingView.swift in Sources */,
